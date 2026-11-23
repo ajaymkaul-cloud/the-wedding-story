@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Make a demo link</title><meta name="robots" content="noindex,nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#F6F5F1;color:#231B16;font:1.05rem/1.55 Mukta,system-ui,sans-serif}
+main{max-width:520px;margin:0 auto;padding:56px 22px}
+h1{font:400 2.2rem/1.1 "Tiro Devanagari Hindi",Georgia,serif;margin:0 0 8px}
+.lede{color:#6C625A;margin:0 0 28px}
+form{display:grid;gap:16px}
+label{display:grid;gap:6px;font-size:.92rem;color:#6C625A}
+input,select{font:inherit;color:#231B16;min-height:48px;border:1px solid #D8D1C5;border-radius:12px;padding:0 14px;background:#fff}
+input:focus,select:focus{outline:2px solid #A27C3A;outline-offset:1px}
+button,.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:999px;border:0;background:#2B1D16;color:#F6F5F1;font:500 1rem Mukta,system-ui,sans-serif;cursor:pointer;text-decoration:none}
+.btn.gold{background:#D6B678;color:#2B1D16}
+.btn.line{background:none;border:1px solid #D8D1C5;color:#231B16}
+.out{margin-top:28px;padding:22px;border-radius:18px;background:#fff;border:1px solid #D8D1C5;display:none}
+.out.on{display:block}
+.out textarea{width:100%;min-height:96px;font:.9rem/1.4 ui-monospace,monospace;border:1px solid #D8D1C5;border-radius:10px;padding:10px;resize:vertical}
+.out .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.out .when{color:#6C625A;font-size:.92rem;margin:0 0 10px}
+.err{color:#8A1C2D;min-height:1.5em;margin:0}
+</style></head>
+<body><main>
+<h1>Make a demo link</h1>
+<p class="lede">For a family or planner who asked to see the demo. The link stops working after the days you choose.</p>
+<form id="f">
+  <label>Passcode<input name="key" type="password" autocomplete="current-password" required></label>
+  <label>Who it's for (only for your own reference)<input name="note" maxlength="60" placeholder="e.g. Mattoo family"></label>
+  <label>Open for<select name="days"><option value="1">1 day</option><option value="3" selected>3 days</option><option value="7">7 days</option></select></label>
+  <p class="err" id="err" role="alert"></p>
+  <button type="submit">Make the link</button>
+</form>
+<div class="out" id="out" aria-live="polite">
+  <p class="when" id="when"></p>
+  <textarea id="link" readonly></textarea>
+  <div class="acts">
+    <button type="button" class="btn" id="copy">Copy link</button>
+    <a class="btn gold" id="wa" target="_blank" rel="noopener">Send on WhatsApp</a>
+  </div>
+</div>
+<script>
+var f=document.getElementById("f"),err=document.getElementById("err");
+f.addEventListener("submit",function(e){
+  e.preventDefault();err.textContent="";
+  var d=new FormData(f),btn=f.querySelector("button");btn.disabled=true;btn.textContent="Making it...";
+  fetch("/api/demo-link",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({key:d.get("key"),note:d.get("note"),days:d.get("days")})})
+  .then(function(r){return r.json().then(function(j){return{ok:r.ok,j:j};});})
+  .then(function(res){
+    if(!res.ok){err.textContent=res.j.error||"Something went wrong.";return;}
+    var when=new Date(res.j.expires).toLocaleString("en-IN",{day:"numeric",month:"long",hour:"numeric",minute:"2-digit"});
+    document.getElementById("when").textContent="Open until "+when+".";
+    document.getElementById("link").value=res.j.link;
+    var msg="Here's a private demo of The Wedding Story, the wedding site I mentioned. It stays open until "+when+".\n\n"+res.j.link;
+    document.getElementById("wa").href="https://wa.me/?text="+encodeURIComponent(msg);
+    document.getElementById("out").classList.add("on");
+  })
+  .catch(function(){err.textContent="Couldn't reach the server. Check your connection and try again.";})
+  .finally(function(){btn.disabled=false;btn.textContent="Make the link";});
+});
+document.getElementById("copy").addEventListener("click",function(){
+  var t=document.getElementById("link");t.select();
+  (navigator.clipboard?navigator.clipboard.writeText(t.value):Promise.reject()).then(function(){},function(){document.execCommand("copy");});
+  this.textContent="Copied";var b=this;setTimeout(function(){b.textContent="Copy link";},1800);
+});
+</script>
+</main></body></html>

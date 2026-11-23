@@ -1,0 +1,8 @@
+{
+  "name": "the-wedding-story",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@vercel/functions": "latest"
+  }
+}

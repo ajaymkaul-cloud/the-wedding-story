@@ -68,7 +68,6 @@ a{color:inherit}
 /* Phone */
 .phone{position:relative;width:min(100%,360px);margin:0 auto;aspect-ratio:390/800;border-radius:44px;padding:12px;background:#120C09;box-shadow:0 0 0 1px rgba(214,182,120,.28),0 40px 80px -30px rgba(0,0,0,.75),0 0 120px -20px rgba(214,182,120,.18)}
 .phone .screen{position:relative;width:100%;height:100%;border-radius:33px;overflow:hidden;background:var(--paper)}
-.phone iframe{position:absolute;top:0;left:0;width:390px;height:800px;border:0;transform-origin:0 0}
 
 .phone-cap{text-align:center;color:#BFAE96;font-size:.9rem;margin-top:16px}
 .phone-cap a{color:var(--gold-light)}
@@ -87,26 +86,22 @@ section{padding:clamp(72px,10vw,128px) 0}
 .problem .pair p{color:var(--muted)}
 @media (max-width:860px){.problem .wrap{grid-template-columns:1fr;gap:36px}}
 
-/* Tour */
+/* Stills */
 .tour{background:var(--paper-2)}
-.tour-grid{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:64px;margin-top:48px;align-items:start}
-.tour-list{display:grid;gap:8px}
-.stop{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;text-align:left;width:100%;background:none;border:0;border-radius:18px;padding:20px 22px;cursor:pointer;font:inherit;color:inherit;transition:background .3s}
-.stop .dot{grid-row:span 2;width:12px;height:12px;margin-top:10px;border-radius:50%;border:1.5px solid var(--gold);transition:background .3s}
-.stop h3{font-size:1.5rem}
-.stop p{color:var(--muted);max-width:46ch}
-.stop:hover{background:rgba(255,255,255,.5)}
-.stop[aria-current="true"]{background:#fff;box-shadow:0 12px 30px -20px rgba(43,29,22,.35)}
-.stop[aria-current="true"] .dot{background:var(--gold)}
-.tour-phone{position:sticky;top:96px}
-.tour-phone .phone{background:#1B1310}
+.phone img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+.stills{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin-top:48px}
+.stills figure{margin:0}
+.phone.sm{width:100%;border-radius:30px;padding:8px}
+.phone.sm .screen{border-radius:23px}
+.stills figcaption{margin-top:18px}
+.stills h3{font-size:1.3rem;margin-bottom:4px}
+.stills p{color:var(--muted);font-size:.98rem}
+.demo-ask{margin-top:48px;display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between;border-top:1px solid var(--rule);padding-top:28px}
+.demo-ask p{font-family:var(--display);font-size:1.35rem;max-width:40ch}
 @media (max-width:960px){
-  .tour-grid{grid-template-columns:1fr;gap:28px}
-  .tour-phone{position:static;order:-1}
-  .tour-phone .phone{width:min(78vw,300px)}
-  .tour-list{display:flex;overflow-x:auto;gap:10px;scroll-snap-type:x mandatory;margin:0 calc(-1 * var(--gutter));padding:0 var(--gutter) 6px;scrollbar-width:none}
-  .tour-list::-webkit-scrollbar{display:none}
-  .stop{flex:none;width:80%;scroll-snap-align:start;background:rgba(255,255,255,.55)}
+  .stills{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:18px;margin-left:calc(-1 * var(--gutter));margin-right:calc(-1 * var(--gutter));padding:0 var(--gutter) 8px;scroll-padding:0 var(--gutter);scrollbar-width:none}
+  .stills::-webkit-scrollbar{display:none}
+  .stills figure{flex:none;width:62%;max-width:260px;scroll-snap-align:start}
 }
 
 /* Family side */
@@ -225,16 +220,16 @@ footer a:hover{color:#fff}
       <h1 id="hero-h">Your guests will understand every rite.</h1>
       <p class="sub">A wedding invitation and ceremony guide in one link. It carries every day of the wedding, explains each rite as it happens, and gathers replies and blessings from the whole family.</p>
       <div class="acts">
-        <a class="btn gold" href="/demo/aditi-ishaan/" target="_blank" rel="noopener">Open the demo</a>
-        <a class="btn line js-wa" href="#contact">Talk to us on WhatsApp</a>
+        <a class="btn gold js-wa" href="#contact" data-msg="Hello, could I see a private demo of The Wedding Story?">Ask for a private demo</a>
+        <a class="btn line" href="#tour">See what guests get</a>
       </div>
       <p class="made">Now taking <b>Kashmiri Pandit</b> weddings for 2027. Other traditions are being prepared.</p>
     </div>
     <div>
-      <div class="phone" data-phone>
-        <div class="screen"><iframe title="Demo wedding site for Aditi and Ishaan" src="/demo/aditi-ishaan/" loading="eager"></iframe></div>
+      <div class="phone">
+        <div class="screen"><img src="/assets/stills/home.jpg" alt="The opening page of a demo wedding site: the names Aditi Tickoo and Ishaan Razdan, their parents, and a gold Dejhoor hanging at the side" width="780" height="1560"></div>
       </div>
-      <p class="phone-cap">This is the live demo. Tap around inside it.</p>
+      <p class="phone-cap">From the demo wedding of Aditi and Ishaan.</p>
     </div>
   </div>
 </section>
@@ -256,20 +251,16 @@ footer a:hover{color:#fff}
 <section class="tour" id="tour" aria-labelledby="tour-h">
   <div class="wrap">
     <h2 class="sec-h rv" id="tour-h">What your guests see</h2>
-    <p class="sec-lede rv">Pick a moment and the demo moves to it.</p>
-    <div class="tour-grid">
-      <div class="tour-list" role="tablist" aria-label="Moments in the demo">
-        <button class="stop" type="button" role="tab" data-view="home" aria-current="true"><span class="dot" aria-hidden="true"></span><h3>The invitation</h3><p>Both families named with care, the heavenly blessings line, and the Dejhoor swaying as the page opens.</p></button>
-        <button class="stop" type="button" role="tab" data-view="days"><span class="dot" aria-hidden="true"></span><h3>Every day of the wedding</h3><p>From Livun to Phirlath, with times, colours to wear, directions and the baraat's meeting point.</p></button>
-        <button class="stop" type="button" role="tab" data-view="ceremony"><span class="dot" aria-hidden="true"></span><h3>The ceremony, rite by rite</h3><p>Swipe through the Lagan at the mandap. What you are seeing, what it means, and what you can do.</p></button>
-        <button class="stop" type="button" role="tab" data-view="rsvp"><span class="dot" aria-hidden="true"></span><h3>A reply that feels like a card</h3><p>Guests open an invitation, choose their days and send it back. Each guest only sees the days they are invited to.</p></button>
-        <button class="stop" type="button" role="tab" data-view="blessings"><span class="dot" aria-hidden="true"></span><h3>Blessings, written or spoken</h3><p>A few lines for the couple, or a voice note from a grandmother in another city.</p></button>
-      </div>
-      <div class="tour-phone">
-        <div class="phone" data-phone>
-          <div class="screen"><iframe id="tour-frame" title="Demo wedding site, guided tour" src="/demo/aditi-ishaan/" loading="lazy"></iframe></div>
-        </div>
-      </div>
+    <p class="sec-lede rv">A few moments from the demo. We'll walk you through the rest on a call.</p>
+    <div class="stills">
+      <figure class="rv"><div class="phone sm"><div class="screen"><img src="/assets/stills/home.jpg" alt="The invitation page with both families' names" loading="lazy" width="780" height="1560"></div></div><figcaption><h3>The invitation</h3><p>Both families named with care, and the heavenly blessings line.</p></figcaption></figure>
+      <figure class="rv"><div class="phone sm"><div class="screen"><img src="/assets/stills/days.jpg" alt="The Maenziraat evening with its time, venue, directions and colour code" loading="lazy" width="780" height="1560"></div></div><figcaption><h3>Every day of the wedding</h3><p>Times, directions, what to wear and a reminder in their calendar.</p></figcaption></figure>
+      <figure class="rv"><div class="phone sm"><div class="screen"><img src="/assets/stills/rite.jpg" alt="A ceremony card explaining the first glimpse through a mirror" loading="lazy" width="780" height="1560"></div></div><figcaption><h3>The ceremony, rite by rite</h3><p>What you are seeing, what it means, and what you can do.</p></figcaption></figure>
+      <figure class="rv"><div class="phone sm"><div class="screen"><img src="/assets/stills/rsvp.jpg" alt="A closed invitation card that guests tap to open and reply" loading="lazy" width="780" height="1560"></div></div><figcaption><h3>A reply that feels like a card</h3><p>Guests open it, choose their days and send it back.</p></figcaption></figure>
+    </div>
+    <div class="demo-ask rv">
+      <p>Want to try it yourself? We'll send you a private demo link, open for a few days.</p>
+      <a class="btn dark js-wa" href="#contact" data-msg="Hello, could I see a private demo of The Wedding Story?">Ask for a private demo</a>
     </div>
   </div>
 </section>
@@ -415,7 +406,7 @@ footer a:hover{color:#fff}
     <h2 id="close-h" class="rv">Tell us about your wedding.</h2>
     <p class="rv">The date, your tradition and how many guests. We reply the same day.</p>
     <div class="acts rv">
-      <a class="btn gold js-wa" href="#contact">Talk to us on WhatsApp</a>
+      <a class="btn gold js-wa" href="#contact" data-msg="Hello, could I see a private demo of The Wedding Story?">Ask for a private demo</a>
       <a class="btn line" href="mailto:info@pixelandink.in?subject=The%20Wedding%20Story">info@pixelandink.in</a>
     </div>
   </div>
@@ -426,7 +417,6 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <span>The Wedding Story by Pixel &amp; Ink. Bengaluru.</span>
     <nav aria-label="More">
-      <a href="/demo/aditi-ishaan/">Demo</a>
       <a href="/privacy/">Privacy</a>
       <a href="/terms/">Terms</a>
       <a href="mailto:info@pixelandink.in">Contact</a>
@@ -447,25 +437,6 @@ footer a:hover{color:#fff}
   document.querySelectorAll(".js-wa").forEach(function(a){
     a.href=contactHref(a.getAttribute("data-msg"));
     if(WA){a.target="_blank";a.rel="noopener";}
-  });
-
-  /* Fit the 390px-wide demo into each phone frame */
-  function fit(){
-    document.querySelectorAll("[data-phone]").forEach(function(p){
-      var s=p.querySelector(".screen"),f=p.querySelector("iframe");if(!s||!f)return;
-      var k=s.clientWidth/390;f.style.transform="scale("+k+")";f.style.height=(s.clientHeight/k)+"px";
-    });
-  }
-  fit();window.addEventListener("resize",fit);
-
-  /* Guided tour: move the demo to the chosen moment */
-  var frame=document.getElementById("tour-frame"),stops=document.querySelectorAll(".stop");
-  stops.forEach(function(b){
-    b.addEventListener("click",function(){
-      stops.forEach(function(x){x.setAttribute("aria-current",x===b?"true":"false");});
-      try{frame.contentWindow.location.hash=b.getAttribute("data-view");frame.contentWindow.scrollTo(0,0);}catch(e){}
-      if(window.matchMedia("(max-width:960px)").matches)b.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"});
-    });
   });
 
   /* "Is your tradition next?" goes to WhatsApp or email with the details filled in */
