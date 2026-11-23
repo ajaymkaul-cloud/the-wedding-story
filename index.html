@@ -603,6 +603,25 @@ html[lang="hi"] .signoff .so2{font-style:normal}
 .swipe-hint{font-size:var(--step--1);color:#BFAE96;margin-bottom:6px;transition:opacity .5s}
 .swipe-hint.gone{opacity:0;height:0;margin:0;overflow:hidden}
 .inv-note{font-size:var(--step--1);color:var(--gold);margin:-10px 0 18px}
+
+/* Edges: nothing cut mid-word */
+.chamber{overflow:clip}
+@media (min-width:821px){
+  .index{flex-wrap:wrap;overflow:visible;-webkit-mask-image:none;mask-image:none}
+}
+html,body{overflow-x:clip}
+.deck{grid-auto-columns:100%;gap:24px;padding:8px 0 24px}
+.rite>*{max-width:68ch}
+.index{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 var(--gutter),#000 calc(100% - 48px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 var(--gutter),#000 calc(100% - 48px),transparent 100%);scrollbar-width:none;scroll-padding:0 48px}
+.index::-webkit-scrollbar{display:none}
+.glance{scrollbar-width:none;padding-bottom:22px}
+.glance::-webkit-scrollbar{display:none}
+@media (min-width:821px){
+  .glance{grid-auto-flow:row;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-columns:auto;overflow:visible;gap:28px 24px;scroll-snap-type:none}
+}
+@media (max-width:820px){
+  .glance{grid-auto-columns:76%;margin-left:calc(-1 * var(--gutter));margin-right:calc(-1 * var(--gutter));padding-left:var(--gutter);padding-right:var(--gutter);scroll-padding:0 var(--gutter)}
+}
 </style>
 </head>
 <body>
@@ -1218,7 +1237,9 @@ function renderDeck(){
 function go(i){
   current=Math.max(0,Math.min(RITES.length-1,i));
   var card=$("deck").children[current];
-  if(card){$("deck").scrollTo({left:card.offsetLeft-$("deck").offsetLeft-2,behavior:reduceMotion?"auto":"smooth"});}
+  if(card){var dk=$("deck");dk.scrollTo({left:dk.scrollLeft+card.getBoundingClientRect().left-dk.getBoundingClientRect().left,behavior:reduceMotion?"auto":"smooth"});
+    var ix=$("rite-index"),off=(ix?ix.getBoundingClientRect().bottom:60)+10,dt=dk.getBoundingClientRect().top;
+    if(dt<off)window.scrollBy({top:dt-off,behavior:reduceMotion?"auto":"smooth"});}
   updateDeckUi();
 }
 function renderDeckProg(){var p=$("deck-prog");if(!p)return;p.textContent="";
@@ -1233,7 +1254,7 @@ function updateDeckUi(){
   $("deck-count").textContent=t("rite_of",{n:current+1,t:RITES.length});
   var chips=$("rite-index").children;
   for(var i=0;i<chips.length;i++){chips[i].setAttribute("aria-current",i===current?"true":"false");chips[i].setAttribute("aria-selected",i===current?"true":"false");}
-  var active=chips[current];if(active&&active.scrollIntoView){var p=active.parentNode;p.scrollLeft=active.offsetLeft-p.offsetLeft-24;}
+  var active=chips[current];if(active){var p=active.parentNode,pr=p.getBoundingClientRect(),ar=active.getBoundingClientRect();p.scrollTo({left:p.scrollLeft+(ar.left-pr.left)-(pr.width-ar.width)/2,behavior:reduceMotion?"auto":"smooth"});}
   $("prev").disabled=current===0;$("next").disabled=current===RITES.length-1;
 }
 var scrollTimer;
@@ -1241,7 +1262,7 @@ $("deck").addEventListener("scroll",function(){
   clearTimeout(scrollTimer);
   scrollTimer=setTimeout(function(){
     var deck=$("deck"),best=0,bestD=Infinity;
-    Array.prototype.forEach.call(deck.children,function(c,i){var d=Math.abs(c.offsetLeft-deck.offsetLeft-deck.scrollLeft);if(d<bestD){bestD=d;best=i;}});
+    Array.prototype.forEach.call(deck.children,function(c,i){var d=Math.abs(c.getBoundingClientRect().left-deck.getBoundingClientRect().left);if(d<bestD){bestD=d;best=i;}});
     if(best!==current){current=best;updateDeckUi();}
   },90);
 },{passive:true});
