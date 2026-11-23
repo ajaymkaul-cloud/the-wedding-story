@@ -1,5 +1,5 @@
 // Demo access: /demo/* opens only with a signed link that hasn't expired.
-// A valid link (?k=...) is swapped for a cookie, so reloading and moving around keep working.
+// A valid link (?k=...) also leaves a cookie, so reloading keeps working until the link expires.
 import { next } from '@vercel/functions';
 import { verifyToken } from './lib/demo-token.js';
 
@@ -27,13 +27,11 @@ export default async function middleware(request) {
     const payload = await verifyToken(fromLink, secret);
     if (!payload) return Response.redirect(expired, 302);
     const maxAge = Math.max(0, Math.floor((payload.e - Date.now()) / 1000));
-    url.searchParams.delete('k');
-    return new Response(null, {
-      status: 302,
+    return next({
       headers: {
-        Location: url.pathname + (url.search || ''),
         'Set-Cookie': `${COOKIE}=${encodeURIComponent(fromLink)}; Path=/demo; Max-Age=${maxAge}; HttpOnly; Secure; SameSite=Lax`,
         'Cache-Control': 'no-store',
+        'X-Robots-Tag': 'noindex',
       },
     });
   }
