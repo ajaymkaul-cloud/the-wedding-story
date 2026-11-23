@@ -605,10 +605,14 @@ html[lang="hi"] .signoff .so2{font-style:normal}
 .inv-note{font-size:var(--step--1);color:var(--gold);margin:-10px 0 18px}
 
 /* Edges: nothing cut mid-word */
+.rite-bar{position:sticky;top:61px;z-index:5;background:var(--walnut);margin:24px calc(-1 * var(--gutter)) 8px;padding:10px var(--gutter);display:flex;align-items:center;gap:12px;box-shadow:0 10px 18px -14px rgba(0,0,0,.6)}
+.rite-bar .index{position:static;margin:0;padding:2px 0;background:none;flex:1;min-width:0;-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 56px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 56px),transparent)}
+.bar-arrows{display:flex;gap:8px;flex:none}
+.round.sm{width:40px;height:40px}
+.round:disabled{opacity:.35;cursor:default}
+.round:not(:disabled):hover{background:rgba(214,182,120,.14)}
+@media (max-width:820px){.rite-bar{gap:8px}.rite-bar .index{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 22px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 22px),transparent)}.round.sm{width:36px;height:36px}}
 .chamber{overflow:clip}
-@media (min-width:821px){
-  .index{flex-wrap:wrap;overflow:visible;-webkit-mask-image:none;mask-image:none}
-}
 html,body{overflow-x:clip}
 .deck{grid-auto-columns:100%;gap:24px;padding:8px 0 24px}
 .rite>*{max-width:68ch}
@@ -707,7 +711,13 @@ html,body{overflow-x:clip}
         <p id="draft-note"></p>
       </div>
       <div class="tumbak" id="tumbak"></div>
-      <div class="index" id="rite-index" role="tablist" aria-label="Jump to a rite"></div>
+      <div class="rite-bar">
+        <div class="index" id="rite-index" role="tablist" aria-label="Jump to a rite"></div>
+        <div class="bar-arrows">
+          <button class="round sm" type="button" id="prev2" aria-label="Previous rite"><svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M11 3 5 9l6 6"/></svg></button>
+          <button class="round sm" type="button" id="next2" aria-label="Next rite"><svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m7 3 6 6-6 6"/></svg></button>
+        </div>
+      </div>
       <div class="deck" id="deck" tabindex="0" aria-roledescription="carousel" aria-label="Ceremony rites"></div>
       <div class="deck-prog" id="deck-prog" role="group" aria-label="Rites"></div>
       <p class="swipe-hint" id="swipe-hint" data-i18n="swipe">Swipe the card, or use the arrows, to move through the rites.</p>
@@ -1238,7 +1248,7 @@ function go(i){
   current=Math.max(0,Math.min(RITES.length-1,i));
   var card=$("deck").children[current];
   if(card){var dk=$("deck");dk.scrollTo({left:dk.scrollLeft+card.getBoundingClientRect().left-dk.getBoundingClientRect().left,behavior:reduceMotion?"auto":"smooth"});
-    var ix=$("rite-index"),off=(ix?ix.getBoundingClientRect().bottom:60)+10,dt=dk.getBoundingClientRect().top;
+    var ix=document.querySelector(".rite-bar"),off=61+(ix?ix.offsetHeight:60)+12,dt=dk.getBoundingClientRect().top;
     if(dt<off)window.scrollBy({top:dt-off,behavior:reduceMotion?"auto":"smooth"});}
   updateDeckUi();
 }
@@ -1255,7 +1265,7 @@ function updateDeckUi(){
   var chips=$("rite-index").children;
   for(var i=0;i<chips.length;i++){chips[i].setAttribute("aria-current",i===current?"true":"false");chips[i].setAttribute("aria-selected",i===current?"true":"false");}
   var active=chips[current];if(active){var p=active.parentNode,pr=p.getBoundingClientRect(),ar=active.getBoundingClientRect();p.scrollTo({left:p.scrollLeft+(ar.left-pr.left)-(pr.width-ar.width)/2,behavior:reduceMotion?"auto":"smooth"});}
-  $("prev").disabled=current===0;$("next").disabled=current===RITES.length-1;
+  $("prev").disabled=$("prev2").disabled=current===0;$("next").disabled=$("next2").disabled=current===RITES.length-1;
 }
 var scrollTimer;
 $("deck").addEventListener("scroll",function(){
@@ -1268,6 +1278,8 @@ $("deck").addEventListener("scroll",function(){
 },{passive:true});
 $("prev").addEventListener("click",function(){go(current-1);});
 $("next").addEventListener("click",function(){go(current+1);});
+$("prev2").addEventListener("click",function(){go(current-1);});
+$("next2").addEventListener("click",function(){go(current+1);});
 $("deck").addEventListener("keydown",function(e){if(e.key==="ArrowRight"){e.preventDefault();go(current+1);}else if(e.key==="ArrowLeft"){e.preventDefault();go(current-1);}});
 
 /* petal shower: one orchestrated moment */
