@@ -192,6 +192,34 @@ footer nav{display:flex;flex-wrap:wrap;gap:22px}
 footer a{color:#D8CBB8;text-decoration:none}
 footer a:hover{color:#fff}
 
+/* Beats */
+.hero .micro{margin-top:16px;color:#BFAE96;font-size:.95rem}
+.beat{padding:clamp(80px,11vw,140px) 0}
+.beat .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:64px;align-items:center}
+.beat.flip .beat-img{order:-1}
+.beat h2,.beat-h{font-size:clamp(2.3rem,1.5rem + 3.2vw,4rem);max-width:14ch}
+.beat-text p{font-size:clamp(1.15rem,1.05rem + .5vw,1.45rem);color:var(--muted);margin-top:22px;max-width:30ch;line-height:1.5}
+.beat-img .phone{max-width:300px}
+.beat.flip{background:var(--paper-2)}
+.beat.dark{background:radial-gradient(ellipse at 50% 30%,#45322A 0%,var(--walnut) 68%);color:#EFE6D8}
+.beat.dark h2{color:#F8F2E7;margin:0 auto}
+.beat.dark p{color:#C9BBA8;margin-left:auto;margin-right:auto}
+.beat.centre .wrap{grid-template-columns:1fr;text-align:center}
+.wave{width:180px;height:40px;color:var(--gold-light);margin:0 auto 34px;display:block}
+.wave rect{transform-box:fill-box;transform-origin:center}
+.beat.dark .rv.in .wave rect{animation:breathe 2.4s ease-in-out infinite}
+.wave rect:nth-child(3n){animation-delay:.3s!important}
+.wave rect:nth-child(3n+1){animation-delay:.6s!important}
+@keyframes breathe{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.55)}}
+.trad .sec-lede{margin-top:18px}
+.next h3{margin-bottom:4px}
+@media (max-width:860px){
+  .beat .wrap{grid-template-columns:1fr;gap:40px}
+  .beat.flip .beat-img{order:0}
+  .beat-img .phone{max-width:240px}
+}
+@media (prefers-reduced-motion:reduce){.wave rect{animation:none!important}}
+
 .rv{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
@@ -204,7 +232,7 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <a class="brand" href="#">The Wedding Story <small>by Pixel &amp; Ink</small></a>
     <nav aria-label="Sections">
-      <a href="#tour">What guests see</a>
+      <a href="#feel">The idea</a>
       <a href="#tradition">Your tradition</a>
       <a href="#pricing">Pricing</a>
       <a href="#questions">Questions</a>
@@ -217,83 +245,61 @@ footer a:hover{color:#fff}
 <section class="hero" aria-labelledby="hero-h" style="padding:0">
   <div class="wrap">
     <div>
-      <h1 id="hero-h">Your guests will understand every rite.</h1>
-      <p class="sub">A wedding invitation and ceremony guide in one link. It carries every day of the wedding, explains each rite as it happens, and gathers replies and blessings from the whole family.</p>
+      <h1 id="hero-h">Every rite, understood by everyone you love.</h1>
+      <p class="sub">One link. Your whole wedding, explained. Every blessing, kept.</p>
       <div class="acts">
         <a class="btn gold js-wa" href="#contact" data-msg="Hello, could I see a private demo of The Wedding Story?">Ask for a private demo</a>
-        <a class="btn line" href="#tour">See what guests get</a>
       </div>
-      <p class="made">Now taking <b>Kashmiri Pandit</b> weddings for 2027. Other traditions are being prepared.</p>
+      <p class="micro">Opens straight from WhatsApp. Simple enough for grandparents. In English and हिंदी.</p>
     </div>
     <div>
       <div class="phone">
         <div class="screen"><img src="/assets/stills/home.jpg" alt="The opening page of a demo wedding site: the names Aditi Tickoo and Ishaan Razdan, their parents, and a gold Dejhoor hanging at the side" width="780" height="1560"></div>
       </div>
-      <p class="phone-cap">From the demo wedding of Aditi and Ishaan.</p>
     </div>
   </div>
 </section>
 
-<section class="problem" aria-labelledby="prob-h">
+<section class="beat" id="feel" aria-labelledby="b1">
   <div class="wrap">
-    <div class="rv">
-      <h2 class="sec-h" id="prob-h">Most guests at a wedding don't know what they are watching.</h2>
-      <p class="sec-lede">And the family spends the week before answering the same questions on WhatsApp. One link takes care of both.</p>
+    <div class="beat-text rv">
+      <h2 id="b1">Let them feel it, not just watch it.</h2>
+      <p>When her father places her hand in his, everyone knows why the room goes quiet.</p>
     </div>
-    <div class="pair rv">
-      <div><h3>For the guests</h3><p>Where to be and when, what to wear, and what each rite means while it is happening. Even the cousin who has never seen a Kashmiri wedding follows along.</p></div>
-      <div><h3>For the family</h3><p>Who is coming to which day, how many, and from which side. All in one place instead of forty chats.</p></div>
-      <div><h3>For afterwards</h3><p>Every blessing, written or spoken, kept as a keepsake of the people who were there and the ones who couldn't be.</p></div>
+    <div class="beat-img rv"><div class="phone sm"><div class="screen"><img src="/assets/stills/rite.jpg" alt="A ceremony card explaining a rite as it happens" loading="lazy" width="780" height="1560"></div></div></div>
+  </div>
+</section>
+
+<section class="beat dark centre" aria-labelledby="b2">
+  <div class="wrap">
+    <div class="beat-text rv">
+      <svg class="wave" viewBox="0 0 220 48" aria-hidden="true"><g fill="currentColor">
+        <rect x="0" y="20" width="4" height="8" rx="2"/><rect x="12" y="14" width="4" height="20" rx="2"/><rect x="24" y="8" width="4" height="32" rx="2"/><rect x="36" y="16" width="4" height="16" rx="2"/><rect x="48" y="4" width="4" height="40" rx="2"/><rect x="60" y="12" width="4" height="24" rx="2"/><rect x="72" y="18" width="4" height="12" rx="2"/><rect x="84" y="6" width="4" height="36" rx="2"/><rect x="96" y="14" width="4" height="20" rx="2"/><rect x="108" y="10" width="4" height="28" rx="2"/><rect x="120" y="18" width="4" height="12" rx="2"/><rect x="132" y="8" width="4" height="32" rx="2"/><rect x="144" y="15" width="4" height="18" rx="2"/><rect x="156" y="5" width="4" height="38" rx="2"/><rect x="168" y="13" width="4" height="22" rx="2"/><rect x="180" y="19" width="4" height="10" rx="2"/><rect x="192" y="11" width="4" height="26" rx="2"/><rect x="204" y="17" width="4" height="14" rx="2"/><rect x="216" y="21" width="4" height="6" rx="2"/>
+      </g></svg>
+      <h2 id="b2">Some blessings are spoken only once.</h2>
+      <p>A grandmother who can't travel. Her voice, her words. Yours to play again.</p>
     </div>
   </div>
 </section>
 
-<section class="tour" id="tour" aria-labelledby="tour-h">
+<section class="beat flip" aria-labelledby="b3">
   <div class="wrap">
-    <h2 class="sec-h rv" id="tour-h">What your guests see</h2>
-    <p class="sec-lede rv">A few moments from the demo. We'll walk you through the rest on a call.</p>
-    <div class="stills">
-      <figure class="rv"><div class="phone sm"><div class="screen"><img src="/assets/stills/home.jpg" alt="The invitation page with both families' names" loading="lazy" width="780" height="1560"></div></div><figcaption><h3>The invitation</h3><p>Both families named with care, and the heavenly blessings line.</p></figcaption></figure>
-      <figure class="rv"><div class="phone sm"><div class="screen"><img src="/assets/stills/days.jpg" alt="The Maenziraat evening with its time, venue, directions and colour code" loading="lazy" width="780" height="1560"></div></div><figcaption><h3>Every day of the wedding</h3><p>Times, directions, what to wear and a reminder in their calendar.</p></figcaption></figure>
-      <figure class="rv"><div class="phone sm"><div class="screen"><img src="/assets/stills/rite.jpg" alt="A ceremony card explaining the first glimpse through a mirror" loading="lazy" width="780" height="1560"></div></div><figcaption><h3>The ceremony, rite by rite</h3><p>What you are seeing, what it means, and what you can do.</p></figcaption></figure>
-      <figure class="rv"><div class="phone sm"><div class="screen"><img src="/assets/stills/rsvp.jpg" alt="A closed invitation card that guests tap to open and reply" loading="lazy" width="780" height="1560"></div></div><figcaption><h3>A reply that feels like a card</h3><p>Guests open it, choose their days and send it back.</p></figcaption></figure>
+    <div class="beat-text rv">
+      <h2 id="b3">Your phone goes quiet the week before.</h2>
+      <p>Times, places, what to wear. All on their link.</p>
     </div>
-    <div class="demo-ask rv">
-      <p>Want to try it yourself? We'll send you a private demo link, open for a few days.</p>
-      <a class="btn dark js-wa" href="#contact" data-msg="Hello, could I see a private demo of The Wedding Story?">Ask for a private demo</a>
-    </div>
-  </div>
-</section>
-
-<section class="family" aria-labelledby="fam-h">
-  <div class="wrap">
-    <h2 class="sec-h rv" id="fam-h">What the family gets</h2>
-    <p class="sec-lede rv">The quiet side of it, seen only by the people you choose.</p>
-    <div class="fam-grid">
-      <div class="fam rv"><h3>Personal invite links</h3><p>Every guest gets their own link with their name on it. Close family see all the functions. Others see only the Maenziraat and the Lagan, or whatever you choose.</p><p class="eg">"Dear Koul family," opens their page.</p></div>
-      <div class="fam rv"><h3>Replies in one place</h3><p>Who is coming, to which day, how many, from which side. No counting thumbs-up emojis in family groups.</p></div>
-      <div class="fam rv"><h3>Your guest list, imported</h3><p>Paste or upload the list you already keep. Send each link on WhatsApp with a tap.</p></div>
-      <div class="fam rv"><h3>A keepsake after</h3><p>Every blessing and voice note, gathered into one page you can keep long after the wedding.</p></div>
-    </div>
+    <div class="beat-img rv"><div class="phone sm"><div class="screen"><img src="/assets/stills/days.jpg" alt="One day of the wedding with its time, venue, directions and colour code" loading="lazy" width="780" height="1560"></div></div></div>
   </div>
 </section>
 
 <section class="trad" id="tradition" aria-labelledby="trad-h">
   <div class="wrap">
     <div class="rv">
-      <h2 class="sec-h" id="trad-h">Made for your tradition, not a template</h2>
-      <p class="sec-lede">A generic wedding website lists times and venues. This explains your rites in your family's words.</p>
-      <ul>
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>The rites in order, as they happen at the mandap</span></li>
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Your terms explained where they appear: Dejhoor, Athwas, Posh Puza, Wanvun</span></li>
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Sanskrit verses with plain meanings</span></li>
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>English and Hindi, switched with one tap</span></li>
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Your purohit reviews the order before it goes out, and you can leave out any rite your family doesn't follow</span></li>
-      </ul>
+      <h2 class="beat-h" id="trad-h">Your rites. Your words. Checked by your purohit.</h2>
+      <p class="sec-lede">Kashmiri Pandit weddings now. More traditions soon.</p>
     </div>
     <div class="next rv" id="next-tradition">
       <h3>Is your tradition next?</h3>
-      <p>We are preparing more traditions. Tell us yours and when the wedding is, and we will let you know when it is ready.</p>
       <form id="trad-form">
         <label>Your tradition
           <select name="tradition" required>
@@ -302,21 +308,9 @@ footer a:hover{color:#fff}
           </select>
         </label>
         <label>Month of the wedding<input name="month" type="month"></label>
-        <label>Your name<input name="name" autocomplete="name"></label>
-        <button class="btn dark" type="submit">Let us know</button>
+        <button class="btn dark" type="submit">Tell me when it's ready</button>
       </form>
     </div>
-  </div>
-</section>
-
-<section class="steps" aria-labelledby="steps-h">
-  <div class="wrap">
-    <h2 class="sec-h rv" id="steps-h">How it works</h2>
-    <ol>
-      <li class="rv"><h3>Share your details</h3><p>Names, parents, days, venues and the guest list. A short form, or a call with us.</p></li>
-      <li class="rv"><h3>Your purohit checks the rites</h3><p>We send them the order of the ceremony. You leave out anything your family does differently.</p></li>
-      <li class="rv"><h3>Send the link</h3><p>Each guest gets their own link on WhatsApp. Replies and blessings start coming in.</p></li>
-    </ol>
   </div>
 </section>
 
@@ -369,8 +363,8 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <div class="rv">
       <h2 class="sec-h" id="trust-h" style="font-size:clamp(1.8rem,1.3rem + 1.8vw,2.6rem)">Who is behind this</h2>
-      <p style="margin-top:18px">The Wedding Story is made by Pixel &amp; Ink, a Bengaluru studio led by Ajay Kaul. Ajay has spent more than twenty years in broadcast television, film and digital media. His short film Echoes earned 28 international festival nominations.</p>
-      <p>We started with Kashmiri Pandit weddings because we know them. Every tradition we add is prepared the same way: from published sources, then reviewed with a purohit from that community.</p>
+      <p style="margin-top:18px">Made by Pixel &amp; Ink, a Bengaluru studio led by Ajay Kaul, after twenty years in film and television.</p>
+      <p>Every tradition is prepared from published sources, then reviewed with a purohit from that community.</p>
       <p style="color:var(--crimson)">[Placeholder: purohit credit, once the review is done.]</p>
     </div>
     <div class="rv">
@@ -403,8 +397,7 @@ footer a:hover{color:#fff}
 
 <section class="close" id="contact" aria-labelledby="close-h">
   <div class="wrap">
-    <h2 id="close-h" class="rv">Tell us about your wedding.</h2>
-    <p class="rv">The date, your tradition and how many guests. We reply the same day.</p>
+    <h2 id="close-h" class="rv">Your wedding happens once. Let everyone feel it.</h2>
     <div class="acts rv">
       <a class="btn gold js-wa" href="#contact" data-msg="Hello, could I see a private demo of The Wedding Story?">Ask for a private demo</a>
       <a class="btn line" href="mailto:info@pixelandink.in?subject=The%20Wedding%20Story">info@pixelandink.in</a>
@@ -443,7 +436,7 @@ footer a:hover{color:#fff}
   var form=document.getElementById("trad-form");
   form.addEventListener("submit",function(e){
     e.preventDefault();var d=new FormData(form);
-    var msg="Hello, please let me know when The Wedding Story is ready for "+d.get("tradition")+" weddings."+(d.get("month")?" Our wedding is in "+d.get("month")+".":"")+(d.get("name")?" My name is "+d.get("name")+".":"");
+    var msg="Hello, please let me know when The Wedding Story is ready for "+d.get("tradition")+" weddings."+(d.get("month")?" Our wedding is in "+d.get("month")+".":"");
     window.location.href=contactHref(msg);
   });
 
