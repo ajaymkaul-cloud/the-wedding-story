@@ -1,0 +1,23 @@
+/* ---------- Theme: Khatamband (the geometric walnut ceilings of old Kashmiri homes) ---------- */
+html[data-theme="khatamband"]{
+  --paper:#F3F6F4;--paper-2:#E3EBE8;--ink:#13292C;--muted:#55686A;--rule:#C9D5D2;
+  --walnut:#123A40;--walnut-2:#1A4A51;--gold:#93763A;--gold-light:#C9A55A;--gold-hover:#D8B977;
+  --on-dark:#EEF4F1;--hero-ink:#EAF2EF;--chamber-ink:#E4EEEA;--on-dark-2:#CFDDD9;--on-dark-3:#B9CCC7;--on-dark-4:#A3BAB4;--art-ink:#DCE9E5;
+  --deep:#0B2529;--deepest:#061417;--deep-2:#0D2C31;--deep-2b:#0E3036;
+  --gl:201,165,90;--glow:201,165,90;--shade:3,14,16;--wal:18,58,64;--ondk:234,242,239;--gd:147,118,58;
+}
+html[data-theme="khatamband"] .hero{background:radial-gradient(55% 65% at 80% 22%,rgba(201,165,90,.20),transparent 62%),radial-gradient(55% 60% at 8% 100%,rgba(58,130,135,.30),transparent 70%),url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48'><g fill='none' stroke='%23C9A55A' stroke-width='.8' opacity='.16'><path d='M14 0H34L48 14V34L34 48H14L0 34V14Z'/><path d='M24 13L27 21L35 24L27 27L24 35L21 27L13 24L21 21Z'/></g></svg>"),var(--deep)}
+html[data-theme="khatamband"] .chamber{background-image:radial-gradient(45% 40% at 85% 0%,rgba(201,165,90,.16),transparent 70%),url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48'><g fill='none' stroke='%23C9A55A' stroke-width='.8' opacity='.16'><path d='M14 0H34L48 14V34L34 48H14L0 34V14Z'/><path d='M24 13L27 21L35 24L27 27L24 35L21 27L13 24L21 21Z'/></g></svg>")}
+html[data-theme="khatamband"] .case{background:radial-gradient(70% 45% at 50% 46%,rgba(201,165,90,.20),transparent 70%),url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48'><g fill='none' stroke='%23C9A55A' stroke-width='.8' opacity='.16'><path d='M14 0H34L48 14V34L34 48H14L0 34V14Z'/><path d='M24 13L27 21L35 24L27 27L24 35L21 27L13 24L21 21Z'/></g></svg>"),var(--walnut)}
+html[data-theme="khatamband"] .day-art{background:radial-gradient(55% 90% at 50% 75%,rgba(201,165,90,.26),transparent 70%),url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48'><g fill='none' stroke='%23C9A55A' stroke-width='.8' opacity='.16'><path d='M14 0H34L48 14V34L34 48H14L0 34V14Z'/><path d='M24 13L27 21L35 24L27 27L24 35L21 27L13 24L21 21Z'/></g></svg>"),var(--deep-2)}
+.kh{position:absolute;right:-180px;top:50%;width:min(560px,48vw);height:auto;transform:translateY(-50%);color:var(--gold-light);overflow:visible;pointer-events:none;opacity:.9}
+html[data-theme="khatamband"] .hero .wrap>*:first-child{position:relative;z-index:1}
+.kh .ln{stroke:currentColor;fill:none;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:khdraw 2.6s cubic-bezier(.4,.1,.2,1) forwards}
+.kh .l2{animation-delay:.5s}.kh .l3{animation-delay:1s}.kh .l4{animation-delay:1.5s}
+.kh .core{fill:currentColor;opacity:0;animation:khfade 1s ease 2.4s forwards}
+.kh .turn{transform-box:view-box;transform-origin:50% 50%;animation:khturn 120s linear 3s infinite}
+@keyframes khdraw{to{stroke-dashoffset:0}}
+@keyframes khfade{to{opacity:1}}
+@keyframes khturn{to{transform:rotate(360deg)}}
+@media (max-width:820px){.kh{width:340px;right:-200px;top:-10px;transform:none;opacity:.55}}
+@media (prefers-reduced-motion:reduce){.kh .ln{animation:none;stroke-dashoffset:0}.kh .core{animation:none;opacity:1}.kh .turn{animation:none}}
