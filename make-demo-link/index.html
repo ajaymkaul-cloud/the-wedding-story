@@ -26,7 +26,7 @@ button,.btn{display:inline-flex;align-items:center;justify-content:center;min-he
 <form id="f">
   <label>Passcode<input name="key" type="password" autocomplete="current-password" required></label>
   <label>Who it's for (only for your own reference)<input name="note" maxlength="60" placeholder="e.g. Mattoo family"></label>
-  <label>Opens in the look<select name="look"><option value="">Dejhoor</option><option value="khatamband">Khatamband</option><option value="marigold">Marigold</option></select></label>
+  <label>Opens in the look<select name="look"><option value="dejhoor">Dejhoor</option><option value="khatamband">Khatamband</option><option value="marigold">Marigold</option></select></label>
   <label>Open for<select name="days"><option value="1">1 day</option><option value="3" selected>3 days</option><option value="7">7 days</option></select></label>
   <p class="err" id="err" role="alert"></p>
   <button type="submit">Make the link</button>
@@ -50,7 +50,7 @@ f.addEventListener("submit",function(e){
     if(!res.ok){err.textContent=res.j.error||"Something went wrong.";return;}
     var when=new Date(res.j.expires).toLocaleString("en-IN",{day:"numeric",month:"long",hour:"numeric",minute:"2-digit"});
     document.getElementById("when").textContent="Open until "+when+".";
-    var lk=d.get("look");if(lk)res.j.link+="&theme="+lk;document.getElementById("link").value=res.j.link;
+    var lk=d.get("look")||"dejhoor",kk=new URL(res.j.link).searchParams.get("k");res.j.link=location.origin+"/look/"+lk+"/?k="+kk;document.getElementById("link").value=res.j.link;
     var msg="Here's a private demo of The Wedding Story, the wedding site I mentioned. It stays open until "+when+".\n\n"+res.j.link;
     document.getElementById("wa").href="https://wa.me/?text="+encodeURIComponent(msg);
     document.getElementById("out").classList.add("on");
