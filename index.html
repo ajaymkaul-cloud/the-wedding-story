@@ -4,305 +4,484 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Wedding Story by Pixel &amp; Ink</title>
-<script>
-/* Theme: set before the page paints. A wedding's default lives in DEFAULT_THEME;
-   ?theme=khatamband (or the footer switch) overrides it on this device. */
-(function(){var DEFAULT_THEME="dejhoor",ok={dejhoor:1,khatamband:1,marigold:1},t=null;
-  try{var q=new URLSearchParams(location.search).get("theme");if(q&&ok[q]){t=q;try{localStorage.setItem("lagan27_theme",q);}catch(e){}}
-    if(!t){var m=localStorage.getItem("lagan27_theme");if(ok[m])t=m;}}catch(e){}
-  document.documentElement.setAttribute("data-theme",t||DEFAULT_THEME);})();
-</script>
 <meta name="description" content="The Wedding Story by Pixel &amp; Ink. Your whole wedding in one link.">
 <meta property="og:title" content="Every rite, understood by everyone you love">
 <meta property="og:description" content="The Wedding Story by Pixel &amp; Ink. Your whole wedding in one link.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://thewedding-story.vercel.app/">
 <meta property="og:site_name" content="The Wedding Story by Pixel &amp; Ink">
-<meta property="og:image" content="https://thewedding-story.vercel.app/og-v2.jpg">
+<meta property="og:image" content="https://thewedding-story.vercel.app/og-khatamband.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="A gold Dejhoor on walnut">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Every rite, understood by everyone you love">
-<meta name="twitter:description" content="The Wedding Story by Pixel &amp; Ink. Your whole wedding in one link.">
-<meta name="twitter:image" content="https://thewedding-story.vercel.app/og-v2.jpg">
-<meta name="theme-color" content="#2B1D16">
+<meta name="theme-color" content="#123A40">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/engine/app.css">
-<link rel="stylesheet" href="/looks/dejhoor.css">
-<link rel="stylesheet" href="/looks/khatamband.css">
-<link rel="stylesheet" href="/looks/marigold.css">
+<style>
+:root{
+  --walnut:#123A40;--walnut-2:#1A4A51;--paper:#F3F6F4;--paper-2:#E3EBE8;
+  --gold:#93763A;--gold-light:#C9A55A;--crimson:#8A1C2D;--muted:#55686A;--rule:#C9D5D2;--ink:#13292C;
+  --display:"Tiro Devanagari Hindi",Georgia,serif;--body:"Mukta",system-ui,sans-serif;
+  --gutter:clamp(18px,4.5vw,48px);--max:1160px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;overflow-x:clip}
+body{font-family:var(--body);font-size:clamp(1.02rem,0.98rem + .2vw,1.12rem);line-height:1.6;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.08;margin:0;letter-spacing:-.005em}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.draft-bar{background:var(--crimson);color:#F6E9EA;font-size:.88rem;text-align:center;padding:6px 12px}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+
+/* Top */
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--walnut) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#E4EEEA;border-bottom:1px solid rgba(201,165,90,.16)}
+.top .wrap{display:flex;align-items:center;gap:24px;min-height:62px}
+.brand{font-family:var(--display);font-size:1.25rem;text-decoration:none;color:#EEF4F1;white-space:nowrap}
+.brand small{font-family:var(--body);font-size:.82rem;color:#A3BAB4;margin-left:6px}
+.top nav{display:flex;gap:22px;margin-left:auto;font-size:.96rem}
+.top nav a{text-decoration:none;color:#CFDDD9}
+.top nav a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:999px;font:500 1rem var(--body);text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background .25s,color .25s,border-color .25s}
+.btn.gold{background:var(--gold-light);color:var(--walnut)}
+.btn.gold:hover{background:#D8B977}
+.btn.line{border-color:rgba(201,165,90,.55);color:#E4EEEA}
+.btn.line:hover{background:rgba(201,165,90,.12)}
+.btn.dark{background:var(--walnut);color:var(--paper)}
+.btn.dark:hover{background:var(--walnut-2)}
+.btn.outline{border-color:var(--rule);color:var(--ink)}
+.btn.outline:hover{border-color:var(--gold)}
+.top .btn{min-height:40px;padding:0 16px;font-size:.92rem;white-space:nowrap}
+@media (max-width:860px){.top nav{display:none}.top .btn{margin-left:auto}}
+
+/* Hero */
+.hero{background:radial-gradient(ellipse at 72% 30%,#2E6E73 0%,var(--walnut) 62%);color:#E4EEEA;overflow:clip}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:center;padding-top:clamp(48px,8vw,96px);padding-bottom:clamp(56px,8vw,96px)}
+.hero h1{font-size:clamp(2.5rem,1.6rem + 3.6vw,4.4rem);color:#EEF4F1;max-width:13ch}
+.hero .sub{font-size:clamp(1.1rem,1rem + .4vw,1.3rem);color:#CFDDD9;margin-top:22px;max-width:36ch}
+.hero .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero .made{margin-top:34px;padding-top:22px;border-top:1px solid rgba(201,165,90,.2);color:#A3BAB4;font-size:.96rem;max-width:44ch}
+.hero .made b{color:var(--gold-light);font-weight:500}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;gap:40px}}
+
+/* Phone */
+.phone{position:relative;width:min(100%,360px);margin:0 auto;aspect-ratio:390/800;border-radius:44px;padding:12px;background:#0A1F22;box-shadow:0 0 0 1px rgba(201,165,90,.28),0 40px 80px -30px rgba(0,0,0,.75),0 0 120px -20px rgba(201,165,90,.18)}
+.phone .screen{position:relative;width:100%;height:100%;border-radius:33px;overflow:hidden;background:var(--paper)}
+
+.phone-cap{text-align:center;color:#A3BAB4;font-size:.9rem;margin-top:16px}
+.phone-cap a{color:var(--gold-light)}
+
+/* Sections */
+section{padding:clamp(72px,10vw,128px) 0}
+.sec-h{font-size:clamp(2rem,1.4rem + 2.4vw,3.2rem);max-width:20ch}
+.sec-lede{font-size:clamp(1.08rem,1rem + .3vw,1.25rem);color:var(--muted);margin-top:18px;max-width:52ch}
+
+/* Problem */
+.problem{background:var(--paper)}
+.problem .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start}
+.problem .pair{display:grid;gap:28px}
+.problem .pair div{border-left:2px solid var(--gold);padding-left:20px}
+.problem .pair h3{font-size:1.45rem;margin-bottom:6px}
+.problem .pair p{color:var(--muted)}
+@media (max-width:860px){.problem .wrap{grid-template-columns:1fr;gap:36px}}
+
+/* Stills */
+.tour{background:var(--paper-2)}
+.phone img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+.stills{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin-top:48px}
+.stills figure{margin:0}
+.phone.sm{width:100%;border-radius:30px;padding:8px}
+.phone.sm .screen{border-radius:23px}
+.stills figcaption{margin-top:18px}
+.stills h3{font-size:1.3rem;margin-bottom:4px}
+.stills p{color:var(--muted);font-size:.98rem}
+.demo-ask{margin-top:48px;display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between;border-top:1px solid var(--rule);padding-top:28px}
+.demo-ask p{font-family:var(--display);font-size:1.35rem;max-width:40ch}
+@media (max-width:960px){
+  .stills{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:18px;margin-left:calc(-1 * var(--gutter));margin-right:calc(-1 * var(--gutter));padding:0 var(--gutter) 8px;scroll-padding:0 var(--gutter);scrollbar-width:none}
+  .stills::-webkit-scrollbar{display:none}
+  .stills figure{flex:none;width:62%;max-width:260px;scroll-snap-align:start}
+}
+
+/* Family side */
+.family{background:var(--walnut);color:#DCE9E5}
+.family .sec-h{color:#EEF4F1}
+.family .sec-lede{color:#B9CCC7}
+.fam-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:48px}
+.fam{border:1px solid rgba(201,165,90,.2);border-radius:22px;padding:28px 30px;background:linear-gradient(180deg,rgba(255,255,255,.035),transparent)}
+.fam h3{font-size:1.45rem;color:#EEF4F1;margin-bottom:8px}
+.fam p{color:#B9CCC7}
+.fam .eg{margin-top:16px;font-size:.92rem;color:var(--gold-light)}
+@media (max-width:760px){.fam-grid{grid-template-columns:1fr}}
+
+/* Tradition */
+.trad .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:64px;align-items:start}
+.trad ul{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:14px}
+.trad li{display:grid;grid-template-columns:22px 1fr;gap:12px;color:var(--ink)}
+.trad li svg{margin-top:5px;color:var(--gold)}
+.next{background:#fff;border:1px solid var(--rule);border-radius:24px;padding:30px}
+.next h3{font-size:1.6rem}
+.next p{color:var(--muted);margin-top:8px}
+.next form{display:grid;gap:14px;margin-top:22px}
+.next label{display:grid;gap:6px;font-size:.92rem;color:var(--muted)}
+.next select,.next input{font:inherit;color:var(--ink);min-height:48px;border:1px solid var(--rule);border-radius:12px;padding:0 14px;background:var(--paper)}
+.next select:focus,.next input:focus{outline:2px solid var(--gold);outline-offset:1px}
+@media (max-width:860px){.trad .wrap{grid-template-columns:1fr;gap:40px}}
+
+/* Steps */
+.steps{background:var(--paper-2)}
+.steps ol{list-style:none;padding:0;margin:48px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;counter-reset:s}
+.steps li{counter-increment:s;padding-top:22px;border-top:1px solid var(--rule)}
+.steps li::before{content:counter(s);font-family:var(--display);font-size:2.6rem;color:var(--gold);display:block;line-height:1;margin-bottom:14px}
+.steps h3{font-size:1.4rem;margin-bottom:6px}
+.steps p{color:var(--muted)}
+@media (max-width:760px){.steps ol{grid-template-columns:1fr;gap:28px}}
+
+/* Pricing */
+.price-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:48px;align-items:stretch}
+.tier{border:1px solid var(--rule);border-radius:26px;padding:34px;background:#fff;display:flex;flex-direction:column}
+.tier.sig{background:var(--walnut);color:#DCE9E5;border-color:var(--walnut)}
+.tier h3{font-size:1.7rem}
+.tier.sig h3{color:#EEF4F1}
+.tier .who{color:var(--muted);margin-top:4px}
+.tier.sig .who{color:#B9CCC7}
+.amt{font-family:var(--display);font-size:3rem;line-height:1;margin:26px 0 4px}
+.tier.sig .amt{color:var(--gold-light)}
+.amt-note{font-size:.9rem;color:var(--muted)}
+.tier.sig .amt-note{color:#A3BAB4}
+.tier ul{list-style:none;padding:0;margin:24px 0 30px;display:grid;gap:10px;flex:1}
+.tier li{display:grid;grid-template-columns:18px 1fr;gap:10px}
+.tier li svg{margin-top:6px;color:var(--gold)}
+.tier.sig li svg{color:var(--gold-light)}
+.founding{margin-top:22px;border-radius:22px;padding:26px 30px;display:flex;flex-wrap:wrap;gap:18px 30px;align-items:center;justify-content:space-between;background:linear-gradient(90deg,rgba(18,58,64,.07),rgba(201,165,90,.14));border:1px solid rgba(201,165,90,.4)}
+.founding h3{font-size:1.45rem;color:var(--walnut)}
+.founding p{color:var(--muted);max-width:60ch;margin-top:4px}
+.planners{margin-top:18px;color:var(--muted);font-size:.98rem}
+@media (max-width:860px){.price-grid{grid-template-columns:1fr}}
+
+/* Trust */
+.trust{background:var(--paper-2)}
+.trust .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px}
+.trust h3{font-size:1.5rem;margin-bottom:10px}
+.trust p{color:var(--muted)}
+.trust p+p{margin-top:12px}
+.promise{display:grid;gap:12px;margin-top:4px}
+.promise div{display:grid;grid-template-columns:22px 1fr;gap:12px}
+.promise svg{margin-top:5px;color:var(--gold)}
+@media (max-width:860px){.trust .wrap{grid-template-columns:1fr;gap:40px}}
+
+/* FAQ */
+.faq-list{margin-top:40px;max-width:820px;border-top:1px solid var(--rule)}
+.faq-list details{border-bottom:1px solid var(--rule)}
+.faq-list summary{list-style:none;cursor:pointer;padding:22px 40px 22px 0;position:relative;font-family:var(--display);font-size:1.3rem}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:"";position:absolute;right:8px;top:50%;width:12px;height:12px;margin-top:-8px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:rotate(45deg);transition:transform .3s}
+.faq-list details[open] summary::after{transform:rotate(-135deg);margin-top:-2px}
+.faq-list details p{padding:0 0 24px;color:var(--muted);max-width:64ch}
+
+/* Close */
+.close{background:radial-gradient(ellipse at 50% 0%,#2E6E73 0%,var(--walnut) 70%);color:#E4EEEA;text-align:center}
+.close h2{font-size:clamp(2.2rem,1.5rem + 2.8vw,3.6rem);color:#EEF4F1;max-width:18ch;margin:0 auto}
+.close p{color:#B9CCC7;margin:18px auto 0;max-width:44ch}
+.close .acts{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:34px}
+
+footer{background:#0B2529;color:#9FB5B0;font-size:.92rem;padding:40px 0}
+footer .wrap{display:flex;flex-wrap:wrap;gap:14px 32px;justify-content:space-between;align-items:center}
+footer nav{display:flex;flex-wrap:wrap;gap:22px}
+footer a{color:#CFDDD9;text-decoration:none}
+footer a:hover{color:#fff}
+
+/* Beats */
+.hero .micro{margin-top:16px;color:#A3BAB4;font-size:.95rem}
+.beat{padding:clamp(80px,11vw,140px) 0}
+.beat .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:64px;align-items:center}
+.beat.flip .beat-img{order:-1}
+.beat h2,.beat-h{font-size:clamp(2.3rem,1.5rem + 3.2vw,4rem);max-width:14ch}
+.beat-text p{font-size:clamp(1.15rem,1.05rem + .5vw,1.45rem);color:var(--muted);margin-top:22px;max-width:30ch;line-height:1.5}
+.beat-img .phone{max-width:300px}
+.beat.flip{background:var(--paper-2)}
+.beat.dark{background:radial-gradient(ellipse at 50% 30%,#2E6E73 0%,var(--walnut) 68%);color:#E4EEEA}
+.beat.dark h2{color:#EEF4F1;margin:0 auto}
+.beat.dark p{color:#B9CCC7;margin-left:auto;margin-right:auto}
+.beat.us p{max-width:40ch}
+.beat.centre .wrap{grid-template-columns:1fr;text-align:center}
+.wave{width:180px;height:40px;color:var(--gold-light);margin:0 auto 34px;display:block}
+.wave rect{transform-box:fill-box;transform-origin:center}
+.beat.dark .rv.in .wave rect{animation:breathe 2.4s ease-in-out infinite}
+.wave rect:nth-child(3n){animation-delay:.3s!important}
+.wave rect:nth-child(3n+1){animation-delay:.6s!important}
+@keyframes breathe{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.55)}}
+.trad .sec-lede{margin-top:18px}
+.next h3{margin-bottom:4px}
+@media (max-width:860px){
+  .beat .wrap{grid-template-columns:1fr;gap:40px}
+  .beat.flip .beat-img{order:0}
+  .beat-img .phone{max-width:240px}
+}
+@media (prefers-reduced-motion:reduce){.wave rect{animation:none!important}}
+
+.beat.looks .wrap{grid-template-columns:minmax(0,.6fr) minmax(0,1.4fr)}
+.look-pair{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.look-pair figure{margin:0}
+.look-pair .phone{max-width:240px}
+.look-pair figcaption{text-align:center;margin-top:18px}
+.look-pair h3{font-size:1.35rem}
+.look-pair p{color:var(--muted);font-size:.98rem;margin-top:4px}
+@media (max-width:860px){.beat.looks .wrap{grid-template-columns:1fr}.look-pair{gap:10px}.look-pair .phone{border-radius:24px;padding:6px}.look-pair .phone .screen{border-radius:19px}.look-pair p{font-size:.9rem}}
+
+.rv{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+/* Khatamband palette: the carved ceiling lattice behind the dark sections */
+.hero{background:radial-gradient(ellipse at 72% 30%,#2E6E73 0%,transparent 62%),url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48'><g fill='none' stroke='%23C9A55A' stroke-width='.8' opacity='.14'><path d='M14 0H34L48 14V34L34 48H14L0 34V14Z'/><path d='M24 13L27 21L35 24L27 27L24 35L21 27L13 24L21 21Z'/></g></svg>"),var(--walnut)}
+.beat.dark{background:radial-gradient(ellipse at 50% 30%,#2E6E73 0%,transparent 68%),url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48'><g fill='none' stroke='%23C9A55A' stroke-width='.8' opacity='.14'><path d='M14 0H34L48 14V34L34 48H14L0 34V14Z'/><path d='M24 13L27 21L35 24L27 27L24 35L21 27L13 24L21 21Z'/></g></svg>"),var(--walnut)}
+.close{background:radial-gradient(ellipse at 50% 0%,#2E6E73 0%,transparent 70%),url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48'><g fill='none' stroke='%23C9A55A' stroke-width='.8' opacity='.14'><path d='M14 0H34L48 14V34L34 48H14L0 34V14Z'/><path d='M24 13L27 21L35 24L27 27L24 35L21 27L13 24L21 21Z'/></g></svg>"),var(--walnut)}
+</style>
 </head>
 <body>
 
 <header class="top">
   <div class="wrap">
-    <a class="mark" href="#home">A &amp; I</a>
-    <nav class="nav" aria-label="Sections">
-      <a href="#days" data-v="days" data-i18n="nav_days">The days</a>
-      <a href="#ceremony" data-v="ceremony" data-i18n="nav_ceremony">Ceremony guide</a>
-      <a href="#rsvp" data-v="rsvp" data-i18n="nav_rsvp">RSVP</a>
-      <a href="#blessings" data-v="wishes" data-i18n="nav_bless">Blessings</a>
+    <a class="brand" href="#">The Wedding Story <small>by Pixel &amp; Ink</small></a>
+    <nav aria-label="Sections">
+      <a href="#feel">The idea</a>
+      <a href="#tradition">Your tradition</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#questions">Questions</a>
     </nav>
-    <button type="button" class="size" id="size-btn" aria-pressed="false" aria-label="Larger text" title="Larger text">A<small>+</small></button>
-    <div class="lang" role="group" aria-label="Language">
-      <button type="button" data-lang="en" aria-pressed="true">EN</button>
-      <button type="button" data-lang="hi" aria-pressed="false" lang="hi">हिंदी</button>
-    </div>
+    <a class="btn gold js-wa" href="#contact">Talk to us</a>
   </div>
 </header>
 
-<main id="top">
-  <section class="hero grain" data-view="home" aria-labelledby="names">
-    <div class="wrap">
+<main>
+<section class="hero" aria-labelledby="hero-h" style="padding:0">
+  <div class="wrap">
+    <div>
+      <h1 id="hero-h">Every rite, understood by everyone you love.</h1>
+      <p class="sub">One link. Your whole wedding, explained. Every blessing, kept.</p>
+      <div class="acts">
+        <a class="btn gold js-wa" href="#contact" data-msg="Hello, could I see a private demo of The Wedding Story?">Ask for a private demo</a>
+      </div>
+      <p class="micro">Opens straight from WhatsApp. Simple enough for grandparents. In English and हिंदी.</p>
+    </div>
+    <div>
+      <div class="phone">
+        <div class="screen"><img src="/assets/stills/home-khatamband.jpg" alt="The opening page of a demo wedding site in the Khatamband look: the names Aditi Tickoo and Ishaan Razdan, their parents, and a carved geometric ceiling pattern" width="780" height="1560"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="beat" id="feel" aria-labelledby="b1">
+  <div class="wrap">
+    <div class="beat-text rv">
+      <h2 id="b1">Let them feel it, not just watch it.</h2>
+      <p>When her father places her hand in his, everyone knows why the room goes quiet.</p>
+    </div>
+    <div class="beat-img rv"><div class="phone sm"><div class="screen"><img src="/assets/stills/rite-khatamband.jpg" alt="A ceremony card explaining a rite as it happens" loading="lazy" width="780" height="1560"></div></div></div>
+  </div>
+</section>
+
+<section class="beat dark centre" aria-labelledby="b2">
+  <div class="wrap">
+    <div class="beat-text rv">
+      <svg class="wave" viewBox="0 0 220 48" aria-hidden="true"><g fill="currentColor">
+        <rect x="0" y="20" width="4" height="8" rx="2"/><rect x="12" y="14" width="4" height="20" rx="2"/><rect x="24" y="8" width="4" height="32" rx="2"/><rect x="36" y="16" width="4" height="16" rx="2"/><rect x="48" y="4" width="4" height="40" rx="2"/><rect x="60" y="12" width="4" height="24" rx="2"/><rect x="72" y="18" width="4" height="12" rx="2"/><rect x="84" y="6" width="4" height="36" rx="2"/><rect x="96" y="14" width="4" height="20" rx="2"/><rect x="108" y="10" width="4" height="28" rx="2"/><rect x="120" y="18" width="4" height="12" rx="2"/><rect x="132" y="8" width="4" height="32" rx="2"/><rect x="144" y="15" width="4" height="18" rx="2"/><rect x="156" y="5" width="4" height="38" rx="2"/><rect x="168" y="13" width="4" height="22" rx="2"/><rect x="180" y="19" width="4" height="10" rx="2"/><rect x="192" y="11" width="4" height="26" rx="2"/><rect x="204" y="17" width="4" height="14" rx="2"/><rect x="216" y="21" width="4" height="6" rx="2"/>
+      </g></svg>
+      <h2 id="b2">Some blessings are spoken only once.</h2>
+      <p>A grandmother who can't travel. Her voice, her words. Yours to play again.</p>
+    </div>
+  </div>
+</section>
+
+<section class="beat flip" aria-labelledby="b3">
+  <div class="wrap">
+    <div class="beat-text rv">
+      <h2 id="b3">Your phone goes quiet the week before.</h2>
+      <p>Times, places, what to wear. All on their link.</p>
+    </div>
+    <div class="beat-img rv"><div class="phone sm"><div class="screen"><img src="/assets/stills/days-khatamband.jpg" alt="One day of the wedding with its time, venue, directions and colour code" loading="lazy" width="780" height="1560"></div></div></div>
+  </div>
+</section>
+
+<section class="beat looks" id="looks" aria-labelledby="look-h">
+  <div class="wrap">
+    <div class="beat-text rv">
+      <h2 id="look-h">Choose your look.</h2>
+      <p>Same wedding. Three moods.</p>
+    </div>
+    <div class="look-pair rv">
+      <figure><div class="phone sm"><div class="screen"><img src="/assets/stills/home.jpg" alt="The opening page in the Dejhoor look: walnut and gold, with a gold Dejhoor hanging beside the names" loading="lazy" width="780" height="1560"></div></div><figcaption><h3>Dejhoor</h3><p>Walnut and gold. Warm, like an evening at home.</p></figcaption></figure>
+      <figure><div class="phone sm"><div class="screen"><img src="/assets/stills/home-khatamband.jpg" alt="The opening page in the Khatamband look: deep teal and gold, with a carved geometric ceiling pattern" loading="lazy" width="780" height="1560"></div></div><figcaption><h3>Khatamband</h3><p>Lake teal and gold. Carved, calm and modern.</p></figcaption></figure>
+      <figure><div class="phone sm"><div class="screen"><img src="/assets/stills/home-marigold.jpg" alt="The opening page in the Marigold look: ivory and marigold, with strings of marigold flowers hanging beside the names" loading="lazy" width="780" height="1560"></div></div><figcaption><h3>Marigold</h3><p>Ivory, marigold and rani pink. Bright, for any family.</p></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="trad" id="tradition" aria-labelledby="trad-h">
+  <div class="wrap">
+    <div class="rv">
+      <h2 class="beat-h" id="trad-h">Your rites. Your words. Checked by your purohit.</h2>
+      <p class="sec-lede">Kashmiri Pandit weddings now. More traditions soon.</p>
+    </div>
+    <div class="next rv" id="next-tradition">
+      <h3>Is your tradition next?</h3>
+      <form id="trad-form">
+        <label>Your tradition
+          <select name="tradition" required>
+            <option value="">Choose one</option>
+            <option>Tamil Iyer</option><option>Tamil Iyengar</option><option>Gujarati</option><option>Marwari</option><option>Punjabi</option><option>Bengali</option><option>Marathi</option><option>Telugu</option><option>Kannada</option><option>Malayali</option><option>Sindhi</option><option>Other</option>
+          </select>
+        </label>
+        <label>Month of the wedding<input name="month" type="month"></label>
+        <button class="btn dark" type="submit">Tell me when it's ready</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="beat dark centre us" aria-labelledby="us-h">
+  <div class="wrap">
+    <div class="beat-text rv">
+      <h2 id="us-h">Made by one of&nbsp;us.</h2>
+      <p>Ajay Kaul is Kashmiri, and has spent twenty years telling stories in film and television. The Wedding Story began with the weddings he knows best.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" aria-labelledby="price-h">
+  <div class="wrap">
+    <h2 class="sec-h rv" id="price-h">Pricing</h2>
+    <p class="sec-lede rv">One payment for the whole wedding. No charge per guest.</p>
+    <div class="price-grid">
+      <div class="tier rv">
+        <h3>Standard</h3>
+        <p class="who">You fill in the details. We check everything before it goes live.</p>
+        <p class="amt">₹8,999</p>
+        <p class="amt-note">per wedding</p>
+        <ul>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Invitation, all the days, dress colours and directions</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Your choice of look: Dejhoor, Khatamband or Marigold</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>The ceremony guide for your tradition, in English and Hindi</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Personal invite links for up to 400 guests</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Replies, blessings and voice notes, with the family's view</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Online for a year, with a keepsake to keep for good</span></li>
+        </ul>
+        <a class="btn outline js-wa" href="#contact" data-msg="Hello, I'd like to know more about the Standard plan for The Wedding Story.">Ask about Standard</a>
+      </div>
+      <div class="tier sig rv">
+        <h3>Signature</h3>
+        <p class="who">We set it all up with you and look after it until the wedding.</p>
+        <p class="amt">₹17,999</p>
+        <p class="amt-note">per wedding</p>
+        <ul>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Everything in Standard</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>We set it up from a call with your family</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>We go through the rites with your purohit</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Your own monogram or motif, drawn for you</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Changes whenever you need them, right up to the day</span></li>
+        </ul>
+        <a class="btn gold js-wa" href="#contact" data-msg="Hello, I'd like to know more about the Signature plan for The Wedding Story.">Ask about Signature</a>
+      </div>
+    </div>
+    <div class="founding rv">
       <div>
-        <p class="invocation" lang="sa">॥ श्री गणेशाय नमः ॥</p>
-        <p class="heav" data-i18n="heav">With the heavenly blessings of Late Smt. Arundhati Tickoo and Late Pt. Dina Nath Razdan</p>
-        <h1 id="names"><span class="nm">Aditi Tickoo</span><span class="par" data-i18n="par_b">Daughter of Smt. Nirmala and Shri Rajinder Nath Tickoo</span><span class="and" data-i18n="and">and</span><span class="nm second">Ishaan Razdan</span><span class="par second" data-i18n="par_g">Son of Smt. Usha and Shri Ashok Kumar Razdan</span></h1>
-        <p class="greet" id="greet" hidden></p>
-        <p class="invite" data-i18n="invite">With the blessings of their families, invite you to their Lagan in Jammu.</p>
-        <dl class="facts">
-          <div><dt data-i18n="f_lagan">Lagan</dt><dd data-i18n="f_lagan_v">Saturday, 13 February 2027</dd></div>
-          <div><dt data-i18n="f_where">Where</dt><dd data-i18n="f_where_v">Tickoo family home, Gandhi Nagar, Jammu</dd></div>
-          <div id="f-count-wrap"><dt data-i18n="f_count">Days to go</dt><dd id="f-count"></dd></div>
-        </dl>
-        <div class="actions">
-          <a class="btn" href="#days" data-i18n="cta_days">See the wedding days</a>
-          <a class="btn ghost" href="#ceremony" data-i18n="cta_guide">Open the ceremony guide</a>
-          <a class="hero-rsvp" href="#rsvp" data-i18n="cta_rsvp2">Reply by 15 January</a>
-        </div>
-        <button type="button" class="cue2" id="cue"><span class="cl" data-i18n="cue">Scroll down for the wedding days</span><span class="cs" data-i18n="cue_s">More below</span><span class="chev" aria-hidden="true"></span></button>
+        <h3>Founding families: ₹5,999</h3>
+        <p>Standard at a lower price for the first ten Kashmiri Pandit weddings, in return for your honest feedback and permission to show your site to other families.</p>
       </div>
-      <div class="dejihor" id="dejihor" role="button" tabindex="0" aria-label="About the Dejhoor"></div>
+      <a class="btn dark js-wa" href="#contact" data-msg="Hello, we'd like to be one of the founding families for The Wedding Story.">Become a founding family</a>
     </div>
-  </section>
+    <p class="planners rv">Wedding planner? Ask us about partner rates.</p>
+  </div>
+</section>
 
-  <section class="sec home-tiles" data-view="home" aria-label="Start here">
-    <div class="wrap">
-      <h2 class="glance-h" data-i18n="glance_h">The wedding at a glance</h2>
-      <div class="glance" id="glance"></div>
+<section class="trust" aria-labelledby="trust-h">
+  <div class="wrap">
+    <div class="rv">
+      <h3 id="trust-h">How each tradition is prepared</h3>
+      <p>From published sources, then reviewed with a purohit from that community.</p>
     </div>
-    <div class="wrap tiles">
-      <a class="tile" style="--d:.12s" href="#ceremony"><span class="tile-n">9 <small data-i18n="tile_cer_n">rites</small></span><h3 data-i18n="tile_cer_h">Ceremony guide</h3><p data-i18n="tile_cer_p">Every rite of the Lagan, explained as it happens at the mandap.</p></a>
-      <a class="tile" style="--d:.24s" href="#blessings"><span class="tile-n" id="tile-bl-n">2 <small data-i18n="tile_bl_n">blessings</small></span><h3 data-i18n="tile_bl_h">Leave a blessing</h3><p data-i18n="tile_bl_p">Write a few lines for Aditi and Ishaan, or record your voice.</p></a>
+    <div class="rv">
+      <h3>Your family's details stay private</h3>
+      <div class="promise">
+        <div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Guests can't see the guest list or each other's replies.</span></div>
+        <div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Phone numbers are used only to send your invitations.</span></div>
+        <div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Ask, and we delete everything.</span></div>
+      </div>
     </div>
-    <div class="wrap"><div class="contacts-slot"></div></div>
-    <div class="wrap"><p class="signoff"><span data-i18n="so1">With best compliments,</span><span class="so2" data-i18n="so2">the Tickoos and the Razdans</span></p></div>
-  </section>
+  </div>
+</section>
 
-  <section id="days" class="sec" data-view="days" aria-labelledby="days-h">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2 id="days-h" data-i18n="days_h">From Livun to Phirlath</h2>
-        <p class="lede" data-i18n="days_lede">Kashmiri Pandit weddings unfold over several days. Here is what happens when, and which gatherings are open to all guests.</p>
-        <p class="began" data-i18n="began">It began with Kasamdry, when the elders of both families met at a temple and exchanged flowers and good wishes. Before the wedding the Razdans send Snazaroo to Aditi, gifts that traditionally include a mirror, sindoor and a betel leaf wrapped in gold foil.</p>
-      </div>
-      <p class="inv-note" id="inv-note" hidden data-i18n="inv_note">Showing the gatherings you are invited to.</p>
-      <ol class="days" id="days-list"></ol>
-      <div class="contacts-slot" style="margin-top:56px"></div>
+<section id="questions" aria-labelledby="faq-h">
+  <div class="wrap">
+    <h2 class="sec-h rv" id="faq-h">Questions</h2>
+    <div class="faq-list rv">
+      <details><summary>Does it work on every phone?</summary><p>Yes. It opens in the phone's browser from a WhatsApp link, on Android and iPhone. Guests don't install anything or sign up.</p></details>
+      <details><summary>Will older relatives manage it?</summary><p>That is who we design for first. Large text, one tap to make it larger still, Hindi with one tap, and nothing to log into.</p></details>
+      <details><summary>Our family does some rites differently. What then?</summary><p>Families differ, and that's expected. Your purohit reviews the order before the link goes out, and you can leave out or reorder any rite.</p></details>
+      <details><summary>Can we change things after sending the link?</summary><p>Yes. Times, venues and names can change at any point, and guests always see the latest version through the same link.</p></details>
+      <details><summary>Can guests see who else is coming?</summary><p>No. Replies go only to the family.</p></details>
+      <details><summary>How long does it stay online?</summary><p>A year after the wedding. You also get a keepsake of all the blessings and voice notes to keep for good.</p></details>
+      <details><summary>Our wedding is outside India. Does that matter?</summary><p>Not at all. Guests can open it anywhere, and you can add directions, travel notes and time zones.</p></details>
+      <details><summary>Is there a language other than English and Hindi?</summary><p>For Kashmiri Pandit weddings, English and Hindi for now. Each new tradition comes in its own language too.</p></details>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="ceremony" class="sec chamber grain" data-view="ceremony" aria-labelledby="cer-h">
-    <div class="wrap">
-      <span class="ghost-word" aria-hidden="true" lang="hi">लगन</span>
-      <div class="sec-head">
-        <h2 id="cer-h" data-i18n="cer_h">The Lagan, rite by rite</h2>
-        <p class="lede" data-i18n="cer_lede">Keep this open at the mandap. Each card tells you what you are seeing, what it means, and what, if anything, you can do.</p>
-        <p class="wv" data-i18n="cer_wanvun">Through the rites you'll hear the women of both families sing wanvun. The tune stays the same all evening and the pitch changes with the moment. Listen for the long "eee" as the chorus comes in between lines.</p>
-      </div>
-      <div class="draft">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="8" cy="8" r="7"/><path d="M8 7v4M8 4.5v.5"/></svg>
-        <p id="draft-note"></p>
-      </div>
-      <div class="tumbak" id="tumbak"></div>
-      <div class="rite-bar">
-        <div class="index" id="rite-index" role="tablist" aria-label="Jump to a rite"></div>
-        <div class="bar-arrows">
-          <button class="round sm" type="button" id="prev2" aria-label="Previous rite"><svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M11 3 5 9l6 6"/></svg></button>
-          <button class="round sm" type="button" id="next2" aria-label="Next rite"><svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m7 3 6 6-6 6"/></svg></button>
-        </div>
-      </div>
-      <div class="deck" id="deck" tabindex="0" aria-roledescription="carousel" aria-label="Ceremony rites"></div>
-      <div class="deck-prog" id="deck-prog" role="group" aria-label="Rites"></div>
-      <p class="swipe-hint" id="swipe-hint" data-i18n="swipe">Swipe the card, or use the arrows, to move through the rites.</p>
-      <div class="deck-ctrl">
-        <span class="count" id="deck-count" aria-live="polite"></span>
-        <button class="round" type="button" id="prev" aria-label="Previous rite"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 3 5 9l6 6"/></svg></button>
-        <button class="round" type="button" id="next" aria-label="Next rite"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m7 3 6 6-6 6"/></svg></button>
-      </div>
+<section class="close" id="contact" aria-labelledby="close-h">
+  <div class="wrap">
+    <h2 id="close-h" class="rv">Your wedding happens once. Let everyone feel it.</h2>
+    <div class="acts rv">
+      <a class="btn gold js-wa" href="#contact" data-msg="Hello, could I see a private demo of The Wedding Story?">Ask for a private demo</a>
+      <a class="btn line" href="mailto:info@pixelandink.in?subject=The%20Wedding%20Story">info@pixelandink.in</a>
     </div>
-  </section>
-
-  <section id="notes" class="sec" data-view="ceremony" aria-labelledby="notes-h">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2 id="notes-h" data-i18n="notes_h">Good to know</h2>
-      </div>
-      <div class="notes">
-        <div><h3 data-i18n="n1_h">The evening runs late</h3><p data-i18n="n1_p">The Lagan begins when the baraat arrives around 5:30 PM and Posh Puza usually comes late in the night. Jammu evenings in February are cold, so bring a warm shawl.</p></div>
-        <div><h3 data-i18n="n2_h">Dinner</h3><p data-i18n="n2_p">A traditional Kashmiri Pandit vegetarian spread after Posh Puza: dum oluv, nadir yakhin, chaman qaliya, haakh and rice, with kahwa to finish.</p></div>
-        <div><h3 data-i18n="n3_h">Taking part</h3><p data-i18n="n3_p">You are welcome to sit close. During Posh Puza every guest is invited to shower the couple with flowers; petals are handed out.</p></div>
-      </div>
-      <div class="sec-head" style="margin-top:72px;margin-bottom:20px">
-        <h2 style="font-size:var(--step-3)" data-i18n="gloss_h">Words you will hear</h2>
-      </div>
-      <dl class="gloss" id="gloss"></dl>
-    </div>
-  </section>
-
-  <section id="rsvp" class="sec rsvp-stage" data-view="rsvp" aria-labelledby="rsvp-h">
-    <div class="wrap rsvp-wrap">
-      <h2 id="rsvp-h" data-i18n="rsvp_h">Will you join us?</h2>
-      <p class="lede" data-i18n="rsvp_lede">Your invitation is waiting. Open it and reply by 15 January 2027. One reply per family is enough.</p>
-      <div class="scene" id="scene">
-        <div class="card-slot" id="card-slot" inert>
-          <div class="card-inner">
-            <form class="card" id="rsvp-form" novalidate>
-              <div class="card-band"><span class="mono">A &amp; I</span><span class="cap">13 · 02 · 2027</span></div>
-              <div class="card-body">
-                <div class="stage stamp" id="stamp" aria-hidden="true"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.2"><path class="d" style="--i:0" pathLength="1" d="M60 18v84M18 60h84"/><rect class="d" style="--i:1" pathLength="1" x="31" y="31" width="58" height="58" transform="rotate(45 60 60)"/><rect class="d" style="--i:2" pathLength="1" x="39" y="39" width="42" height="42"/><circle class="d" style="--i:3" pathLength="1" cx="60" cy="60" r="10"/><circle class="d" style="--i:4" pathLength="1" cx="60" cy="60" r="3"/></svg></div>
-                <div class="field">
-                  <label class="cap" for="r-name" data-i18n="r_name">Your name, or your family's</label>
-                  <input class="line" type="text" id="r-name" maxlength="80" autocomplete="name" placeholder="Raina family, Delhi" required>
-                </div>
-                <fieldset class="field">
-                  <legend class="cap" data-i18n="r_att">Attending</legend>
-                  <div class="seg">
-                    <label><input type="radio" name="att" value="yes" id="att-yes" checked><span data-i18n="r_yes">Yes, we'll be there</span></label>
-                    <label><input type="radio" name="att" value="no" id="att-no"><span data-i18n="r_no">Sending blessings from afar</span></label>
-                  </div>
-                </fieldset>
-                <div id="r-coming" class="coming">
-                  <div class="field">
-                    <span class="cap" id="r-count-l" data-i18n="r_count">How many of you</span>
-                    <div class="stepper" role="group" aria-labelledby="r-count-l">
-                      <button type="button" id="r-minus" aria-label="One fewer">−</button>
-                      <output id="r-count" aria-live="polite">2</output>
-                      <button type="button" id="r-plus" aria-label="One more">+</button>
-                    </div>
-                  </div>
-                  <fieldset class="field">
-                    <legend class="cap" data-i18n="r_events">Which gatherings</legend>
-                    <div class="seg">
-                      <label><input type="checkbox" id="ev-maenz" value="maenziraat" checked><span data-i18n="ev_maenz">Maenziraat, Fri 12 Feb</span></label>
-                      <label><input type="checkbox" id="ev-lagan" value="lagan" checked><span data-i18n="ev_lagan">Lagan, Sat 13 Feb</span></label>
-                    </div>
-                  </fieldset>
-                </div>
-                <div class="field">
-                  <label class="cap" for="r-note" data-i18n="r_note">Anything the family should know (optional)</label>
-                  <input class="line" type="text" id="r-note" maxlength="140" placeholder="Arriving by the morning train">
-                </div>
-                <div class="foot">
-                  <span class="small" id="r-status" role="status"></span>
-                  <button class="btn" type="submit" id="r-submit" data-i18n="r_submit">Send reply</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-        <button type="button" class="case" id="case" aria-expanded="false" aria-controls="rsvp-form">
-          <span class="mono">Aditi &amp; Ishaan</span>
-          <span class="emblem" aria-hidden="true"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.2"><path class="d" style="--i:0" pathLength="1" d="M60 18v84M18 60h84"/><rect class="d" style="--i:1" pathLength="1" x="31" y="31" width="58" height="58" transform="rotate(45 60 60)"/><rect class="d" style="--i:2" pathLength="1" x="39" y="39" width="42" height="42"/><circle class="d" style="--i:3" pathLength="1" cx="60" cy="60" r="10"/><circle class="d" style="--i:4" pathLength="1" cx="60" cy="60" r="3"/></svg></span>
-          <span class="cap" data-i18n="case_title">Lagan invitation</span>
-        </button>
-        <p class="cap case-hint" data-i18n="case_hint">Tap the invitation to open</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="blessings" class="sec" data-view="wishes" aria-labelledby="bl-h">
-    <div class="wrap">
-      <div class="split">
-        <div class="sec-head" style="margin:0">
-          <h2 id="bl-h" data-i18n="bl_h">Leave a blessing</h2>
-          <p class="lede" data-i18n="bl_lede">For the elders who can't travel, and for everyone who can. Write a few lines; add your voice if you like.</p>
-        </div>
-        <form class="form" id="bl-form" novalidate>
-          <div class="split" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px">
-            <div class="field"><label for="b-name" data-i18n="b_name">Your name</label><input type="text" id="b-name" maxlength="60" placeholder="Poff Shanta"></div>
-            <div class="field"><label for="b-rel" data-i18n="b_rel">Relation or city (optional)</label><input type="text" id="b-rel" maxlength="60" placeholder="Aditi's aunt, Pune"></div>
-          </div>
-          <div class="field"><label for="b-msg" data-i18n="b_msg">Your blessing</label><textarea id="b-msg" maxlength="400"></textarea></div>
-          <div class="rec" id="rec">
-            <div class="rec-row">
-              <button type="button" class="btn ghost small" id="rec-btn"><span class="dot" aria-hidden="true"></span><span id="rec-label" data-i18n="rec_start">Record a voice note</span></button>
-              <span class="time" id="rec-time">0:00 / 0:30</span>
-            </div>
-            <p class="small" id="rec-status" role="status" data-i18n="rec_idle">Optional, up to 30 seconds.</p>
-            <audio id="rec-preview" controls hidden></audio>
-          </div>
-          <div class="foot">
-            <span class="small" id="b-status" role="status"></span>
-            <button class="btn" type="submit" id="b-submit" data-i18n="b_submit">Add blessing</button>
-          </div>
-        </form>
-      </div>
-      <div class="wall" id="wall"></div>
-    </div>
-  </section>
-
-  <section id="photos" class="sec" data-view="wishes" style="background:var(--paper-2)" aria-labelledby="ph-h">
-    <div class="wrap">
-      <div class="sec-head" style="grid-template-columns:minmax(0,1fr) auto;align-items:end">
-        <div style="display:grid;gap:14px">
-          <h2 id="ph-h" data-i18n="ph_h">Photos from the days</h2>
-          <p class="lede" data-i18n="ph_lede">Add the ones the photographer missed. Photos are resized on your phone before they are saved.</p>
-        </div>
-        <label class="btn upload"><span data-i18n="ph_add">Add a photo</span><input type="file" id="ph-input" accept="image/*" aria-label="Add a photo"></label>
-      </div>
-      <div class="photos" id="photos-grid"></div>
-    </div>
-  </section>
-
-  <section class="sec keep" data-view="wishes" aria-labelledby="keep-h">
-    <div class="wrap keep-card">
-      <div style="display:grid;gap:12px">
-        <h2 id="keep-h" data-i18n="keep_h">Keep a copy</h2>
-        <p class="lede" data-i18n="keep_lede">The ceremony guide and every blessing on this page, in the language you are reading.</p>
-      </div>
-      <div class="actions" style="margin:0">
-        <button class="btn" type="button" id="keep-copy" data-i18n="keep_copy">Copy as text</button>
-        <button class="btn ghost" type="button" id="keep-dl" data-i18n="keep_dl">Download page</button>
-      </div>
-    </div>
-  </section>
-
-  <section id="family" class="sec" data-view="family" aria-label="Family view">
-    <div class="wrap"><div class="org" id="org"></div></div>
-  </section>
+  </div>
+</section>
 </main>
 
 <footer>
   <div class="wrap">
-    <span data-i18n="foot">The Wedding Story by Pixel &amp; Ink. Made for the Tickoo and Razdan families.</span>
-    <a class="linkbtn" href="#family" data-i18n="org_btn">Family view: replies and guest list</a>
-    <span class="theme-pick" role="group" aria-label="Look"><span data-i18n="theme_l">Look</span>
-      <button type="button" data-set-theme="dejhoor">Dejhoor</button>
-      <button type="button" data-set-theme="khatamband">Khatamband</button>
-      <button type="button" data-set-theme="marigold">Marigold</button>
-    </span>
+    <span>The Wedding Story by Pixel &amp; Ink. Bengaluru.</span>
+    <nav aria-label="More">
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="mailto:info@pixelandink.in">Contact</a>
+    </nav>
   </div>
 </footer>
 
-<nav class="tabbar" aria-label="Sections">
-  <a href="#home" data-v="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 20V9M19 20V9M3 9q9-6 18 0"/><path d="M12 19c-2.5-2-2.5-5 0-7.5 2.5 2.5 2.5 5.5 0 7.5z"/></svg><span data-i18n="tab_home">Wedding</span></a>
-  <a href="#days" data-v="days"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="1.5"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><span data-i18n="tab_days">Days</span></a>
-  <a href="#ceremony" data-v="ceremony"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 4c4 4 4 9 0 12-4-3-4-8 0-12z"/><path d="M6 20h12"/></svg><span data-i18n="tab_cer">Ceremony</span></a>
-  <a href="#rsvp" data-v="rsvp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="4" y="6" width="16" height="12" rx="1.5"/><path d="m4.5 7 7.5 6 7.5-6"/></svg><span data-i18n="tab_rsvp">RSVP</span></a>
-  <a href="#blessings" data-v="wishes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 15c2 3 12 3 14 0z"/><path d="M12 14c-2-2-2-5 0-8 2 3 2 6 0 8z"/></svg><span data-i18n="tab_bless">Blessings</span></a>
-</nav>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  /* WhatsApp number goes here, digits only with country code, e.g. "919800000000".
+     Until it's set, every WhatsApp button falls back to email. */
+  var WA="";
+  var DEFAULT_MSG="Hello, I'd like to know more about The Wedding Story for our wedding.";
+  function contactHref(msg){
+    msg=msg||DEFAULT_MSG;
+    return WA?"https://wa.me/"+WA+"?text="+encodeURIComponent(msg):"mailto:info@pixelandink.in?subject="+encodeURIComponent("The Wedding Story")+"&body="+encodeURIComponent(msg);
+  }
+  document.querySelectorAll(".js-wa").forEach(function(a){
+    a.href=contactHref(a.getAttribute("data-msg"));
+    if(WA){a.target="_blank";a.rel="noopener";}
+  });
 
-<script src="/engine/strings.js"></script>
-<script src="/packs/kashmiri-pandit.js"></script>
-<script src="/looks/dejhoor.js"></script>
-<script src="/looks/khatamband.js"></script>
-<script src="/looks/marigold.js"></script>
-<script src="/weddings/aditi-ishaan.js"></script>
-<script src="/engine/app.js"></script>
+  /* "Is your tradition next?" goes to WhatsApp or email with the details filled in */
+  var form=document.getElementById("trad-form");
+  form.addEventListener("submit",function(e){
+    e.preventDefault();var d=new FormData(form);
+    var msg="Hello, please let me know when The Wedding Story is ready for "+d.get("tradition")+" weddings."+(d.get("month")?" Our wedding is in "+d.get("month")+".":"");
+    window.location.href=contactHref(msg);
+  });
+
+  /* Gentle reveal as sections come into view */
+  var reduce=window.matchMedia("(prefers-reduced-motion:reduce)").matches;
+  var els=document.querySelectorAll(".rv");
+  if(reduce||!("IntersectionObserver" in window)){els.forEach(function(el){el.classList.add("in");});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target);}});},{rootMargin:"0px 0px -8% 0px"});
+  els.forEach(function(el){io.observe(el);});
+})();
+</script>
 </body>
 </html>

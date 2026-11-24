@@ -2,12 +2,12 @@
    Everything specific to Aditi and Ishaan lives here: names, families, days, venues, contacts and copy. */
 window.WS_WEDDING={
  "slug": "aditi-ishaan",
- "out": "index.html",
- "noindex": false,
+ "out": "demo/aditi-ishaan/index.html",
+ "noindex": true,
  "share": {
   "title": "Every rite, understood by everyone you love",
   "description": "The Wedding Story by Pixel & Ink. Your whole wedding in one link.",
-  "url": "https://thewedding-story.vercel.app/",
+  "url": "https://thewedding-story.vercel.app/demo/aditi-ishaan/",
   "image": "https://thewedding-story.vercel.app/og-v2.jpg",
   "image_alt": "A gold Dejhoor on walnut"
  },
