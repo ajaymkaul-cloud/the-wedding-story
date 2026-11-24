@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{robots}}<title>{{title}}</title>
+<script>
+/* Theme: set before the page paints. A wedding's default lives in DEFAULT_THEME;
+   ?theme=khatamband (or the footer switch) overrides it on this device. */
+(function(){var DEFAULT_THEME="{{look}}",ok={{looks_ok}},t=null;
+  try{var q=new URLSearchParams(location.search).get("theme");if(q&&ok[q]){t=q;try{localStorage.setItem("lagan27_theme",q);}catch(e){}}
+    if(!t){var m=localStorage.getItem("lagan27_theme");if(ok[m])t=m;}}catch(e){}
+  document.documentElement.setAttribute("data-theme",t||DEFAULT_THEME);})();
+</script>
+<meta name="description" content="{{og_description}}">
+<meta property="og:title" content="{{og_title}}">
+<meta property="og:description" content="{{og_description}}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{og_url}}">
+<meta property="og:site_name" content="The Wedding Story by Pixel &amp; Ink">
+<meta property="og:image" content="{{og_image}}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{og_image_alt}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{twitter_title}}">
+<meta name="twitter:description" content="{{twitter_description}}">
+<meta name="twitter:image" content="{{twitter_image}}">
+<meta name="theme-color" content="{{theme_color}}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/engine/app.css">
+{{look_css}}
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#home">{{mono}}</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#days" data-v="days" data-i18n="nav_days">The days</a>
+      <a href="#ceremony" data-v="ceremony" data-i18n="nav_ceremony">Ceremony guide</a>
+      <a href="#rsvp" data-v="rsvp" data-i18n="nav_rsvp">RSVP</a>
+      <a href="#blessings" data-v="wishes" data-i18n="nav_bless">Blessings</a>
+    </nav>
+    <button type="button" class="size" id="size-btn" aria-pressed="false" aria-label="Larger text" title="Larger text">A<small>+</small></button>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="hi" aria-pressed="false" lang="hi">हिंदी</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero grain" data-view="home" aria-labelledby="names">
+    <div class="wrap">
+      <div>
+        <p class="invocation" lang="sa">॥ श्री गणेशाय नमः ॥</p>
+        <p class="heav" data-i18n="heav">With the heavenly blessings of Late Smt. Arundhati Tickoo and Late Pt. Dina Nath Razdan</p>
+        <h1 id="names"><span class="nm">{{bride_full}}</span><span class="par" data-i18n="par_b">Daughter of Smt. Nirmala and Shri Rajinder Nath Tickoo</span><span class="and" data-i18n="and">and</span><span class="nm second">{{groom_full}}</span><span class="par second" data-i18n="par_g">Son of Smt. Usha and Shri Ashok Kumar Razdan</span></h1>
+        <p class="greet" id="greet" hidden></p>
+        <p class="invite" data-i18n="invite">With the blessings of their families, invite you to their Lagan in Jammu.</p>
+        <dl class="facts">
+          <div><dt data-i18n="f_lagan">Lagan</dt><dd data-i18n="f_lagan_v">Saturday, 13 February 2027</dd></div>
+          <div><dt data-i18n="f_where">Where</dt><dd data-i18n="f_where_v">Tickoo family home, Gandhi Nagar, Jammu</dd></div>
+          <div id="f-count-wrap"><dt data-i18n="f_count">Days to go</dt><dd id="f-count"></dd></div>
+        </dl>
+        <div class="actions">
+          <a class="btn" href="#days" data-i18n="cta_days">See the wedding days</a>
+          <a class="btn ghost" href="#ceremony" data-i18n="cta_guide">Open the ceremony guide</a>
+          <a class="hero-rsvp" href="#rsvp" data-i18n="cta_rsvp2">Reply by 15 January</a>
+        </div>
+        <button type="button" class="cue2" id="cue"><span class="cl" data-i18n="cue">Scroll down for the wedding days</span><span class="cs" data-i18n="cue_s">More below</span><span class="chev" aria-hidden="true"></span></button>
+      </div>
+      <div class="dejihor" id="dejihor" role="button" tabindex="0" aria-label="About the Dejhoor"></div>
+    </div>
+  </section>
+
+  <section class="sec home-tiles" data-view="home" aria-label="Start here">
+    <div class="wrap">
+      <h2 class="glance-h" data-i18n="glance_h">The wedding at a glance</h2>
+      <div class="glance" id="glance"></div>
+    </div>
+    <div class="wrap tiles">
+      <a class="tile" style="--d:.12s" href="#ceremony"><span class="tile-n">9 <small data-i18n="tile_cer_n">rites</small></span><h3 data-i18n="tile_cer_h">Ceremony guide</h3><p data-i18n="tile_cer_p">Every rite of the Lagan, explained as it happens at the mandap.</p></a>
+      <a class="tile" style="--d:.24s" href="#blessings"><span class="tile-n" id="tile-bl-n">2 <small data-i18n="tile_bl_n">blessings</small></span><h3 data-i18n="tile_bl_h">Leave a blessing</h3><p data-i18n="tile_bl_p">Write a few lines for Aditi and Ishaan, or record your voice.</p></a>
+    </div>
+    <div class="wrap"><div class="contacts-slot"></div></div>
+    <div class="wrap"><p class="signoff"><span data-i18n="so1">With best compliments,</span><span class="so2" data-i18n="so2">the Tickoos and the Razdans</span></p></div>
+  </section>
+
+  <section id="days" class="sec" data-view="days" aria-labelledby="days-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="days-h" data-i18n="days_h">From Livun to Phirlath</h2>
+        <p class="lede" data-i18n="days_lede">Kashmiri Pandit weddings unfold over several days. Here is what happens when, and which gatherings are open to all guests.</p>
+        <p class="began" data-i18n="began">It began with Kasamdry, when the elders of both families met at a temple and exchanged flowers and good wishes. Before the wedding the Razdans send Snazaroo to Aditi, gifts that traditionally include a mirror, sindoor and a betel leaf wrapped in gold foil.</p>
+      </div>
+      <p class="inv-note" id="inv-note" hidden data-i18n="inv_note">Showing the gatherings you are invited to.</p>
+      <ol class="days" id="days-list"></ol>
+      <div class="contacts-slot" style="margin-top:56px"></div>
+    </div>
+  </section>
+
+  <section id="ceremony" class="sec chamber grain" data-view="ceremony" aria-labelledby="cer-h">
+    <div class="wrap">
+      <span class="ghost-word" aria-hidden="true" lang="hi">लगन</span>
+      <div class="sec-head">
+        <h2 id="cer-h" data-i18n="cer_h">The Lagan, rite by rite</h2>
+        <p class="lede" data-i18n="cer_lede">Keep this open at the mandap. Each card tells you what you are seeing, what it means, and what, if anything, you can do.</p>
+        <p class="wv" data-i18n="cer_wanvun"></p>
+      </div>
+      <div class="draft">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="8" cy="8" r="7"/><path d="M8 7v4M8 4.5v.5"/></svg>
+        <p id="draft-note"></p>
+      </div>
+      <div class="tumbak" id="tumbak"></div>
+      <div class="rite-bar">
+        <div class="index" id="rite-index" role="tablist" aria-label="Jump to a rite"></div>
+        <div class="bar-arrows">
+          <button class="round sm" type="button" id="prev2" aria-label="Previous rite"><svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M11 3 5 9l6 6"/></svg></button>
+          <button class="round sm" type="button" id="next2" aria-label="Next rite"><svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m7 3 6 6-6 6"/></svg></button>
+        </div>
+      </div>
+      <div class="deck" id="deck" tabindex="0" aria-roledescription="carousel" aria-label="Ceremony rites"></div>
+      <div class="deck-prog" id="deck-prog" role="group" aria-label="Rites"></div>
+      <p class="swipe-hint" id="swipe-hint" data-i18n="swipe">Swipe the card, or use the arrows, to move through the rites.</p>
+      <div class="deck-ctrl">
+        <span class="count" id="deck-count" aria-live="polite"></span>
+        <button class="round" type="button" id="prev" aria-label="Previous rite"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 3 5 9l6 6"/></svg></button>
+        <button class="round" type="button" id="next" aria-label="Next rite"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m7 3 6 6-6 6"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <section id="notes" class="sec" data-view="ceremony" aria-labelledby="notes-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="notes-h" data-i18n="notes_h">Good to know</h2>
+      </div>
+      <div class="notes">
+        <div><h3 data-i18n="n1_h">The evening runs late</h3><p data-i18n="n1_p">The Lagan begins when the baraat arrives around 5:30 PM and Posh Puza usually comes late in the night. Jammu evenings in February are cold, so bring a warm shawl.</p></div>
+        <div><h3 data-i18n="n2_h">Dinner</h3><p data-i18n="n2_p">A traditional Kashmiri Pandit vegetarian spread after Posh Puza: dum oluv, nadir yakhin, chaman qaliya, haakh and rice, with kahwa to finish.</p></div>
+        <div><h3 data-i18n="n3_h">Taking part</h3><p data-i18n="n3_p">You are welcome to sit close. During Posh Puza every guest is invited to shower the couple with flowers; petals are handed out.</p></div>
+      </div>
+      <div class="sec-head" style="margin-top:72px;margin-bottom:20px">
+        <h2 style="font-size:var(--step-3)" data-i18n="gloss_h">Words you will hear</h2>
+      </div>
+      <dl class="gloss" id="gloss"></dl>
+    </div>
+  </section>
+
+  <section id="rsvp" class="sec rsvp-stage" data-view="rsvp" aria-labelledby="rsvp-h">
+    <div class="wrap rsvp-wrap">
+      <h2 id="rsvp-h" data-i18n="rsvp_h">Will you join us?</h2>
+      <p class="lede" data-i18n="rsvp_lede">Your invitation is waiting. Open it and reply by 15 January 2027. One reply per family is enough.</p>
+      <div class="scene" id="scene">
+        <div class="card-slot" id="card-slot" inert>
+          <div class="card-inner">
+            <form class="card" id="rsvp-form" novalidate>
+              <div class="card-band"><span class="mono">{{mono}}</span><span class="cap">{{card_date}}</span></div>
+              <div class="card-body">
+                <div class="stage stamp" id="stamp" aria-hidden="true"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.2"><path class="d" style="--i:0" pathLength="1" d="M60 18v84M18 60h84"/><rect class="d" style="--i:1" pathLength="1" x="31" y="31" width="58" height="58" transform="rotate(45 60 60)"/><rect class="d" style="--i:2" pathLength="1" x="39" y="39" width="42" height="42"/><circle class="d" style="--i:3" pathLength="1" cx="60" cy="60" r="10"/><circle class="d" style="--i:4" pathLength="1" cx="60" cy="60" r="3"/></svg></div>
+                <div class="field">
+                  <label class="cap" for="r-name" data-i18n="r_name">Your name, or your family's</label>
+                  <input class="line" type="text" id="r-name" maxlength="80" autocomplete="name" placeholder="Raina family, Delhi" required>
+                </div>
+                <fieldset class="field">
+                  <legend class="cap" data-i18n="r_att">Attending</legend>
+                  <div class="seg">
+                    <label><input type="radio" name="att" value="yes" id="att-yes" checked><span data-i18n="r_yes">Yes, we'll be there</span></label>
+                    <label><input type="radio" name="att" value="no" id="att-no"><span data-i18n="r_no">Sending blessings from afar</span></label>
+                  </div>
+                </fieldset>
+                <div id="r-coming" class="coming">
+                  <div class="field">
+                    <span class="cap" id="r-count-l" data-i18n="r_count">How many of you</span>
+                    <div class="stepper" role="group" aria-labelledby="r-count-l">
+                      <button type="button" id="r-minus" aria-label="One fewer">−</button>
+                      <output id="r-count" aria-live="polite">2</output>
+                      <button type="button" id="r-plus" aria-label="One more">+</button>
+                    </div>
+                  </div>
+                  <fieldset class="field">
+                    <legend class="cap" data-i18n="r_events">Which gatherings</legend>
+                    <div class="seg">
+                      <label><input type="checkbox" id="ev-maenz" value="maenziraat" checked><span data-i18n="ev_maenz">Maenziraat, Fri 12 Feb</span></label>
+                      <label><input type="checkbox" id="ev-lagan" value="lagan" checked><span data-i18n="ev_lagan">Lagan, Sat 13 Feb</span></label>
+                    </div>
+                  </fieldset>
+                </div>
+                <div class="field">
+                  <label class="cap" for="r-note" data-i18n="r_note">Anything the family should know (optional)</label>
+                  <input class="line" type="text" id="r-note" maxlength="140" placeholder="Arriving by the morning train">
+                </div>
+                <div class="foot">
+                  <span class="small" id="r-status" role="status"></span>
+                  <button class="btn" type="submit" id="r-submit" data-i18n="r_submit">Send reply</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <button type="button" class="case" id="case" aria-expanded="false" aria-controls="rsvp-form">
+          <span class="mono">{{case}}</span>
+          <span class="emblem" aria-hidden="true"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.2"><path class="d" style="--i:0" pathLength="1" d="M60 18v84M18 60h84"/><rect class="d" style="--i:1" pathLength="1" x="31" y="31" width="58" height="58" transform="rotate(45 60 60)"/><rect class="d" style="--i:2" pathLength="1" x="39" y="39" width="42" height="42"/><circle class="d" style="--i:3" pathLength="1" cx="60" cy="60" r="10"/><circle class="d" style="--i:4" pathLength="1" cx="60" cy="60" r="3"/></svg></span>
+          <span class="cap" data-i18n="case_title">Lagan invitation</span>
+        </button>
+        <p class="cap case-hint" data-i18n="case_hint">Tap the invitation to open</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="blessings" class="sec" data-view="wishes" aria-labelledby="bl-h">
+    <div class="wrap">
+      <div class="split">
+        <div class="sec-head" style="margin:0">
+          <h2 id="bl-h" data-i18n="bl_h">Leave a blessing</h2>
+          <p class="lede" data-i18n="bl_lede">For the elders who can't travel, and for everyone who can. Write a few lines; add your voice if you like.</p>
+        </div>
+        <form class="form" id="bl-form" novalidate>
+          <div class="split" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px">
+            <div class="field"><label for="b-name" data-i18n="b_name">Your name</label><input type="text" id="b-name" maxlength="60" placeholder="Poff Shanta"></div>
+            <div class="field"><label for="b-rel" data-i18n="b_rel">Relation or city (optional)</label><input type="text" id="b-rel" maxlength="60" placeholder="{{rel_placeholder}}"></div>
+          </div>
+          <div class="field"><label for="b-msg" data-i18n="b_msg">Your blessing</label><textarea id="b-msg" maxlength="400"></textarea></div>
+          <div class="rec" id="rec">
+            <div class="rec-row">
+              <button type="button" class="btn ghost small" id="rec-btn"><span class="dot" aria-hidden="true"></span><span id="rec-label" data-i18n="rec_start">Record a voice note</span></button>
+              <span class="time" id="rec-time">0:00 / 0:30</span>
+            </div>
+            <p class="small" id="rec-status" role="status" data-i18n="rec_idle">Optional, up to 30 seconds.</p>
+            <audio id="rec-preview" controls hidden></audio>
+          </div>
+          <div class="foot">
+            <span class="small" id="b-status" role="status"></span>
+            <button class="btn" type="submit" id="b-submit" data-i18n="b_submit">Add blessing</button>
+          </div>
+        </form>
+      </div>
+      <div class="wall" id="wall"></div>
+    </div>
+  </section>
+
+  <section id="photos" class="sec" data-view="wishes" style="background:var(--paper-2)" aria-labelledby="ph-h">
+    <div class="wrap">
+      <div class="sec-head" style="grid-template-columns:minmax(0,1fr) auto;align-items:end">
+        <div style="display:grid;gap:14px">
+          <h2 id="ph-h" data-i18n="ph_h">Photos from the days</h2>
+          <p class="lede" data-i18n="ph_lede">Add the ones the photographer missed. Photos are resized on your phone before they are saved.</p>
+        </div>
+        <label class="btn upload"><span data-i18n="ph_add">Add a photo</span><input type="file" id="ph-input" accept="image/*" aria-label="Add a photo"></label>
+      </div>
+      <div class="photos" id="photos-grid"></div>
+    </div>
+  </section>
+
+  <section class="sec keep" data-view="wishes" aria-labelledby="keep-h">
+    <div class="wrap keep-card">
+      <div style="display:grid;gap:12px">
+        <h2 id="keep-h" data-i18n="keep_h">Keep a copy</h2>
+        <p class="lede" data-i18n="keep_lede">The ceremony guide and every blessing on this page, in the language you are reading.</p>
+      </div>
+      <div class="actions" style="margin:0">
+        <button class="btn" type="button" id="keep-copy" data-i18n="keep_copy">Copy as text</button>
+        <button class="btn ghost" type="button" id="keep-dl" data-i18n="keep_dl">Download page</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="family" class="sec" data-view="family" aria-label="Family view">
+    <div class="wrap"><div class="org" id="org"></div></div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span data-i18n="foot">The Wedding Story by Pixel &amp; Ink. Made for the Tickoo and Razdan families.</span>
+    <a class="linkbtn" href="#family" data-i18n="org_btn">Family view: replies and guest list</a>
+{{look_pick}}  </div>
+</footer>
+
+<nav class="tabbar" aria-label="Sections">
+  <a href="#home" data-v="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 20V9M19 20V9M3 9q9-6 18 0"/><path d="M12 19c-2.5-2-2.5-5 0-7.5 2.5 2.5 2.5 5.5 0 7.5z"/></svg><span data-i18n="tab_home">Invite</span></a>
+  <a href="#days" data-v="days"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="1.5"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><span data-i18n="tab_days">Days</span></a>
+  <a href="#ceremony" data-v="ceremony"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 4c4 4 4 9 0 12-4-3-4-8 0-12z"/><path d="M6 20h12"/></svg><span data-i18n="tab_cer">Ceremony</span></a>
+  <a href="#rsvp" data-v="rsvp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="4" y="6" width="16" height="12" rx="1.5"/><path d="m4.5 7 7.5 6 7.5-6"/></svg><span data-i18n="tab_rsvp">RSVP</span></a>
+  <a href="#blessings" data-v="wishes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 15c2 3 12 3 14 0z"/><path d="M12 14c-2-2-2-5 0-8 2 3 2 6 0 8z"/></svg><span data-i18n="tab_bless">Blessings</span></a>
+</nav>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="/engine/strings.js"></script>
+<script src="/packs/{{pack}}.js"></script>
+{{look_js}}
+<script src="/weddings/{{slug}}.js"></script>
+<script src="/engine/app.js"></script>
+</body>
+</html>
