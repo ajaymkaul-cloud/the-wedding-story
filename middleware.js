@@ -39,9 +39,9 @@ function entryPage(look) {
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>The Wedding Story by Pixel &amp; Ink</title>
-<meta name="description" content="The Wedding Story by Pixel &amp; Ink. A private demo in the ${L.name} look.">
+<meta name="description" content="A personalised wedding invitation on WhatsApp, from invite to bidai.">
 <meta property="og:title" content="Every rite, understood by everyone you love">
-<meta property="og:description" content="The Wedding Story by Pixel &amp; Ink. A private demo in the ${L.name} look.">
+<meta property="og:description" content="A personalised wedding invitation on WhatsApp, from invite to bidai.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://${SHORT_HOST}/demo/">
 <meta property="og:site_name" content="The Wedding Story by Pixel &amp; Ink">
