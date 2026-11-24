@@ -8,7 +8,7 @@
 <script>
 /* Theme: set before the page paints. A wedding's default lives in DEFAULT_THEME;
    ?theme=khatamband (or the footer switch) overrides it on this device. */
-(function(){var DEFAULT_THEME="dejhoor",ok={dejhoor:1,khatamband:1},t=null;
+(function(){var DEFAULT_THEME="dejhoor",ok={dejhoor:1,khatamband:1,marigold:1},t=null;
   try{var q=new URLSearchParams(location.search).get("theme");if(q&&ok[q]){t=q;try{localStorage.setItem("lagan27_theme",q);}catch(e){}}
     if(!t){var m=localStorage.getItem("lagan27_theme");if(ok[m])t=m;}}catch(e){}
   document.documentElement.setAttribute("data-theme",t||DEFAULT_THEME);})();
@@ -34,6 +34,7 @@
 <link rel="stylesheet" href="/engine/app.css">
 <link rel="stylesheet" href="/looks/dejhoor.css">
 <link rel="stylesheet" href="/looks/khatamband.css">
+<link rel="stylesheet" href="/looks/marigold.css">
 </head>
 <body>
 
@@ -283,6 +284,7 @@
     <span class="theme-pick" role="group" aria-label="Look"><span data-i18n="theme_l">Look</span>
       <button type="button" data-set-theme="dejhoor">Dejhoor</button>
       <button type="button" data-set-theme="khatamband">Khatamband</button>
+      <button type="button" data-set-theme="marigold">Marigold</button>
     </span>
   </div>
 </footer>
@@ -300,6 +302,7 @@
 <script src="/packs/kashmiri-pandit.js"></script>
 <script src="/looks/dejhoor.js"></script>
 <script src="/looks/khatamband.js"></script>
+<script src="/looks/marigold.js"></script>
 <script src="/weddings/aditi-ishaan.js"></script>
 <script src="/engine/app.js"></script>
 </body>

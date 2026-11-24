@@ -15,7 +15,8 @@ window.WS_WEDDING={
  "look": "dejhoor",
  "looks": [
   "dejhoor",
-  "khatamband"
+  "khatamband",
+  "marigold"
  ],
  "tokens": {
   "en": {
