@@ -7,8 +7,8 @@ window.WS_WEDDING={
  "share": {
   "title": "Every rite, understood by everyone you love",
   "description": "The Wedding Story by Pixel & Ink. Your whole wedding in one link.",
-  "url": "https://thewedding-story.vercel.app/demo/aditi-ishaan/",
-  "image": "https://thewedding-story.vercel.app/og-v2.jpg",
+  "url": "https://theweddingstory.pixelandink.in/demo/aditi-ishaan/",
+  "image": "https://theweddingstory.pixelandink.in/og-v2.jpg",
   "image_alt": "A gold Dejhoor on walnut"
  },
  "pack": "kashmiri-pandit",
