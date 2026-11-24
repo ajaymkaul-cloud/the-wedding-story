@@ -2,7 +2,38 @@
   "cleanUrls": true,
   "trailingSlash": true,
   "redirects": [
-    { "source": "/:path*", "has": [{ "type": "host", "value": "thewedding-story.vercel.app" }], "destination": "https://theweddingstory.pixelandink.in/:path*", "permanent": true },
-    { "source": "/:path*", "has": [{ "type": "host", "value": "thewedding-story-rouge.vercel.app" }], "destination": "https://theweddingstory.pixelandink.in/:path*", "permanent": true }
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "thewedding-story.vercel.app"
+        }
+      ],
+      "destination": "https://theweddingstory.pixelandink.in/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "thewedding-story-rouge.vercel.app"
+        }
+      ],
+      "destination": "https://theweddingstory.pixelandink.in/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "theweddingstorydemo.pixelandink.in"
+        }
+      ],
+      "destination": "https://theweddingstory.pixelandink.in/",
+      "permanent": false
+    }
   ]
 }
