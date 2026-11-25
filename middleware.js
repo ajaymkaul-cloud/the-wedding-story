@@ -50,8 +50,8 @@ function entryPage(look) {
 <meta property="og:image:alt" content="${L.alt}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="${L.bg}">
-<script>location.replace(${JSON.stringify(dest)}+location.hash);</script>
-</head><body style="margin:0;background:${L.bg}"><noscript><a href="${dest}">Open the demo</a></noscript></body></html>`;
+<script>location.replace(${JSON.stringify(dest)}+(location.hash||"#g-shri-ravi-kaul-ji-and-family"));</script>
+</head><body style="margin:0;background:${L.bg}"><noscript><a href="${dest}#g-shri-ravi-kaul-ji-and-family">Open the demo</a></noscript></body></html>`;
 }
 
 export default async function middleware(request) {
