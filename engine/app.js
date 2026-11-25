@@ -62,7 +62,7 @@ function renderDays(){
     body.appendChild(meta);body.appendChild(el("h3",null,L(d.title)));body.appendChild(el("p","where",L(d.where)));
     var dp=el("p","desc");dp.appendChild(hl(L(d.desc)));body.appendChild(dp);
     var acts=el("div","day-acts");
-    (d.venues||[]).forEach(function(k){var v=VENUES[k];if(!v)return;
+    if(d.open||guestInv)(d.venues||[]).forEach(function(k){var v=VENUES[k];if(!v)return;
       var a=el("a","mini-link",t("dir",{p:L(v.name)}));a.href="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(v.q);a.target="_blank";a.rel="noopener";
       var wrap=el("div","venue");wrap.appendChild(a);wrap.appendChild(el("span","small",L(v.land)));acts.appendChild(wrap);});
     if(d.cal){var c=el("a","mini-link cal",t("cal"));c.target="_blank";c.rel="noopener";
@@ -674,7 +674,7 @@ function renderTumbak(){
 }
 
 /* ---------- five seconds of tumbaknaer on arrival ---------- */
-var introTimer=null,introDone=false;
+var introTimer=null,introDone=true; /* no synthetic drum on arrival */
 function stopIntro(){if(introTimer){clearInterval(introTimer);introTimer=null;}}
 function playIntro(){
   if(introDone||introTimer)return;introDone=true;stopBeat();
@@ -736,7 +736,7 @@ function applyInvites(){
 }
 function greetGuest(sl){
   var parts=sl.split("--");sl=parts[0];guestInv=parts[1]?parts[1].split(""):null;
-  guestName=sl.split("-").map(function(w){return w?w.charAt(0).toUpperCase()+w.slice(1):"";}).join(" ").trim();
+  var small={ji:1,and:1,family:1,of:1};guestName=sl.split("-").map(function(w,i){return !w?"":(i&&small[w])?w:w.charAt(0).toUpperCase()+w.slice(1);}).join(" ").trim();
   if(guestName&&!$("r-name").value&&!rsvps.some(function(r){return r.mine;}))$("r-name").value=guestName;
   save("lagan27_me",{name:guestName,inv:guestInv});applyInvites();renderDays();renderGlance();watchDays();revealIn();
 }
