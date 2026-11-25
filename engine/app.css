@@ -617,3 +617,7 @@ html,body{overflow-x:clip}
 
 /* Once the reply card is open, the closed invitation below it is no longer shown */
 .scene.open .case,.scene.open .case-hint{display:none}
+
+/* Guest greeting sits right after the invocation */
+.hero .invocation+.greet{margin-top:22px;margin-bottom:26px;line-height:1.25}
+.hero h1+.invite{margin-top:36px}
