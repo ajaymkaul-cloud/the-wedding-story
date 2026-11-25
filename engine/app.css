@@ -614,3 +614,6 @@ html,body{overflow-x:clip}
 .cue2{position:static;margin:0 auto;max-width:100%;animation:fadeup 1s ease 2.4s both}
 .hero .actions{margin-bottom:22px}
 @media (max-width:720px){.hero .actions{margin-bottom:14px}}
+
+/* Once the reply card is open, the closed invitation below it is no longer shown */
+.scene.open .case,.scene.open .case-hint{display:none}

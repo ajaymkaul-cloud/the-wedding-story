@@ -44,7 +44,7 @@
     <nav class="nav" aria-label="Sections">
       <a href="#days" data-v="days" data-i18n="nav_days">The days</a>
       <a href="#ceremony" data-v="ceremony" data-i18n="nav_ceremony">Ceremony guide</a>
-      <a href="#rsvp" data-v="rsvp" data-i18n="nav_rsvp">RSVP</a>
+      <a href="#rsvp" data-v="rsvp" data-i18n="nav_rsvp">Reply</a>
       <a href="#blessings" data-v="wishes" data-i18n="nav_bless">Blessings</a>
     </nav>
     <button type="button" class="size" id="size-btn" aria-pressed="false" aria-label="Larger text" title="Larger text">A<small>+</small></button>
@@ -118,7 +118,6 @@
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="8" cy="8" r="7"/><path d="M8 7v4M8 4.5v.5"/></svg>
         <p id="draft-note"></p>
       </div>
-      <div class="tumbak" id="tumbak"></div>
       <div class="rite-bar">
         <div class="index" id="rite-index" role="tablist" aria-label="Jump to a rite"></div>
         <div class="bar-arrows">
@@ -157,7 +156,7 @@
   <section id="rsvp" class="sec rsvp-stage" data-view="rsvp" aria-labelledby="rsvp-h">
     <div class="wrap rsvp-wrap">
       <h2 id="rsvp-h" data-i18n="rsvp_h">Will you join us?</h2>
-      <p class="lede" data-i18n="rsvp_lede">Your invitation is waiting. Open it and reply by 15 January 2027. One reply per family is enough.</p>
+      <p class="lede" data-i18n="rsvp_lede">Let the family know if you will be there. Please reply by 15 January 2027. One reply per family is enough.</p>
       <div class="scene" id="scene">
         <div class="card-slot" id="card-slot" inert>
           <div class="card-inner">
@@ -280,12 +279,6 @@
 <footer>
   <div class="wrap">
     <span data-i18n="foot">The Wedding Story by Pixel &amp; Ink. Made for the Tickoo and Razdan families.</span>
-    <a class="linkbtn" href="#family" data-i18n="org_btn">Family view: replies and guest list</a>
-    <span class="theme-pick" role="group" aria-label="Look"><span data-i18n="theme_l">Look</span>
-      <button type="button" data-set-theme="dejhoor">Dejhoor</button>
-      <button type="button" data-set-theme="khatamband">Khatamband</button>
-      <button type="button" data-set-theme="marigold">Marigold</button>
-    </span>
   </div>
 </footer>
 
@@ -293,7 +286,7 @@
   <a href="#home" data-v="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 20V9M19 20V9M3 9q9-6 18 0"/><path d="M12 19c-2.5-2-2.5-5 0-7.5 2.5 2.5 2.5 5.5 0 7.5z"/></svg><span data-i18n="tab_home">Wedding</span></a>
   <a href="#days" data-v="days"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="1.5"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><span data-i18n="tab_days">Days</span></a>
   <a href="#ceremony" data-v="ceremony"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 4c4 4 4 9 0 12-4-3-4-8 0-12z"/><path d="M6 20h12"/></svg><span data-i18n="tab_cer">Ceremony</span></a>
-  <a href="#rsvp" data-v="rsvp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="4" y="6" width="16" height="12" rx="1.5"/><path d="m4.5 7 7.5 6 7.5-6"/></svg><span data-i18n="tab_rsvp">RSVP</span></a>
+  <a href="#rsvp" data-v="rsvp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="4" y="6" width="16" height="12" rx="1.5"/><path d="m4.5 7 7.5 6 7.5-6"/></svg><span data-i18n="tab_rsvp">Reply</span></a>
   <a href="#blessings" data-v="wishes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 15c2 3 12 3 14 0z"/><path d="M12 14c-2-2-2-5 0-8 2 3 2 6 0 8z"/></svg><span data-i18n="tab_bless">Blessings</span></a>
 </nav>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
