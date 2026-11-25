@@ -234,6 +234,57 @@ footer a:hover{color:#fff}
 .look-pair p{color:var(--muted);font-size:.98rem;margin-top:4px}
 @media (max-width:860px){.beat.looks .wrap{grid-template-columns:1fr}.look-pair{gap:10px}.look-pair .phone{border-radius:24px;padding:6px}.look-pair .phone .screen{border-radius:19px}.look-pair p{font-size:.9rem}}
 
+/* WhatsApp chat in the hero phone */
+.screen.wa{display:flex;flex-direction:column;background:#EFE7DD;font-family:var(--body);color:#111B21}
+.wa-top{display:flex;align-items:center;gap:10px;padding:34px 14px 10px;background:#0B3D3A;color:#fff}
+.wa-back{width:9px;height:9px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(45deg);margin-right:2px}
+.wa-av{width:34px;height:34px;border-radius:50%;background:#C9A55A;color:#123A40;display:grid;place-items:center;font-size:.78rem;font-weight:600}
+.wa-who{display:flex;flex-direction:column;line-height:1.2}.wa-who b{font-weight:500;font-size:.95rem}.wa-who small{font-size:.72rem;opacity:.8}
+.wa-body{flex:1;padding:14px 10px;display:flex;flex-direction:column;align-items:flex-start;gap:10px;overflow:hidden}
+.wa-day{align-self:center;background:#fff;border-radius:8px;padding:3px 10px;font-size:.72rem;color:#54656F}
+.wa-msg{position:relative;background:#fff;border-radius:0 10px 10px 10px;padding:5px 5px 18px;max-width:92%;box-shadow:0 1px .5px rgba(11,20,26,.13)}
+.wa-msg p{font-size:.86rem;line-height:1.38;padding:6px 6px 0}
+.wa-msg .wa-link{color:#027EB5;font-size:.8rem;word-break:break-all}
+.wa-time{position:absolute;right:8px;bottom:4px;font-size:.66rem;color:#667781}
+.wa-card{border-radius:7px;overflow:hidden;background:#F5F6F6}
+.wa-art{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;padding:22px 12px 20px;color:#EEF4F1;background:radial-gradient(ellipse at 50% 30%,#2E6E73 0%,transparent 70%),url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><g fill='none' stroke='%23C9A55A' stroke-width='.7' opacity='.3'><path d='M9 0H23L32 9V23L23 32H9L0 23V9Z'/></g></svg>"),#123A40}
+.wa-art small{font-size:.66rem;letter-spacing:.02em;color:#C9D5D2}
+.wa-art b{font-family:var(--display);font-weight:400;font-size:1.32rem;line-height:1.15;color:#E2C27A}
+.wa-art i{font-style:normal;font-size:.7rem;color:#C9D5D2}
+.wa-meta{display:flex;flex-direction:column;gap:2px;padding:8px 10px}
+.wa-meta b{font-size:.8rem;font-weight:600}.wa-meta span{font-size:.72rem;color:#54656F;line-height:1.3}.wa-meta em{font-style:normal;font-size:.68rem;color:#8696A0}
+.wa-bar{margin:8px;padding:10px 14px;border-radius:22px;background:#fff;color:#8696A0;font-size:.82rem}
+@media (max-width:860px){
+  .hero .wrap{gap:0}
+  .hero .wrap>div:first-child{display:contents}
+  .hero h1{order:1}
+  .hero .wrap>div:last-child{order:2;margin-top:26px}
+  .hero .sub{order:3;margin-top:28px}.hero .acts{order:4}.hero .micro{order:5}
+  .hero .phone{width:min(100%,330px);aspect-ratio:auto;height:452px}
+  .wa-bar{display:none}.wa-top{padding-top:16px}
+}
+
+/* How it works */
+.how{background:var(--paper-2)}
+.how-steps{list-style:none;padding:0;margin:48px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;counter-reset:h}
+.how-steps li{counter-increment:h;display:flex;flex-direction:column;gap:26px}
+.how-t::before{content:counter(h);display:block;font-family:var(--display);font-size:2.4rem;line-height:1;color:var(--gold);margin-bottom:12px}
+.how-t h3{font-size:1.55rem}
+.how-t p{color:var(--muted);margin-top:8px;max-width:30ch}
+.how-steps .phone{max-width:250px;margin:auto 0 0}
+@media (max-width:860px){.how-steps{grid-template-columns:1fr;gap:56px}.how-steps .phone{max-width:230px}}
+
+/* Printed card */
+.paper{background:var(--paper-2)}
+.paper .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:64px;align-items:center}
+.paper-card{justify-self:center;width:min(100%,300px);aspect-ratio:5/7;background:#FFFDF8;border:1px solid #D9CFB8;outline:1px solid #D9CFB8;outline-offset:-12px;border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:28px;box-shadow:0 30px 60px -30px rgba(18,58,64,.45);transform:rotate(-2deg);color:var(--walnut)}
+.pc-init{font-family:var(--display);font-size:2.4rem;color:var(--gold)}
+.pc-line{font-family:var(--display);font-size:1.2rem}
+.pc-date{font-size:.85rem;color:var(--muted)}
+.pc-qr{width:76px;height:76px;margin-top:18px;color:var(--walnut)}
+.pc-scan{font-size:.72rem;color:var(--muted)}
+@media (max-width:860px){.paper .wrap{grid-template-columns:1fr;gap:40px}}
+
 .rv{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
@@ -250,7 +301,7 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <a class="brand" href="#">The Wedding Story <small>by Pixel &amp; Ink</small></a>
     <nav aria-label="Sections">
-      <a href="#feel">The idea</a>
+      <a href="#how">How it works</a>
       <a href="#tradition">Your tradition</a>
       <a href="#pricing">Pricing</a>
       <a href="#questions">Questions</a>
@@ -264,7 +315,7 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <div>
       <h1 id="hero-h">Every rite, understood by everyone you love.</h1>
-      <p class="sub">A personalised wedding invitation, from invite to bidai. Every guest receives their own, by name. It walks them through each rite as it happens, and keeps every blessing for you.</p>
+      <p class="sub">A personalised digital wedding invitation, from invite to bidai. Every guest receives their own, by name. It walks them through each rite as it happens, and keeps every blessing for you.</p>
       <div class="acts">
         <a class="btn gold js-wa" href="#contact" data-msg="Hello, could I see a private demo of The Wedding Story?">Ask for a private demo</a>
       </div>
@@ -272,9 +323,35 @@ footer a:hover{color:#fff}
     </div>
     <div>
       <div class="phone">
-        <div class="screen"><img src="/assets/stills/home-khatamband.jpg" alt="The opening page of a demo wedding site in the Khatamband look: the names Aditi Tickoo and Ishaan Razdan, their parents, and a carved geometric ceiling pattern" width="780" height="1560"></div>
+        <div class="screen wa" role="img" aria-label="A WhatsApp message from the bride's father to Ravi Kaul, inviting him and his family to Aditi and Ishaan's wedding, with a card that carries his name">
+          <div class="wa-top" aria-hidden="true"><span class="wa-back"></span><span class="wa-av">RT</span><span class="wa-who"><b>Rajinder Tickoo</b><small>online</small></span></div>
+          <div class="wa-body" aria-hidden="true">
+            <span class="wa-day">Today</span>
+            <div class="wa-msg">
+              <div class="wa-card">
+                <div class="wa-art"><small>Invited to the wedding of Aditi and Ishaan</small><b>Shri Ravi Kaul ji<br>and family</b><i>February 2027</i></div>
+                <div class="wa-meta"><b>From invite to bidai</b><span>A personalised wedding invitation that walks every guest through every rite.</span><em>theweddingstory.pixelandink.in</em></div>
+              </div>
+              <p>Namaskar Ravi ji. With joy, we invite you and your family to Aditi and Ishaan&rsquo;s wedding. Your invitation is here:</p>
+              <p class="wa-link">theweddingstory.pixelandink.in/aditi-ishaan</p>
+              <span class="wa-time">10:42</span>
+            </div>
+          </div>
+          <div class="wa-bar" aria-hidden="true"><span>Message</span></div>
+        </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="how" id="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <h2 class="sec-h rv" id="how-h">How it works</h2>
+    <ol class="how-steps">
+      <li class="rv"><div class="how-t"><h3>You send it.</h3><p>Each guest gets their own invitation on WhatsApp, from your phone, with their name on the card.</p></div><div class="phone sm"><div class="screen"><img src="/assets/stills/home-guest-khatamband.jpg" alt="The invitation as Ravi Kaul sees it, greeting him by name" loading="lazy" width="780" height="1560"></div></div></li>
+      <li class="rv"><div class="how-t"><h3>They open it.</h3><p>Only their functions, with venues, timings and what to wear. Your phone goes quiet the week before.</p></div><div class="phone sm"><div class="screen"><img src="/assets/stills/days-khatamband.jpg" alt="One day of the wedding with its time, venue, directions and colour code" loading="lazy" width="780" height="1560"></div></div></li>
+      <li class="rv"><div class="how-t"><h3>It comes back to you.</h3><p>Who is coming to which function, and every blessing, written or spoken.</p></div><div class="phone sm"><div class="screen"><img src="/assets/stills/rsvp-khatamband.jpg" alt="The reply card, already filled with Ravi Kaul's name" loading="lazy" width="780" height="1560"></div></div></li>
+    </ol>
   </div>
 </section>
 
@@ -288,7 +365,7 @@ footer a:hover{color:#fff}
 <section class="beat" id="feel" aria-labelledby="b1">
   <div class="wrap">
     <div class="beat-text rv">
-      <h2 id="b1">Let them feel it, not just watch it.</h2>
+      <h2 id="b1">Every rite, explained as it happens.</h2>
       <p>When her father places her hand in his, everyone knows why the room goes quiet.</p>
     </div>
     <div class="beat-img rv"><div class="phone sm"><div class="screen"><img src="/assets/stills/rite-khatamband.jpg" alt="A ceremony card explaining a rite as it happens" loading="lazy" width="780" height="1560"></div></div></div>
@@ -304,16 +381,6 @@ footer a:hover{color:#fff}
       <h2 id="b2">Some blessings are spoken only once.</h2>
       <p>A grandmother who can't travel. Her voice, her words. Yours to play again.</p>
     </div>
-  </div>
-</section>
-
-<section class="beat flip" aria-labelledby="b3">
-  <div class="wrap">
-    <div class="beat-text rv">
-      <h2 id="b3">Your phone goes quiet the week before.</h2>
-      <p>Times, places, what to wear. All on their link.</p>
-    </div>
-    <div class="beat-img rv"><div class="phone sm"><div class="screen"><img src="/assets/stills/days-khatamband.jpg" alt="One day of the wedding with its time, venue, directions and colour code" loading="lazy" width="780" height="1560"></div></div></div>
   </div>
 </section>
 
@@ -353,6 +420,20 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
+<section class="paper" aria-labelledby="paper-h">
+  <div class="wrap">
+    <div class="rv">
+      <h2 class="beat-h" id="paper-h">Keep your printed card.</h2>
+      <p class="sec-lede">We give you a small QR code to print on it. Anyone who receives the paper card can open the same invitation, guide and blessings.</p>
+    </div>
+    <div class="paper-card rv" aria-hidden="true">
+      <span class="pc-init">A &amp; I</span><span class="pc-line">Aditi weds Ishaan</span><span class="pc-date">February 2027</span>
+      <svg class="pc-qr" viewBox="0 0 21 21"><g fill="currentColor"><path d="M0 0h7v7H0zM1 1v5h5V1zM2 2h3v3H2zM14 0h7v7h-7zM15 1v5h5V1zM16 2h3v3h-3zM0 14h7v7H0zM1 15v5h5v-5zM2 16h3v3H2z" fill-rule="evenodd"/><path d="M9 0h2v2H9zM8 3h2v2H8zM11 4h2v3h-2zM9 8h3v2H9zM0 9h2v2H0zM3 8h3v2H3zM14 9h2v2h-2zM17 8h4v2h-4zM8 12h2v2H8zM12 11h2v3h-2zM9 15h3v2H9zM15 13h3v2h-3zM19 12h2v4h-2zM14 17h2v4h-2zM17 18h4v3h-4zM10 18h2v3h-2z"/></g></svg>
+      <span class="pc-scan">Scan to open your invitation</span>
+    </div>
+  </div>
+</section>
+
 <section class="beat dark centre us" aria-labelledby="us-h">
   <div class="wrap">
     <div class="beat-text rv">
@@ -366,7 +447,7 @@ footer a:hover{color:#fff}
 <section id="pricing" aria-labelledby="price-h">
   <div class="wrap">
     <h2 class="sec-h rv" id="price-h">Pricing</h2>
-    <p class="sec-lede rv">One payment for the whole wedding. No charge per guest.</p>
+    <p class="sec-lede rv">One payment for the whole wedding. No charge per guest. Made with you, checked by your purohit, kept for good.</p>
     <div class="price-grid">
       <div class="tier rv">
         <h3>Standard</h3>
@@ -374,11 +455,14 @@ footer a:hover{color:#fff}
         <p class="amt">₹8,999</p>
         <p class="amt-note">per wedding</p>
         <ul>
-          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Invitation, all the days, dress colours and directions</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>An invitation by name for up to 400 guests, each showing only their functions</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>All the days, venues, dress colours and directions, with one tap to add to the calendar</span></li>
           <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Your choice of look: Dejhoor, Khatamband or Marigold</span></li>
-          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>The ceremony guide for your tradition, in English and Hindi</span></li>
-          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Personal invite links for up to 400 guests</span></li>
-          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Replies, blessings and voice notes, with the family's view</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>The ceremony guide for your tradition, in English and Hindi, checked by your purohit</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Who&rsquo;s who: both families, so every guest knows who is who</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Guests&rsquo; photos by function, and live updates on the wedding days</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Replies, blessings and voice notes, with the family&rsquo;s view</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>A QR code for your printed card</span></li>
           <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Online for a year, with a keepsake to keep for good</span></li>
         </ul>
         <a class="btn outline js-wa" href="#contact" data-msg="Hello, I'd like to know more about the Standard plan for The Wedding Story.">Ask about Standard</a>
@@ -430,6 +514,8 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <h2 class="sec-h rv" id="faq-h">Questions</h2>
     <div class="faq-list rv">
+      <details><summary>What does a guest actually receive?</summary><p>A WhatsApp message from you, with their name on the card. One tap opens their invitation, showing only the functions they are invited to. The same link guides them through the wedding.</p></details>
+      <details><summary>Do we still need a printed card?</summary><p>Many families send both. Print the QR code we give you on your card, and anyone with the paper card can open the same invitation.</p></details>
       <details><summary>Does it work on every phone?</summary><p>Yes. It opens in the phone's browser from a WhatsApp link, on Android and iPhone. Guests don't install anything or sign up.</p></details>
       <details><summary>Will older relatives manage it?</summary><p>That is who we design for first. Large text, one tap to make it larger still, Hindi with one tap, and nothing to log into.</p></details>
       <details><summary>Our family does some rites differently. What then?</summary><p>Families differ, and that's expected. Your purohit reviews the order before the link goes out, and you can leave out or reorder any rite.</p></details>
