@@ -38,3 +38,8 @@ html[data-theme="marigold"] .rite.posh{--on-dark:#FFF3F7;--on-dark-2:#FBDDE8;--o
 html[data-theme="marigold"] .rite.posh .layer p,html[data-theme="marigold"] .rite.posh .verse .lit{color:#FFEAF2}
 html[data-theme="marigold"] .rite.posh .num,html[data-theme="marigold"] .rite.posh .layer h4{color:#FBD27A}
 html[data-theme="marigold"] .rite.posh .round,html[data-theme="marigold"] .rite.posh .btn{color:#FFF3F7}
+
+html[data-theme="marigold"] .wv .wv-means{color:#4A2433}
+html[data-theme="marigold"] .wv .wv-src{color:#8A6A70}
+html[data-theme="marigold"] .wv .wv-src a,html[data-theme="marigold"] .wv h4{color:#B85407}
+html[data-theme="marigold"] .rite.posh .wv .wv-means{color:#FFEAF2}

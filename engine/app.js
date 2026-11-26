@@ -61,6 +61,7 @@ function renderDays(){
     meta.appendChild(el("span","chip"+(d.open||guestInv?" open":""),guestInv?t("inv_you"):(d.open?t("open"):t("family"))));
     body.appendChild(meta);body.appendChild(el("h3",null,L(d.title)));body.appendChild(el("p","where",L(d.where)));
     var dp=el("p","desc");dp.appendChild(hl(L(d.desc)));body.appendChild(dp);
+    if(d.wv)body.appendChild(wvBlock(d.wv,"wv-day"));
     var acts=el("div","day-acts");
     if(d.open||guestInv)(d.venues||[]).forEach(function(k){var v=VENUES[k];if(!v)return;
       var a=el("a","mini-link",t("dir",{p:L(v.name)}));a.href="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(v.q);a.target="_blank";a.rel="noopener";
@@ -75,6 +76,10 @@ function renderDays(){
   });
 }
 
+function wvBlock(w,cls){var b=el("div",cls);b.appendChild(el("h4",null,t("wv_h")));
+  var ln=el("p","wv-lines");w.lines.forEach(function(x,i){if(i)ln.appendChild(document.createElement("br"));ln.appendChild(document.createTextNode(x));});b.appendChild(ln);
+  b.appendChild(el("p","wv-means",L(w.means)));
+  var src=el("p","wv-src",t("wv_src")+" ");var a=el("a",null,t("wv_page",{p:w.page}));a.href="https://archive.org/details/hinzevanvuninkashmirilakshmishrikandru/page/n"+(w.page+7)+"/mode/1up";a.target="_blank";a.rel="noopener";src.appendChild(a);b.appendChild(src);return b;}
 /* ---------- ceremony deck ---------- */
 function layer(cls,h,p){var d=el("div","layer"+(cls?" "+cls:""));d.appendChild(el("h4",null,h));var pe=el("p");pe.appendChild(hl(p));d.appendChild(pe);return d;}
 function renderDeck(){
@@ -105,6 +110,7 @@ function renderDeck(){
       card.appendChild(v);
     }
     if(r.listen)card.appendChild(layer("listen",t("l_listen"),L(r.listen)));
+    if(r.wv)card.appendChild(wvBlock(r.wv,"verse wv"));
     card.appendChild(layer("you",t("l_you"),L(r.you)));
     if(r.play)card.appendChild(buildPlay(r.play));
     if(r.posh){
