@@ -598,8 +598,8 @@ window.WS_PACK={
     "hi": "कसमद्री"
    },
    "d": {
-    "en": "The engagement, when the elders of both families meet at a temple and exchange flowers and good wishes.",
-    "hi": "सगाई, जब दोनों परिवारों के बड़े मंदिर में मिलते हैं और फूलों व शुभकामनाओं का आदान-प्रदान करते हैं।"
+    "en": "The formal engagement, when the elders of both families meet at a temple and exchange flowers and sweets.",
+    "hi": "औपचारिक सगाई, जब दोनों परिवारों के बड़े मंदिर में मिलते हैं और फूल व मिठाइयाँ बाँटते हैं।"
    }
   },
   {
@@ -608,8 +608,8 @@ window.WS_PACK={
     "hi": "स्नज़ारू"
    },
    "d": {
-    "en": "Gifts from the groom's family to the bride, traditionally including a mirror, sindoor and a betel leaf in gold or silver foil.",
-    "hi": "वर पक्ष की ओर से वधू को उपहार, पारंपरिक रूप से दर्पण, सिंदूर और सोने या चाँदी के वर्क में लिपटा पान।"
+    "en": "A hamper of bridal adornments sent by the groom's family, for the bride to wear on the wedding morning.",
+    "hi": "वर पक्ष की ओर से भेजी गई दुल्हन के श्रृंगार की वस्तुओं की टोकरी, जिसे वह विवाह की सुबह पहनती है।"
    }
   },
   {
@@ -852,3 +852,15 @@ window.WS_PACK={
     {t:{en:"Roth",hi:"रोठ"},d:{en:"A sweet bread topped with nuts and poppy seeds, sent between the families.",hi:"मेवों और खसखस से सजी मीठी रोटी, जो दोनों परिवारों के बीच भेजी जाती है।"}}
   );
 })(window.WS_PACK);
+
+/* Day descriptions as reviewed by AJ (26 Nov 2026) */
+(function(D){
+  D.livun.desc={en:"The wedding begins with Livun. In the old mud-and-timber houses of the Valley, both homes were plastered and cleaned with fresh earth; today they get a thorough clean and wipe-down with water. The waza, the family cook, sets up the wuri, an earthen oven for every wedding meal, the wanvun evenings begin, and {bride}'s poff makes var, a traditional rice dish, for neighbours and relatives.",
+    hi:"विवाह की शुरुआत लिवुन से होती है। घाटी के पुराने मिट्टी और लकड़ी के घरों में दोनों घरों को ताज़ी मिट्टी से लीपा और साफ़ किया जाता था; आज घरों की अच्छी तरह सफ़ाई होती है और पानी से पोंछा जाता है। परिवार के रसोइए, वाज़ा, हर विवाह-भोज के लिए वुरि यानी मिट्टी का चूल्हा बनाते हैं, वनवुन की शामें शुरू होती हैं, और {bride} की पोफ़ पड़ोसियों और संबंधियों के लिए 'वर' नामक पारंपरिक चावल का व्यंजन बनाती हैं।"};
+  D.mas.desc={en:"{bride}'s oiled hair is woven into many tiny braids, the waankh, and her poff unties them one by one while the women sing slow, tender wanvun. Isband is burnt in a kangri and its smoke waved around her and the women to keep away the evil eye. Her hair stays loose until the wedding day.",
+    hi:"{bride} के तेल लगे बालों को कई छोटी-छोटी चोटियों, वांख, में गूँथा जाता है, और उनकी पोफ़ उन्हें एक-एक करके खोलती हैं, जबकि महिलाएँ धीमे, कोमल वनवुन गाती हैं। कांगड़ी में इसबंद जलाकर उसका धुआँ उनके और महिलाओं के चारों ओर घुमाया जाता है, ताकि बुरी नज़र दूर रहे। विवाह के दिन तक उनके बाल खुले रहते हैं।"};
+  D.kanishran.desc={en:"Before Devgon, at both homes. Relatives hold a clean cloth over {bride} and {groom} by its four corners, and elders pour water, milk, curd, rice and petals through it while the women sing wanvun. A bath follows, then new clothes from the maternal uncle.",
+    hi:"देवगोन से पहले, दोनों घरों में। संबंधी {bride} और {groom} के ऊपर एक साफ़ कपड़ा चारों कोनों से थामते हैं, और बड़े उसमें से पानी, दूध, दही, चावल और फूलों की पंखुड़ियाँ डालते हैं, जबकि महिलाएँ वनवुन गाती हैं। फिर स्नान होता है और मामा के दिए नए कपड़े पहने जाते हैं।"};
+  D.devgon.desc={en:"At both homes, often the day before the wedding. {bride} and {groom}, their parents and the elders leading it fast until it ends. The mama brings them to the havan, where the purohit invokes Shiva and Parvati, the family deity and the ancestors, and the trousseau is blessed beside the fire. During the day {bride}'s poff fastens her Dejhoor. Kheer and moong-wari follow as prasad, then Duribat, a feast for the maternal relatives.",
+    hi:"दोनों घरों में, प्रायः विवाह से एक दिन पहले। {bride} और {groom}, उनके माता-पिता और रस्म कराने वाले बड़े इसके पूरा होने तक उपवास रखते हैं। मामा उन्हें हवन तक लाते हैं, जहाँ पुरोहित जी शिव-पार्वती, कुल देवता और पितरों का आह्वान करते हैं, और दहेज़ का सामान अग्नि के पास रखकर आशीर्वाद दिया जाता है। दिन में {bride} की पोफ़ उनका देजहूर बाँधती हैं। फिर प्रसाद में खीर और मूँग-वड़ी, और उसके बाद दुरिबत, मामा के परिवार के लिए भोज।"};
+})(window.WS_PACK.days);
