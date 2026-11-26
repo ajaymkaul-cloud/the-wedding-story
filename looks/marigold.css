@@ -33,7 +33,7 @@ html[data-theme="marigold"] .rite{border-color:#F0D9B8}
 html[data-theme="marigold"] .rite-bar{background:var(--deep-2b);box-shadow:0 10px 18px -14px rgba(120,50,30,.35)}
 html[data-theme="marigold"] .index button{border-color:#E9C9A2;color:#5A2D3D}
 html[data-theme="marigold"] .index button[aria-current="true"]{background:var(--walnut);border-color:var(--walnut);color:#FFF9F0}
-/* Posh Puza card stays a celebration: rani pink with light text */
+/* Posh Pooza card stays a celebration: rani pink with light text */
 html[data-theme="marigold"] .rite.posh{--on-dark:#FFF3F7;--on-dark-2:#FBDDE8;--on-dark-3:#F6CADB;--on-dark-4:#F2B8CE;border-color:transparent}
 html[data-theme="marigold"] .rite.posh .layer p,html[data-theme="marigold"] .rite.posh .verse .lit{color:#FFEAF2}
 html[data-theme="marigold"] .rite.posh .num,html[data-theme="marigold"] .rite.posh .layer h4{color:#FBD27A}
