@@ -812,3 +812,40 @@ window.WS_PACK={
   null
  ]
 };
+
+/* Wanvun for each day and rite: a few lines from Hinzen Vanvun, compiled by Lakshmishri Kandru
+   (Jammu, 1999/2001). Roman lines are provisional until checked against the printed page;
+   page = the book's own page number. Meanings are short guest-facing summaries, not word-for-word translations. */
+(function(P){
+  function rite(id){for(var i=0;i<P.rites.length;i++)if(P.rites[i].id===id)return P.rites[i];return null;}
+  var D=P.days;
+  D.livun.wv={page:1,lines:["Shekalam karith hemav wanvonuy,","Rati phal diti Maaji Bhavani.","Praji peth aniton Brahman chharith,","Livanas kyut diyi saat charith."],
+    means:{en:"The home is prepared with auspiciousness and prayer. The family seeks blessings from Maaji Bhavani as preparations for Livun begin.",hi:"शुभता और प्रार्थना के साथ घर को नए आरंभ के लिए तैयार किया जाता है। लिवुन की शुरुआत पर परिवार माँ भवानी का आशीर्वाद माँगता है।"}};
+  D.mas.wv={page:3,lines:["Om sedi data vegan hartaro,","Ganpat yaray mas muchray.","Shokalam karith mas muchrayey,","Shobh phal ditiy Maaji Bhavani."],
+    means:{en:"The women gather around the bride for this intimate ceremony. The wanvun invokes Lord Ganapati and seeks auspicious blessings from Maaji Bhavani.",hi:"इस आत्मीय रस्म में महिलाएँ दुल्हन के चारों ओर एकत्र होती हैं। वनवुन में गणपति का स्मरण और माँ भवानी से शुभ आशीर्वाद की प्रार्थना की जाती है।"}};
+  D.devgon.wv={page:14,lines:["Shokalam karith wanwun hyotuyi,","Shobh phal ditiy Maaji Bhavani.","Jamnayi jalay gangay myeche,","Devgonas kyut livase."],
+    means:{en:"Devgon invokes auspiciousness and sacred blessings. The wanvun speaks of the waters of the Yamuna and the Ganga as the preparations unfold.",hi:"देवगोन की रस्म में शुभता और पवित्र आशीर्वाद का आह्वान किया जाता है। वनवुन में यमुना और गंगा के पवित्र जल का उल्लेख आता है।"}};
+  D.maenz.wv={page:8,lines:["Dakshin kis balas maenzi hund tar draav,","Shar draav laalas chhi maenzerat.","Padshah bagas Tulmuli nagas,","Tragas man phol manze posh."],
+    means:{en:"Maenziraat brings the family together in celebration. The verses evoke henna, flowers and familiar Kashmiri places.",hi:"मेंज़िरात परिवार को उत्सव के लिए एक साथ लाती है। इसके वनवुन में मेहंदी, फूलों और कश्मीर के परिचित स्थलों की छवियाँ उभरती हैं।"}};
+  D.targa.wv={page:28,lines:["Maansav kotuyi tomas photuyi,","Pophav kotuyi kalabot.","Tarang onmay gaah log taavane,","Taah koss Maaji Rajagnyaye."],
+    means:{en:"The Tarang is adorned and brought out as an important part of the bride's wedding attire. The wanvun invokes Maaji Ragnya as it is prepared.",hi:"दुल्हन के पारंपरिक विवाह-वेश का महत्वपूर्ण अंग तरंग सजाकर तैयार किया जाता है। इस रस्म के वनवुन में माँ राज्ञा का स्मरण किया जाता है।"}};
+  D.lagan.wv={page:30,lines:["Vushku draayi heli tay daatri log poore,","Drayuk yenivol kar vaate.","Aav Maharaj tay pok maadani,","Khot asamaani gardi gubaar."],
+    means:{en:"The Lagan verses build anticipation for the groom's arrival. The baraat approaches and the household fills with excitement.",hi:"लग्न के वनवुन दूल्हे के आगमन की प्रतीक्षा और उत्साह को व्यक्त करते हैं। बारात के पहुँचने के साथ घर उल्लास से भर उठता है।"}};
+  var r;
+  if(r=rite("dwar"))r.wv={page:37,lines:["Dwar pooz karu maali vyash kumaare,","Vaar pooz karu maali Saligramas.","Posh pooz karu maali daari ta hangas,","Ali ta rogas dwaray pooz."],
+    means:{en:"The threshold is honoured with worship and flowers as the groom is welcomed into the home. The verses invoke the sacred Saligrama.",hi:"वर के स्वागत के समय घर की दहलीज़ पर पूजा और पुष्प अर्पित किए जाते हैं। इन वनवुन में शालिग्राम का स्मरण भी आता है।"}};
+  if(r=rite("kanyadan"))r.wv={page:46,lines:["Koor chhey kochhi tay pustak paraan,","Maharaj chhasay ath daaran.","Kanya-daan koryo maali Dashraavno,","Bhoomi-daan rottho maali Brahmano."],
+    means:{en:"The verses place Kanyadan within a sacred tradition, recalling King Dasharatha. The joining of hands becomes a moment of trust and blessing.",hi:"इन वनवुन में कन्यादान को एक पवित्र परंपरा के रूप में स्मरण किया गया है। हाथों का मिलन विश्वास और आशीर्वाद का क्षण बन जाता है।"}};
+  if(r=rite("glimpse"))r.wv={page:49,lines:["Aain hanavith roop chhiye ratiye,","Agnan ditu ye sheetal sobhaav."],
+    means:{en:"The mirror becomes a moment of shared reflection. The verse pairs beauty with the gentle, cooling presence of the sacred fire.",hi:"दर्पण में प्रतिबिंब देखना साथ की नई शुरुआत का सुंदर क्षण है। इस वनवुन में सौंदर्य और अग्नि की शीतल, सौम्य छवि है।"}};
+  if(r=rite("lagan"))r.wv={page:49,lines:["Satvayi mohakh pethi pakanavamakh,","Vaarivik gutharay taaranavamakh."],
+    means:{en:"The seven steps mark the couple's passage into married life, a shared journey witnessed and blessed by everyone gathered.",hi:"सात पवित्र कदम दंपति की साथ-साथ वैवाहिक जीवन की यात्रा का प्रतीक हैं, जिसे सब प्रियजन आशीर्वाद देते हैं।"}};
+  if(r=rite("posh"))r.wv={page:50,lines:["Om kar shlok par Shri Ganeshaye,","Posh poozaye vel hay woth.","Aakaash posh varshun hani-hani chhus,","Rathbaan kani chhus Siri Devta."],
+    means:{en:"The time for Posh Pooza arrives with an invocation to Lord Ganesha. Flowers are showered on the couple as blessings for their life together.",hi:"श्री गणेश के स्मरण के साथ पोश पूजा की शुभ घड़ी आती है। दंपति पर पुष्प-वर्षा कर उनके जीवन के लिए मंगलकामनाएँ दी जाती हैं।"}};
+  if(r=rite("vidaai"))r.wv={page:58,lines:["Pokhtan lari draayikhay, mortan lari chaayikhay,","Vart kinch draayikhay bhartavaar.","Daari kichhi dichnam rumaal daarith,","Arinni manni neeynam heey chanasthi."],
+    means:{en:"As the bride leaves for her new home, the women sing her farewell. The verses carry the ache of parting and the love of the home she leaves behind.",hi:"दुल्हन के नए घर के लिए विदा होते समय महिलाएँ विदाई का वनवुन गाती हैं। इन पंक्तियों में बिछड़ने की टीस और मायके का स्नेह है।"}};
+  P.gloss.push(
+    {t:{en:"Yezman",hi:"यज़मान"},d:{en:"The host of the ceremonies, usually the bride's or groom's father. From the Sanskrit yajamana.",hi:"संस्कारों के आयोजक, प्रायः वधू या वर के पिता। संस्कृत 'यजमान' से।"}},
+    {t:{en:"Yezmanbai",hi:"यज़मानबाय"},d:{en:"The hostess, the lady of the house who receives everyone. Said with warmth, not only as a title.",hi:"घर की मालकिन जो सबका स्वागत करती हैं। यह शब्द आदर और अपनेपन से कहा जाता है।"}}
+  );
+})(window.WS_PACK);
