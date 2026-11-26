@@ -846,6 +846,9 @@ window.WS_PACK={
     means:{en:"As the bride leaves for her new home, the women sing her farewell. The verses carry the ache of parting and the love of the home she leaves behind.",hi:"दुल्हन के नए घर के लिए विदा होते समय महिलाएँ विदाई का वनवुन गाती हैं। इन पंक्तियों में बिछड़ने की टीस और मायके का स्नेह है।"}};
   P.gloss.push(
     {t:{en:"Yezman",hi:"यज़मान"},d:{en:"The host of the ceremonies, usually the bride's or groom's father. From the Sanskrit yajamana.",hi:"संस्कारों के आयोजक, प्रायः वधू या वर के पिता। संस्कृत 'यजमान' से।"}},
-    {t:{en:"Yezmanbai",hi:"यज़मानबाय"},d:{en:"The hostess, the lady of the house who receives everyone. Said with warmth, not only as a title.",hi:"घर की मालकिन जो सबका स्वागत करती हैं। यह शब्द आदर और अपनेपन से कहा जाता है।"}}
+    {t:{en:"Yezmanbai",hi:"यज़मानबाय"},d:{en:"The hostess, the lady of the house who receives everyone. Said with warmth, not only as a title.",hi:"घर की मालकिन जो सबका स्वागत करती हैं। यह शब्द आदर और अपनेपन से कहा जाता है।"}},
+    {t:{en:"Isband",hi:"इसबंद"},d:{en:"Wild rue seeds, burnt over coals in a kangri and waved around the couple and relatives present to keep away the evil eye.",hi:"हरमल के बीज, जिन्हें कांगड़ी के अंगारों पर जलाकर दंपति और उपस्थित संबंधियों के चारों ओर घुमाया जाता है, ताकि बुरी नज़र दूर रहे।"}},
+    {t:{en:"Kalpush",hi:"कलपुश"},d:{en:"The white cap at the base of the Tarang.",hi:"तरंग के नीचे पहनी जाने वाली सफ़ेद टोपी।"}},
+    {t:{en:"Roth",hi:"रोठ"},d:{en:"A sweet bread topped with nuts and poppy seeds, sent between the families.",hi:"मेवों और खसखस से सजी मीठी रोटी, जो दोनों परिवारों के बीच भेजी जाती है।"}}
   );
 })(window.WS_PACK);
