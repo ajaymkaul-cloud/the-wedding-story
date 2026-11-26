@@ -260,10 +260,21 @@ footer a:hover{color:#fff}
   .hero .wrap>div:first-child{display:contents}
   .hero h1{order:1}
   .hero .wrap>div:last-child{order:2;margin-top:26px}
-  .hero .sub{order:3;margin-top:28px}.hero .acts{order:4}.hero .micro{order:5}
+  .hero .sub{order:3;margin-top:28px}.hero .plain{order:3}.hero .acts{order:4}.hero .micro{order:5}
   .hero .phone{width:min(100%,330px);aspect-ratio:auto;height:452px}
   .wa-bar{display:none}.wa-top{padding-top:16px}
 }
+
+/* What your family gets */
+.hero .plain{margin-top:20px;color:#E4EEEA;font-size:clamp(1rem,.96rem + .2vw,1.08rem);max-width:52ch;padding-top:18px;border-top:1px solid rgba(201,165,90,.25)}
+.gets-list{list-style:none;padding:0;margin:40px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 48px}
+.gets-list li{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start}
+.gets-list svg{margin-top:5px;color:var(--gold)}
+.gets-list p{color:var(--muted)}.gets-list b{color:var(--ink);font-weight:500}
+.gets-price{margin-top:40px;padding-top:22px;border-top:1px solid var(--rule);font-family:var(--display);font-size:1.3rem;max-width:52ch}
+.gets-price a{font-family:var(--body);font-size:1rem;color:var(--gold);margin-left:6px}
+.form-note{font-size:.88rem;color:var(--muted);margin-top:2px}
+@media (max-width:760px){.gets-list{grid-template-columns:1fr;gap:18px}}
 
 /* How it works */
 .how{background:var(--paper-2)}
@@ -307,7 +318,7 @@ footer a:hover{color:#fff}
       <a href="#pricing">Pricing</a>
       <a href="#questions">Questions</a>
     </nav>
-    <a class="btn gold js-wa" href="#contact">Talk to us</a>
+    <a class="btn gold js-wa" href="#contact">Email us</a>
   </div>
 </header>
 
@@ -316,11 +327,12 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <div>
       <h1 id="hero-h">Your wedding card, from invite to bidai.</h1>
-      <p class="sub"><span>An invitation addressed to every guest by name.</span><span>The story of each rite, told as it happens at the mandap.</span><span>Every voice, photo and blessing, kept for a lifetime.</span></p>
+      <p class="sub"><span>An invitation addressed to every guest by name.</span><span>The story of each rite, told as it happens at the mandap.</span><span>Every voice, photo and blessing, kept for you.</span></p>
+      <p class="plain">A personalised digital invitation and guest guide, sent on WhatsApp: each guest&rsquo;s own functions, the meaning of every rite, replies, photos and blessings.</p>
       <div class="acts">
-        <a class="btn gold js-wa" href="#contact" data-msg="Hello, could I see a private demo of The Wedding Story?">Ask for a private demo</a>
+        <a class="btn gold js-wa" href="#contact" data-msg="Hello, could I see a private demo of The Wedding Story?">Email us for a private demo</a>
       </div>
-      <p class="micro">Opens on any phone. Simple enough for every elder. In English and हिंदी.</p>
+      <p class="micro">Opens on any phone. Nothing to install or log into. Simple enough for every elder. In English and हिंदी.</p>
     </div>
     <div>
       <div class="phone">
@@ -342,6 +354,25 @@ footer a:hover{color:#fff}
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="gets" id="gets" aria-labelledby="gets-h">
+  <div class="wrap">
+    <h2 class="sec-h rv" id="gets-h">What your family gets</h2>
+    <ul class="gets-list rv">
+      <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><p><b>Every guest, by name.</b> An invitation for up to 400 guests, each showing only the functions they are invited to.</p></li>
+      <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><p><b>Every day and venue.</b> Timings, directions and dress colours, with one tap to add to the calendar.</p></li>
+      <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><p><b>Every rite, explained.</b> A ceremony guide for your tradition, in English and Hindi, checked by your own purohit.</p></li>
+      <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><p><b>Who&rsquo;s who.</b> Both families, so every guest knows who is who.</p></li>
+      <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><p><b>Replies.</b> Who is coming to which function, in a private view for the family.</p></li>
+      <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><p><b>Blessings and voice notes.</b> Written or spoken, from anyone, even elders who cannot travel.</p></li>
+      <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><p><b>Photos by function.</b> Guests add the moments the photographer missed.</p></li>
+      <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><p><b>Happening now.</b> Live updates on the wedding days, like &ldquo;Baraat leaving now&rdquo;.</p></li>
+      <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><p><b>Your printed card, connected.</b> A QR code that opens the same invitation.</p></li>
+      <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><p><b>Kept for you.</b> Online for a year, plus a keepsake file of every blessing, voice note and photo, yours to keep.</p></li>
+    </ul>
+    <p class="gets-price rv">One payment for the whole wedding: from &#8377;8,999, or &#8377;5,999 for our first ten founding families. <a href="#pricing">See pricing</a></p>
   </div>
 </section>
 
@@ -416,6 +447,7 @@ footer a:hover{color:#fff}
         </label>
         <label>Month of the wedding<input name="month" type="month"></label>
         <button class="btn dark" type="submit">Tell me when it's ready</button>
+        <p class="form-note">We will write to you once when your tradition is ready. Nothing else.</p>
       </form>
     </div>
   </div>
@@ -456,15 +488,9 @@ footer a:hover{color:#fff}
         <p class="amt">₹8,999</p>
         <p class="amt-note">per wedding</p>
         <ul>
-          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>An invitation by name for up to 400 guests, each showing only their functions</span></li>
-          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>All the days, venues, dress colours and directions, with one tap to add to the calendar</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Everything in &ldquo;What your family gets&rdquo;</span></li>
           <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Your choice of look: Dejhoor, Khatamband or Marigold</span></li>
-          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>The ceremony guide for your tradition, in English and Hindi, checked by your purohit</span></li>
-          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Who&rsquo;s who: both families, so every guest knows who is who</span></li>
-          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Guests&rsquo; photos by function, and live updates on the wedding days</span></li>
-          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Replies, blessings and voice notes, with the family&rsquo;s view</span></li>
-          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>A QR code for your printed card</span></li>
-          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Online for a year, with a keepsake to keep for good</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>One round of changes before the invitations go out</span></li>
         </ul>
         <a class="btn outline js-wa" href="#contact" data-msg="Hello, I'd like to know more about the Standard plan for The Wedding Story.">Ask about Standard</a>
       </div>
@@ -522,7 +548,7 @@ footer a:hover{color:#fff}
       <details><summary>Our family does some rites differently. What then?</summary><p>Families differ, and that's expected. Your purohit reviews the order before the link goes out, and you can leave out or reorder any rite.</p></details>
       <details><summary>Can we change things after sending the link?</summary><p>Yes. Times, venues and names can change at any point, and guests always see the latest version through the same link.</p></details>
       <details><summary>Can guests see who else is coming?</summary><p>No. Replies go only to the family.</p></details>
-      <details><summary>How long does it stay online?</summary><p>A year after the wedding. You also get a keepsake of all the blessings and voice notes to keep for good.</p></details>
+      <details><summary>How long does it stay online?</summary><p>A year after the wedding. You also get a keepsake file of every blessing, voice note and photo, yours to keep.</p></details>
       <details><summary>Our wedding is outside India. Does that matter?</summary><p>Not at all. Guests can open it anywhere, and you can add directions, travel notes and time zones.</p></details>
       <details><summary>Is there a language other than English and Hindi?</summary><p>For Kashmiri Pandit weddings, English and Hindi for now. Each new tradition comes in its own language too.</p></details>
     </div>
@@ -533,7 +559,7 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <h2 id="close-h" class="rv">Your wedding happens once. Let everyone feel it.</h2>
     <div class="acts rv">
-      <a class="btn gold js-wa" href="#contact" data-msg="Hello, could I see a private demo of The Wedding Story?">Ask for a private demo</a>
+      <a class="btn gold js-wa" href="#contact" data-msg="Hello, could I see a private demo of The Wedding Story?">Email us for a private demo</a>
       <a class="btn line" href="mailto:info@pixelandink.in?subject=The%20Wedding%20Story">info@pixelandink.in</a>
     </div>
   </div>
