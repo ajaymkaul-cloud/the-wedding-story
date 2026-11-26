@@ -61,6 +61,7 @@ function renderDays(){
     meta.appendChild(el("span","chip"+(d.open||guestInv?" open":""),guestInv?t("inv_you"):(d.open?t("open"):t("family"))));
     body.appendChild(meta);body.appendChild(el("h3",null,L(d.title)));body.appendChild(el("p","where",L(d.where)));
     var dp=el("p","desc");dp.appendChild(hl(L(d.desc)));body.appendChild(dp);
+    if(d.story)body.appendChild(storyBlock(d.story,"story story-day"));
     if(d.wv)body.appendChild(wvBlock(d.wv,"wv-day"));
     var acts=el("div","day-acts");
     if(d.open||guestInv)(d.venues||[]).forEach(function(k){var v=VENUES[k];if(!v)return;
@@ -76,6 +77,7 @@ function renderDays(){
   });
 }
 
+function storyBlock(st,cls){var d=document.createElement("details");d.className=cls;var sm=el("summary",null,t("story_h"));d.appendChild(sm);var p=el("p");p.appendChild(hl(L(st)));d.appendChild(p);d.addEventListener("toggle",function(){if(typeof fitDeck==="function")fitDeck();});return d;}
 function wvBlock(w,cls){var b=el("div",cls);b.appendChild(el("h4",null,t("wv_h")));
   var ln=el("p","wv-lines");w.lines.forEach(function(x,i){if(i)ln.appendChild(document.createElement("br"));ln.appendChild(document.createTextNode(x));});b.appendChild(ln);
   b.appendChild(el("p","wv-means",L(w.means)));
@@ -96,6 +98,7 @@ function renderDeck(){
     top.appendChild(left);top.appendChild(head);card.appendChild(top);
     card.appendChild(layer("",t("l_see"),L(r.see)));
     card.appendChild(layer("",t("l_means"),L(r.means)));
+    if(r.story)card.appendChild(storyBlock(r.story,"story story-rite"));
     if(r.steps){
       var s7=el("div","steps7");
       r.steps.forEach(function(s,k){var d=el("div");var b=el("b",null,String(k+1));d.appendChild(b);d.appendChild(document.createTextNode(s.w));d.appendChild(el("span","m",lang==="hi"?s.hi:s.en));s7.appendChild(d);});

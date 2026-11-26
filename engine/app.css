@@ -632,3 +632,13 @@ html,body{overflow-x:clip}
 .wv-day .wv-lines{font-family:var(--display);font-style:italic;font-size:var(--step-1);line-height:1.5;color:var(--ink)}
 .wv-day .wv-means{color:var(--muted)}
 .wv-day .wv-src{font-size:.8rem;color:var(--muted)}.wv-day .wv-src a{color:var(--gold)}
+
+/* The story behind it */
+.story summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:8px;font-size:.88rem;font-weight:600;padding:6px 0}
+.story summary::-webkit-details-marker{display:none}
+.story summary::before{content:"";width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(-45deg);transition:transform .25s}
+.story[open] summary::before{transform:rotate(45deg)}
+.story p{margin-top:6px;line-height:1.6}
+.story-rite{margin:4px 0 6px}.story-rite summary{color:var(--gold-light)}.story-rite p{color:#E6DDCF}
+.story-day{margin-top:10px}.story-day summary{color:var(--gold)}.story-day p{color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.story summary::before{transition:none}}
