@@ -79,9 +79,10 @@ function renderDays(){
 
 function storyBlock(st,cls){var d=document.createElement("details");d.className=cls;var sm=el("summary",null,t("story_h"));d.appendChild(sm);var p=el("p");p.appendChild(hl(L(st)));d.appendChild(p);d.addEventListener("toggle",function(){if(typeof fitDeck==="function")fitDeck();});return d;}
 function wvBlock(w,cls){var b=el("div",cls);b.appendChild(el("h4",null,t("wv_h")));
+  if(w.deva){var dv=el("p","wv-deva");dv.lang="hi";w.deva.forEach(function(x,i){if(i)dv.appendChild(document.createElement("br"));dv.appendChild(document.createTextNode(x));});b.appendChild(dv);}
   var ln=el("p","wv-lines");w.lines.forEach(function(x,i){if(i)ln.appendChild(document.createElement("br"));ln.appendChild(document.createTextNode(x));});b.appendChild(ln);
   b.appendChild(el("p","wv-means",L(w.means)));
-  var src=el("p","wv-src",t("wv_src")+" ");var a=el("a",null,t("wv_page",{p:w.page}));a.href="https://archive.org/details/hinzevanvuninkashmirilakshmishrikandru/page/n"+(w.page+7)+"/mode/1up";a.target="_blank";a.rel="noopener";src.appendChild(a);b.appendChild(src);return b;}
+  return b;}
 /* ---------- ceremony deck ---------- */
 function layer(cls,h,p){var d=el("div","layer"+(cls?" "+cls:""));d.appendChild(el("h4",null,h));var pe=el("p");pe.appendChild(hl(p));d.appendChild(pe);return d;}
 function renderDeck(){

@@ -642,3 +642,6 @@ html,body{overflow-x:clip}
 .story-rite{margin:4px 0 6px}.story-rite summary{color:var(--gold-light)}.story-rite p{color:#E6DDCF}
 .story-day{margin-top:10px}.story-day summary{color:var(--gold)}.story-day p{color:var(--muted)}
 @media (prefers-reduced-motion:reduce){.story summary::before{transition:none}}
+.wv .wv-deva{font-family:var(--display);font-size:var(--step-1);line-height:1.55;color:var(--on-dark)}
+.wv-deva+.wv-lines{font-size:var(--step-0);opacity:.85}
+.wv-day .wv-deva{font-family:var(--display);font-size:var(--step-1);line-height:1.55;color:var(--ink)}

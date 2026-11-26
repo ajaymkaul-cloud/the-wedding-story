@@ -899,3 +899,18 @@ window.WS_PACK={
   var vis={en:"The couple's first visits back to her parents keep her bond with home alive in the first weeks of marriage.",hi:"दंपति का मायके लौटना विवाह के पहले हफ़्तों में उनके घर से रिश्ते को जीवंत रखता है।"};
   D.satraat.story=vis;D.phirlath.story=vis;
 })(window.WS_PACK);
+
+/* Devanagari for the wanvun, as supplied by AJ (26 Nov 2026). Held back where the copy still had
+   scan errors: Livun, the seven rounds, the mirror and the departure. */
+(function(P){
+  function rite(id){for(var i=0;i<P.rites.length;i++)if(P.rites[i].id===id)return P.rites[i];return null;}
+  var D=P.days,r;
+  D.mas.wv.deva=["ओं सेदि दाता वेगन हरतारो ।","गणपत यारय मस मुचरय ।।","शोकलम करिथ मस मुचरयेय ।","शोभ फल दितीय माजि भवानी ।।"];
+  D.devgon.wv.deva=["शोकलम करिथ वनवुन ह्योतुयि ।","शोभ फल दितीय माजि भवानी ।।","जमनायि जलय गंगय म्येचे ।","दिवगोनस क्युत लिवसे ।।"];
+  D.maenz.wv.deva=["दक्षिण किस बालस मअंजि हुन्द तर द्राव ।","शर द्राव लालस छि मअंजेरात ।।","पादशाह बागसर तुलमुलि नागस ।","त्रागस मन्न फोल मंअजे पोश ।।"];
+  D.targa.wv.deva=["माँसव कोतुयि तोमस फोतुयि ।","पोफव कोतुयि कलाबोत ।।","तरंग ओनमय गाह लोग तावने ।","ताह कोस्स माजि रजअगन्याये ।।"];
+  D.lagan.wv.deva=["वुशकू द्रायि हेलि तय दात्रि लोग पूरे ।","द्रयुक येनिवोल कर वाते ।।","आव महाराज तय पोक मअदनी ।","खोत असमअनी गरदि गुबार ।।"];
+  if(r=rite("dwar"))r.wv.deva=["द्वार-पूज करु मालि व्यश कुमारे ।","वार-पूज करु मालि सालिग्रामस ।।","पोश पूज करु मालि दारि त हंगस ।","अलि त रोगस द्वारय पूज ।।"];
+  if(r=rite("kanyadan"))r.wv.deva=["कूर छेयि कोछि तय पुस्तक परान ।","महाराज छसय अथ दारान ।।","कन्य-दान कोरयो मालि दशरावनो ।","भूमि-दान रोटथो मालि ब्रह्मणो ।।"];
+  if(r=rite("posh"))r.wv.deva=["ॐ कर श्लोक पर श्री गणेशाये ।","पोश पूजाये वेल हय वोथ ।।","आकाश पोश वर्षुण हनि-हनि छुस ।","रथबान कनि छुस सिरी दीवता ।।"];
+})(window.WS_PACK);
