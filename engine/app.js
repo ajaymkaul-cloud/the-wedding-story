@@ -730,7 +730,7 @@ function applySize(big){document.documentElement.classList.toggle("big",big);var
 var bigText=load("lagan27_big",false)===true;
 $("size-btn").addEventListener("click",function(){bigText=!bigText;save("lagan27_big",bigText);applySize(bigText);});
 /* ---------- views ---------- */
-var VIEW_OF={"":"home",home:"home",top:"home",days:"days",ceremony:"ceremony",notes:"ceremony",rsvp:"rsvp",blessings:"wishes",photos:"wishes",wishes:"wishes",family:"family"};
+var VIEW_OF={"":"home",home:"home",top:"home",days:"days",ceremony:"ceremony",notes:"home",rsvp:"rsvp",blessings:"wishes",photos:"wishes",wishes:"wishes",family:"family"};
 var currentView=null,guestName=null;
 var rvIO=("IntersectionObserver" in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");rvIO.unobserve(e.target);}});},{threshold:.1}):null;
 function revealIn(){document.querySelectorAll(".rv:not(.in)").forEach(function(n){if(rvIO)rvIO.observe(n);else n.classList.add("in");});}
