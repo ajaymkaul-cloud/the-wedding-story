@@ -110,8 +110,8 @@ window.WS_PACK={
     "hi": "मेंज़िरात"
    },
    "desc": {
-    "en": "The henna night. {bride}'s mama and mami wash her feet before the henna is applied, and the evening turns into wanvun to the beat of the tumbaknaer, and dancing.",
-    "hi": "मेहंदी की रात। मेहंदी से पहले {bride} के मामा-मामी उनके पाँव धोते हैं, और फिर शाम तुम्बकनार की थाप पर वनवुन और नृत्य में बदल जाती है।"
+    "en": "The henna night. {bride}'s masi, her mother's sister, washes her feet before the henna is applied, and the evening turns into wanvun to the beat of the tumbaknaer, and dancing.",
+    "hi": "मेहंदी की रात। मेहंदी से पहले {bride} की मासी उनके पाँव धोती हैं, और फिर शाम तुम्बकनार की थाप पर वनवुन और नृत्य में बदल जाती है।"
    }
   },
   "targa": {
@@ -468,8 +468,8 @@ window.WS_PACK={
     "hi": "मामा और मामी"
    },
    "d": {
-    "en": "Mother's brother and his wife. They wash the bride's feet at Maenziraat and bring her to the mandap.",
-    "hi": "माँ के भाई और उनकी पत्नी। मेंज़िरात पर वधू के पाँव धोते हैं और उन्हें मंडप तक लाते हैं।"
+    "en": "Mother's brother and his wife. The mama brings the bride to the mandap.",
+    "hi": "माँ के भाई और उनकी पत्नी। मामा वधू को मंडप तक लाते हैं।"
    }
   },
   {
@@ -917,3 +917,6 @@ window.WS_PACK={
 
 /* Livun Devanagari, as supplied by AJ (26 Nov 2026), pending his check */
 window.WS_PACK.days.livun.wv.deva=["शेकलम करिथे हमव वनवोनय ।","रति फल दिती माजि भवानी ॥","प्रजि पेठ अनितोन ब्रह्मण छ़अरिथ ।","लिवनस क्युत दियि सात चअरिथ ॥"];
+
+/* Masi (AJ, 26 Nov 2026): it is the masi who washes the bride's feet at Maenziraat */
+window.WS_PACK.gloss.push({t:{en:"Masi",hi:"मासी"},d:{en:"Mother's sister. She washes the bride's feet at Maenziraat, before the henna.",hi:"माँ की बहन। मेंज़िरात पर मेहंदी से पहले वधू के पाँव धोती हैं।"}});
