@@ -43,3 +43,6 @@ html[data-theme="marigold"] .wv .wv-means{color:#4A2433}
 html[data-theme="marigold"] .wv .wv-src{color:#8A6A70}
 html[data-theme="marigold"] .wv .wv-src a,html[data-theme="marigold"] .wv h4{color:#B85407}
 html[data-theme="marigold"] .rite.posh .wv .wv-means{color:#FFEAF2}
+html[data-theme="marigold"] .story-rite summary{color:#B85407}
+html[data-theme="marigold"] .story-rite p{color:#4A2433}
+html[data-theme="marigold"] .rite.posh .story-rite p{color:#FFEAF2}

@@ -864,3 +864,38 @@ window.WS_PACK={
   D.devgon.desc={en:"At both homes, often the day before the wedding. {bride} and {groom}, their parents and the elders leading it fast until it ends. The mama brings them to the havan, where the purohit invokes Shiva and Parvati, the family deity and the ancestors, and the trousseau is blessed beside the fire. During the day {bride}'s poff fastens her Dejhoor. Kheer and moong-wari follow as prasad, then Duribat, a feast for the maternal relatives.",
     hi:"दोनों घरों में, प्रायः विवाह से एक दिन पहले। {bride} और {groom}, उनके माता-पिता और रस्म कराने वाले बड़े इसके पूरा होने तक उपवास रखते हैं। मामा उन्हें हवन तक लाते हैं, जहाँ पुरोहित जी शिव-पार्वती, कुल देवता और पितरों का आह्वान करते हैं, और दहेज़ का सामान अग्नि के पास रखकर आशीर्वाद दिया जाता है। दिन में {bride} की पोफ़ उनका देजहूर बाँधती हैं। फिर प्रसाद में खीर और मूँग-वड़ी, और उसके बाद दुरिबत, मामा के परिवार के लिए भोज।"};
 })(window.WS_PACK.days);
+
+/* "The story behind it": approved by AJ, 26 Nov 2026. Interpretations are framed as "some say". */
+(function(P){
+  function rite(id){for(var i=0;i<P.rites.length;i++)if(P.rites[i].id===id)return P.rites[i];return null;}
+  var R={
+    vyug:{en:"The Vyug is a sacred diagram drawn at the threshold in coloured powders. Some say that stepping onto it, the groom is received at a drawn centre of the world, its four sides open to blessings from every direction.",
+          hi:"व्यूग दहलीज़ पर रंगीन चूर्ण से बनाया गया एक पवित्र रेखांकन है। कुछ लोग मानते हैं कि उस पर क़दम रखकर वर को संसार के खींचे हुए केंद्र पर स्वीकारा जाता है, जिसकी चारों दिशाएँ हर ओर के आशीर्वाद के लिए खुली हैं।"},
+    dwar:{en:"The doorway is the first line the groom crosses into the bride's home, so it is honoured before he steps through.",
+          hi:"द्वार वह पहली रेखा है जिसे पार कर वर वधू के घर में आते हैं, इसलिए उनके भीतर आने से पहले उसका पूजन होता है।"},
+    glimpse:{en:"The couple first see each other in a mirror, after the sacred fire is lit, so their first look is shared in the fire's presence.",
+          hi:"पवित्र अग्नि प्रज्वलित होने के बाद दंपति एक-दूसरे को पहली बार दर्पण में देखते हैं, ताकि उनकी पहली दृष्टि अग्नि की उपस्थिति में हो।"},
+    kanyadan:{en:"Her parents give their daughter's hand, counted among the greatest gifts a family can make. The groom promises to walk with her in duty, wealth and desire alike.",
+          hi:"माता-पिता अपनी बेटी का हाथ सौंपते हैं, जिसे किसी परिवार के सबसे बड़े दानों में गिना जाता है। वर धर्म, अर्थ और काम, तीनों में उनका साथ निभाने का वचन देते हैं।"},
+    athwas:{en:"The joined hands stay covered until the end: a promise to hold on through everything. Some say the golden thread across their foreheads joins their thoughts as one.",
+          hi:"जुड़े हुए हाथ अंत तक ढके रहते हैं: हर परिस्थिति में साथ थामे रहने का वचन। कुछ लोग मानते हैं कि माथे पर बँधा सुनहरा धागा उनके विचारों को एक कर देता है।"},
+    lagan:{en:"Each round is a vow: food, strength, prosperity, happiness, children, long life together, and friendship.",
+          hi:"हर फेरा एक वचन है: अन्न, बल, समृद्धि, सुख, संतान, साथ में लंबा जीवन, और मित्रता।"},
+    plate:{en:"Their first meal from one plate makes them one household.",
+          hi:"एक थाली से पहला भोजन उन्हें एक परिवार बना देता है।"},
+    posh:{en:"The couple are seen as Shiva and Parvati, so the flowers are offered as at worship, not only as blessings. Some see the red cloth above them as marking out a sacred space.",
+          hi:"दंपति को शिव और पार्वती के रूप में देखा जाता है, इसलिए फूल केवल आशीर्वाद नहीं, पूजा की तरह अर्पित होते हैं। कुछ लोग उनके ऊपर के लाल कपड़े को एक पवित्र स्थान का घेरा मानते हैं।"},
+    vidaai:{en:"At the groom's door, his Poff stops the couple until she is given a gift. Many read the teasing as the old household making room, warmly, for a new one.",
+          hi:"वर के घर के द्वार पर उनकी पोफ़ दंपति को तब तक रोकती हैं जब तक उन्हें उपहार न मिले। बहुत से लोग इस छेड़छाड़ को पुराने घर का नई बहू के लिए प्रेम से जगह बनाना मानते हैं।"}
+  };
+  Object.keys(R).forEach(function(k){var r=rite(k);if(r)r.story=R[k];});
+  var D=P.days;
+  D.mas.story={en:"Many see it as her first step out of girlhood.",hi:"बहुत से लोग इसे उनके बचपन से बाहर पहला क़दम मानते हैं।"};
+  D.kanishran.story={en:"It cleanses body and mind for the rites ahead.",hi:"यह आगे के संस्कारों के लिए तन और मन को शुद्ध करता है।"};
+  D.devgon.story={en:"The Dejhoor, given by the bride's family and worn through the upper ear, marks her as a married woman. Some see its six-sided shape as the meeting of Shiva and Shakti.",
+    hi:"वधू के परिवार की ओर से दिया गया और कान के ऊपरी भाग में पहना जाने वाला देजहूर उन्हें विवाहित स्त्री के रूप में चिह्नित करता है। कुछ लोग इसके षट्कोण आकार को शिव और शक्ति के मिलन के रूप में देखते हैं।"};
+  D.targa.story={en:"The Tarang, the bride's layered white headdress, was once worn every day by married women as the mark of the woman of the house. Folklore links its shape to the raised hood of a sacred serpent, from the Valley's old Naga tradition.",
+    hi:"तरंग, वधू का परतदार सफ़ेद शिरोवस्त्र, कभी विवाहित स्त्रियाँ रोज़ घर की मालकिन के चिह्न के रूप में पहनती थीं। लोककथाएँ इसके आकार को घाटी की पुरानी नाग परंपरा के पवित्र सर्प के उठे फन से जोड़ती हैं।"};
+  var vis={en:"The couple's first visits back to her parents keep her bond with home alive in the first weeks of marriage.",hi:"दंपति का मायके लौटना विवाह के पहले हफ़्तों में उनके घर से रिश्ते को जीवंत रखता है।"};
+  D.satraat.story=vis;D.phirlath.story=vis;
+})(window.WS_PACK);
