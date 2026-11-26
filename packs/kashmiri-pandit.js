@@ -76,7 +76,7 @@ window.WS_PACK={
   },
   "mas": {
    "title": {
-    "en": "Mas Muczravun",
+    "en": "Mas Muchravun",
     "hi": "मस मुचरावुन"
    },
    "desc": {
@@ -130,7 +130,7 @@ window.WS_PACK={
     "hi": "लगन"
    },
    "desc": {
-    "en": "The baraat arrives in the early evening. The wedding rites follow through the night and close with Posh Puza, then dinner.",
+    "en": "The baraat arrives in the early evening. The wedding rites follow through the night and close with Posh Pooza, then dinner.",
     "hi": "बारात शाम को पहुँचती है। विवाह संस्कार रात भर चलते हैं और पोश पूजा के साथ पूर्ण होते हैं, फिर भोजन।"
    }
   },
@@ -163,7 +163,7 @@ window.WS_PACK={
    "reviewed": false,
    "play": "vyug",
    "listen": {
-    "en": "Wanvun, sung by the women of {bride}'s family to receive the baraat. A Pandit wanvun traditionally opens with Henze, a slow opening chant.",
+    "en": "Wanvun, sung by the women of {bride}'s family to receive the baraat. A Pandit wanvun traditionally opens with Henzey, a slow opening chant.",
     "hi": "{bride} के परिवार की महिलाओं द्वारा बारात के स्वागत में गाया जाने वाला वनवुन। पंडित वनवुन पारंपरिक रूप से हेंज़े नामक धीमे आरंभिक गान से शुरू होता है।"
    },
    "title": {
@@ -387,18 +387,18 @@ window.WS_PACK={
     "hi": "एक परिवार के रूप में उनका पहला भोजन।"
    },
    "you": {
-    "en": "A good moment to find a spot near the mandap. Posh Puza is next.",
+    "en": "A good moment to find a spot near the mandap. Posh Pooza is next.",
     "hi": "मंडप के पास जगह ले लें। अगला संस्कार पोश पूजा है।"
    }
   },
   {
    "id": "posh",
    "art": "posh",
-   "term": "Posh Puza",
+   "term": "Posh Pooza",
    "reviewed": false,
    "posh": true,
    "title": {
-    "en": "Posh Puza",
+    "en": "Posh Pooza",
     "hi": "पोश पूजा"
    },
    "see": {
@@ -548,7 +548,7 @@ window.WS_PACK={
     "hi": "पोश"
    },
    "d": {
-    "en": "Flowers. Posh Puza is the shower of flowers that closes the Lagan.",
+    "en": "Flowers. Posh Pooza is the shower of flowers that closes the Lagan.",
     "hi": "फूल। पोश पूजा फूलों की वह वर्षा है जिससे लगन पूर्ण होता है।"
    }
   },
@@ -574,7 +574,7 @@ window.WS_PACK={
   },
   {
    "t": {
-    "en": "Henze",
+    "en": "Henzey",
     "hi": "हेंज़े"
    },
    "d": {
@@ -700,9 +700,9 @@ window.WS_PACK={
    ]
   },
   {
-   "g": "Henze",
+   "g": "Henzey",
    "en": [
-    "Henze"
+    "Henzey"
    ],
    "hi": [
     "हेंज़े"
