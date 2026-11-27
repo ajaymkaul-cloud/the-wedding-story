@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 320" role="img" aria-label="An illustrated portrait of Aditi and Ishaan inside an arch, with the hills, a lake and a shikara behind them">
+  <defs>
+    <linearGradient id="pt-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBEEDB"/>
+      <stop offset=".55" stop-color="#F6DCC8"/>
+      <stop offset="1" stop-color="#EFCFC0"/>
+    </linearGradient>
+    <linearGradient id="pt-lake" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#CFE0DC"/>
+      <stop offset="1" stop-color="#B7CFCB"/>
+    </linearGradient>
+    <clipPath id="pt-in">
+      <path d="M30 312V132C30 82 70 46 120 18C170 46 210 82 210 132V312Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- arch interior: sky, hills, lake -->
+  <g clip-path="url(#pt-in)">
+    <rect x="0" y="0" width="240" height="320" fill="url(#pt-sky)"/>
+    <circle cx="150" cy="118" r="26" fill="#FFF6E6" opacity=".9"/>
+    <path d="M30 196L58 168L78 182L104 150L128 176L150 158L176 182L196 168L210 178V230H30Z" fill="#B8C6C3"/>
+    <path d="M30 210L52 196L74 206L100 188L126 204L150 192L176 208L210 196V236H30Z" fill="#9DB1AE"/>
+    <rect x="0" y="222" width="240" height="98" fill="url(#pt-lake)"/>
+    <path d="M44 236H92M120 244H180M60 252H104M150 258H196" stroke="#FFFFFF" stroke-width="1.4" stroke-linecap="round" opacity=".8"/>
+    <!-- shikara -->
+    <path d="M160 230C170 236 192 236 202 230L198 234C190 238 172 238 164 234Z" fill="#5A3B2A"/>
+    <path d="M172 230V222H190V230" fill="none" stroke="#5A3B2A" stroke-width="1.6"/>
+    <path d="M170 222H192L186 217H176Z" fill="#8E1B2E"/>
+    <!-- chinar leaves -->
+    <g transform="translate(48 296) rotate(-18)"><path d="M0,-14L4,-6L12,-9L8,-1L14,4L5,4L6,12L0,7L-6,12L-5,4L-14,4L-8,-1L-12,-9L-4,-6Z" fill="#C8572B"/><path d="M0,7V18" stroke="#8A3A1E" stroke-width="1.2"/></g>
+    <g transform="translate(196 300) rotate(24) scale(.85)"><path d="M0,-14L4,-6L12,-9L8,-1L14,4L5,4L6,12L0,7L-6,12L-5,4L-14,4L-8,-1L-12,-9L-4,-6Z" fill="#D9802F"/><path d="M0,7V18" stroke="#8A3A1E" stroke-width="1.2"/></g>
+  </g>
+
+  <!-- the couple -->
+  <g>
+    <g transform="translate(6 0)">
+    <!-- bride's veil falling from the Tarang, behind her -->
+    <path d="M136 132C150 130 160 140 162 156L170 268L134 268L132 150Z" fill="#FFFFFF" opacity=".95"/>
+    </g>
+    <g transform="translate(-6 0)">
+    <!-- groom: pheran -->
+    <path d="M86 176C88 166 96 160 104 160C112 160 120 166 122 176L128 284H80Z" fill="#F1E3C8"/>
+    <path d="M96 162L104 186L112 162" fill="none" stroke="#B8893E" stroke-width="2"/>
+    <path d="M80 284H128" stroke="#B8893E" stroke-width="3"/>
+    <path d="M118 182L132 212" stroke="#F1E3C8" stroke-width="9" stroke-linecap="round"/>
+    <!-- groom: head and turban -->
+    <rect x="99" y="150" width="10" height="12" rx="3" fill="#C58C68"/>
+    <circle cx="104" cy="142" r="13" fill="#C58C68"/>
+    <path d="M90 140C88 124 98 116 106 116C116 116 120 124 119 138C112 132 98 132 90 140Z" fill="#7A1F2B"/>
+    <path d="M92 130C100 124 110 124 118 130" fill="none" stroke="#B8893E" stroke-width="1.5"/>
+    <circle cx="112" cy="121" r="2.6" fill="#E9C46A"/>
+
+    </g>
+    <g transform="translate(6 0)">
+    <!-- bride: pheran -->
+    <path d="M128 178C130 168 138 162 146 162C154 162 160 168 162 178L168 284H122Z" fill="#8E1B2E"/>
+    <path d="M136 166C140 172 152 172 156 166" fill="none" stroke="#E9C46A" stroke-width="2.2"/>
+    <path d="M140 172V228" stroke="#E9C46A" stroke-width="1.6"/>
+    <path d="M122 284H168" stroke="#E9C46A" stroke-width="3"/>
+    <path d="M125 266H165" stroke="#E9C46A" stroke-width="1.4" opacity=".8"/>
+    <path d="M132 184L124 212" stroke="#8E1B2E" stroke-width="9" stroke-linecap="round"/>
+    <!-- bride: head -->
+    <rect x="141" y="150" width="10" height="13" rx="3" fill="#C9906C"/>
+    <circle cx="146" cy="142" r="12.5" fill="#C9906C"/>
+    <!-- Tarang: layered white headdress with a coloured band -->
+    <path d="M132 142C130 126 138 118 146 118C155 118 162 126 160 142C154 136 138 136 132 142Z" fill="#FFFFFF"/>
+    <path d="M133 136C140 131 152 131 159 136" fill="none" stroke="#D85C7A" stroke-width="3"/>
+    <path d="M134 130C141 125 151 125 158 130" fill="none" stroke="#E9C46A" stroke-width="1.6"/>
+    <!-- Dejhoor: hanging from the ears on a thread -->
+    <path d="M134 146V176M158 146V176" stroke="#B8893E" stroke-width="1"/>
+    <path d="M134 176l3 2v4l-3 2l-3-2v-4Z" fill="#E9C46A" stroke="#B8893E" stroke-width=".8"/>
+    <path d="M158 176l3 2v4l-3 2l-3-2v-4Z" fill="#E9C46A" stroke="#B8893E" stroke-width=".8"/>
+    <path d="M134 184v6M158 184v6" stroke="#E9C46A" stroke-width="1.2"/>
+    </g>
+    <!-- joined hands -->
+    <circle cx="128" cy="214" r="5" fill="#C58C68"/>
+  </g>
+
+  <!-- arch frame -->
+  <path d="M30 312V132C30 82 70 46 120 18C170 46 210 82 210 132V312" fill="none" stroke="#C9A55A" stroke-width="3"/>
+  <path d="M20 316V130C20 76 64 36 120 6C176 36 220 76 220 130V316" fill="none" stroke="#C9A55A" stroke-width="1.4"/>
+  <path d="M14 316H226" stroke="#C9A55A" stroke-width="2.4"/>
+  <g fill="#C9A55A">
+    <path d="M120 0l4 6l-4 6l-4-6Z"/>
+    <circle cx="25" cy="160" r="2"/><circle cx="25" cy="200" r="2"/><circle cx="25" cy="240" r="2"/><circle cx="25" cy="280" r="2"/>
+    <circle cx="215" cy="160" r="2"/><circle cx="215" cy="200" r="2"/><circle cx="215" cy="240" r="2"/><circle cx="215" cy="280" r="2"/>
+  </g>
+
+  <!-- monogram -->
+  <text x="120" y="82" text-anchor="middle" font-family="'Tiro Devanagari Hindi',Georgia,serif" font-size="26" fill="#8A6A2E">A &amp; I</text>
+  <path d="M96 92H144" stroke="#C9A55A" stroke-width="1"/>
+</svg>
