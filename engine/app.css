@@ -653,3 +653,8 @@ html,body{overflow-x:clip}
 /* Good to know, on the invitation page */
 .notes-home{margin-top:56px;margin-bottom:56px}
 .notes-home .sec-head{margin-bottom:24px}
+
+/* Quick details shortcut under the greeting */
+.hero .quick{display:inline-flex;align-items:center;gap:8px;margin:-12px 0 26px;padding:8px 16px;border:1px solid rgba(var(--gl),.55);border-radius:999px;color:var(--gold-light);font-size:.92rem;text-decoration:none}
+.hero .quick::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-top:-3px}
+.hero .quick:hover{background:rgba(var(--gl),.12)}

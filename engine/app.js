@@ -730,7 +730,7 @@ function applySize(big){document.documentElement.classList.toggle("big",big);var
 var bigText=load("lagan27_big",false)===true;
 $("size-btn").addEventListener("click",function(){bigText=!bigText;save("lagan27_big",bigText);applySize(bigText);});
 /* ---------- views ---------- */
-var VIEW_OF={"":"home",home:"home",top:"home",days:"days",ceremony:"ceremony",notes:"home",rsvp:"rsvp",blessings:"wishes",photos:"wishes",wishes:"wishes",family:"family"};
+var VIEW_OF={"":"home",home:"home",top:"home",days:"days",ceremony:"ceremony",notes:"home",quick:"home",rsvp:"rsvp",blessings:"wishes",photos:"wishes",wishes:"wishes",family:"family"};
 var currentView=null,guestName=null;
 var rvIO=("IntersectionObserver" in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");rvIO.unobserve(e.target);}});},{threshold:.1}):null;
 function revealIn(){document.querySelectorAll(".rv:not(.in)").forEach(function(n){if(rvIO)rvIO.observe(n);else n.classList.add("in");});}
@@ -759,7 +759,7 @@ function route(){
   document.querySelectorAll("main>[data-view]").forEach(function(sc){sc.classList.toggle("on",sc.dataset.view===v);});
   document.querySelectorAll("[data-v]").forEach(function(a){a.setAttribute("aria-current",a.dataset.v===v?"true":"false");});
   if(changed)window.scrollTo(0,0);
-  if(h==="notes"||h==="photos"){var tg=$(h);if(tg)setTimeout(function(){tg.scrollIntoView({behavior:reduceMotion?"auto":"smooth"});},changed?160:0);}
+  if(h==="notes"||h==="photos"||h==="quick"){var tg=$(h);if(tg)setTimeout(function(){tg.scrollIntoView({behavior:reduceMotion?"auto":"smooth"});},changed?160:0);}
   if(v==="ceremony")setTimeout(function(){go(current);fitDeck();},60);
   if(v==="family")renderOrg();
   revealIn();
