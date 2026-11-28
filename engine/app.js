@@ -304,7 +304,7 @@ function myReplyText(){
 }
 function refreshRsvpUi(){
   var mine=rsvps.filter(function(r){return r.mine;})[0];
-  $("r-submit").textContent=!attending()?t("r_submit_afar"):(mine?t("r_update"):t("r_submit"));
+  $("r-submit").textContent=(!attending()&&$("att-no").checked)?t("r_submit_afar"):(mine?t("r_update"):t("r_submit"));
   if(arguments[0]===true)return;
   var st=$("r-status");st.className="small";st.textContent=myReplyText();
 }
@@ -318,6 +318,7 @@ $("rsvp-form").addEventListener("submit",function(e){
   e.preventDefault();
   var st=$("r-status"),name=$("r-name").value.trim();
   if(!name){st.className="small status-err";st.textContent=t("r_err_name");$("r-name").focus();return;}
+  if(!$("att-yes").checked&&!$("att-no").checked){st.className="small status-err";st.textContent=t("r_err_att");return;}
   var events=[];if($("ev-maenz").checked)events.push("maenziraat");if($("ev-lagan").checked)events.push("lagan");
   if(attending()&&!events.length){st.className="small status-err";st.textContent=t("r_err_ev");return;}
   var entry={name:name,att:attending()?"yes":"no",count:attending()?count:0,events:attending()?events:[],note:$("r-note").value.trim(),at:Date.now(),mine:true};
@@ -718,7 +719,7 @@ function renderContacts(){
       var wa=el("a","btn ghost small",t("c_wa"));wa.href="https://wa.me/"+digits;wa.target="_blank";wa.rel="noopener";
       row.appendChild(call);row.appendChild(wa);card.appendChild(row);grid.appendChild(card);
     });
-    slot.appendChild(grid);slot.appendChild(el("p","small",t("c_note")));
+    slot.appendChild(el("p","c-note",t("c_note")));slot.appendChild(grid);
   });
 }
 function renderCountdown(){
