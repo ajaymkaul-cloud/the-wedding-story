@@ -662,3 +662,6 @@ html,body{overflow-x:clip}
 /* The couple's illustrated portrait (Signature) */
 .hero .portrait{display:block;width:min(200px,52vw);height:auto;margin:18px 0 22px;filter:drop-shadow(0 18px 28px rgba(var(--shade),.35))}
 @media (min-width:821px){.hero .portrait{width:230px}}
+
+/* sample-contacts note, visible */
+.c-note{margin:0 0 14px;padding:10px 14px;border:1px dashed currentColor;border-radius:10px;font-size:.95rem;opacity:.9}
